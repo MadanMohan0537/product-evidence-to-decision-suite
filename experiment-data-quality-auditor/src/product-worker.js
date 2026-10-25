@@ -24,6 +24,7 @@ import {assureRoadmapRecalibrationReentry} from '../../roadmap_recalibration_ree
 import {controlRoadmapRecalibrationReentryPromotion} from '../../roadmap_recalibration_reentry_promotion_controller/src/promotion.js';
 import {monitorRoadmapRecalibrationPromotionOutcomes} from '../../roadmap_recalibration_promotion_outcome_monitor/src/outcomes.js';
 import {controlRoadmapRecalibrationBaselineHandoff} from '../../roadmap_recalibration_baseline_handoff_controller/src/handoff.js';
+import {monitorRoadmapRecalibrationBaselineDrift} from '../../roadmap_recalibration_baseline_drift_monitor/src/drift.js';
 import {stressPortfolio} from '../../portfolio_resilience_stress_tester/src/stress.js';
 import {trackBenefits} from '../../benefits_realization_tracker/src/benefits.js';
 import {reviewInvestments} from '../../investment_assurance_review/src/assurance.js';
@@ -162,6 +163,26 @@ function buildRoadmapRecalibrationPromotionOutcome(runs, input) {
     review: input.recalibrationPromotionOutcomeReview,
   });
   return {learning, assurance, promotion, outcome};
+}
+
+function buildRoadmapRecalibrationBaselineHandoff(runs, input) {
+  const {learning, assurance, promotion, outcome} = buildRoadmapRecalibrationPromotionOutcome(runs, input);
+  const handoff = controlRoadmapRecalibrationBaselineHandoff(outcome, {
+    id: input.recalibrationBaselineHandoffId,
+    asOf: input.recalibrationBaselineHandoffAsOf,
+    maximumHandoffHours: input.recalibrationBaselineHandoffMaximumHandoffHours,
+    minimumArchiveDays: input.recalibrationBaselineHandoffMinimumArchiveDays,
+    maximumRollbackTestAgeDays: input.recalibrationBaselineHandoffMaximumRollbackTestAgeDays,
+    manifest: input.recalibrationBaselineHandoffManifest,
+    referenceClasses: input.recalibrationBaselineHandoffReferenceClasses,
+    consumers: input.recalibrationBaselineHandoffConsumers,
+    archive: input.recalibrationBaselineHandoffArchive,
+    rollback: input.recalibrationBaselineHandoffRollback,
+    monitoring: input.recalibrationBaselineHandoffMonitoring,
+    approvals: input.recalibrationBaselineHandoffApprovals,
+    review: input.recalibrationBaselineHandoffReview,
+  });
+  return {learning, assurance, promotion, outcome, handoff};
 }
 
 export default {
@@ -351,21 +372,25 @@ export default {
       if (url.pathname === '/api/roadmap-recalibration-baseline-handoff' && request.method === 'POST') {
         const limit = Number(url.searchParams.get('limit') ?? 20);
         const input = await body(request); const runs = await store.recent(limit);
-        const {outcome} = buildRoadmapRecalibrationPromotionOutcome(runs, input);
-        return json(controlRoadmapRecalibrationBaselineHandoff(outcome, {
-          id: input.recalibrationBaselineHandoffId,
-          asOf: input.recalibrationBaselineHandoffAsOf,
-          maximumHandoffHours: input.recalibrationBaselineHandoffMaximumHandoffHours,
-          minimumArchiveDays: input.recalibrationBaselineHandoffMinimumArchiveDays,
-          maximumRollbackTestAgeDays: input.recalibrationBaselineHandoffMaximumRollbackTestAgeDays,
-          manifest: input.recalibrationBaselineHandoffManifest,
-          referenceClasses: input.recalibrationBaselineHandoffReferenceClasses,
-          consumers: input.recalibrationBaselineHandoffConsumers,
-          archive: input.recalibrationBaselineHandoffArchive,
-          rollback: input.recalibrationBaselineHandoffRollback,
-          monitoring: input.recalibrationBaselineHandoffMonitoring,
-          approvals: input.recalibrationBaselineHandoffApprovals,
-          review: input.recalibrationBaselineHandoffReview,
+        return json(buildRoadmapRecalibrationBaselineHandoff(runs, input).handoff);
+      }
+      if (url.pathname === '/api/roadmap-recalibration-baseline-drift' && request.method === 'POST') {
+        const limit = Number(url.searchParams.get('limit') ?? 20);
+        const input = await body(request); const runs = await store.recent(limit);
+        const {handoff} = buildRoadmapRecalibrationBaselineHandoff(runs, input);
+        return json(monitorRoadmapRecalibrationBaselineDrift(handoff, {
+          id: input.recalibrationBaselineDriftId,
+          asOf: input.recalibrationBaselineDriftAsOf,
+          minimumSnapshots: input.recalibrationBaselineDriftMinimumSnapshots,
+          maximumSnapshotGapHours: input.recalibrationBaselineDriftMaximumSnapshotGapHours,
+          maximumSnapshotAgeHours: input.recalibrationBaselineDriftMaximumSnapshotAgeHours,
+          minimumArchiveRemainingDays: input.recalibrationBaselineDriftMinimumArchiveRemainingDays,
+          maximumRollbackTestAgeDays: input.recalibrationBaselineDriftMaximumRollbackTestAgeDays,
+          snapshots: input.recalibrationBaselineDriftSnapshots,
+          archive: input.recalibrationBaselineDriftArchive,
+          rollback: input.recalibrationBaselineDriftRollback,
+          monitoring: input.recalibrationBaselineDriftMonitoring,
+          review: input.recalibrationBaselineDriftReview,
         }));
       }
       if (url.pathname === '/api/portfolio-stress' && request.method === 'POST') {
