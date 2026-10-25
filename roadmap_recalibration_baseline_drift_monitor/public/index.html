@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>ProdMind · Baseline Configuration Drift</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">ProdMind · Project 56</p>
+      <h1>Baseline configuration drift monitor</h1>
+      <p>Verify that every roadmap-estimation consumer remains on the exact Project 55 version and factor manifest.</p>
+    </header>
+    <section class="panel">
+      <h2>Assess ongoing configuration</h2>
+      <p>Upload a JSON object containing <code>handoffReport</code> and <code>input</code>. The monitor is read-only.</p>
+      <form id="assessment">
+        <label>API token<input name="token" type="password" autocomplete="off" required></label>
+        <label>Assessment JSON<input name="file" type="file" accept=".json,application/json" required></label>
+        <button>Monitor baseline</button>
+      </form>
+      <p id="message" role="status"></p>
+    </section>
+    <section class="panel" id="results" hidden>
+      <h2>Result</h2>
+      <div class="metrics" id="metrics"></div>
+      <div id="checks"></div>
+      <details><summary>Complete report</summary><pre id="report"></pre></details>
+    </section>
+  </main>
+  <script src="/app.js" defer></script>
+</body>
+</html>
