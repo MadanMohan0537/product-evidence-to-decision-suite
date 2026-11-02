@@ -1,5 +1,14 @@
 # Roadmap Recalibration Rollout Assurance Monitor
 
+<!-- catalog:io:start -->
+**Input → output:** staged exposure evidence → recalibration rollout assurance
+
+**Quick start:** `cd roadmap_recalibration_rollout_monitor && npm install && npm run check`
+
+**Track:** PM · Advanced · built
+<!-- catalog:io:end -->
+
+
 Project 49 closes the gap between an approved estimate recalibration and a safe human promotion decision. It verifies a zero-exposure shadow, increasing active stages, concurrent baseline comparison, exact factors, sufficient dwell and evidence, and an executable rollback—without changing production state.
 
 ## Why this belongs in ProdMind
@@ -104,3 +113,19 @@ This tool does not establish statistical significance, causality, compliance, or
 - [Metrics](docs/METRICS.md)
 
 MIT licensed.
+
+<!-- catalog:connects:start -->
+## How this connects
+
+**Input → output:** staged exposure evidence → recalibration rollout assurance
+
+**Upstream:** [Roadmap Estimate Recalibration Proposal & Validation Controller](../roadmap_recalibration_controller/README.md)
+
+**Downstream:** [Roadmap Recalibration Rollback & Recovery Verifier](../roadmap_recalibration_recovery_verifier/README.md)
+
+**Related:** None in this catalog.
+
+**Track:** PM · Advanced.
+
+**Project 7:** Imported by the [Experiment & Learning Workspace](../experiment-data-quality-auditor/README.md).
+<!-- catalog:connects:end -->

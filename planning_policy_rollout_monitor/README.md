@@ -1,5 +1,14 @@
 # Project 35 — Product Planning Policy Rollout Assurance Monitor
 
+<!-- catalog:io:start -->
+**Input → output:** rollout observations → stage, dwell, and evidence assurance
+
+**Quick start:** `cd planning_policy_rollout_monitor && npm install && npm run check`
+
+**Track:** PM · Advanced · built
+<!-- catalog:io:end -->
+
+
 Project 35 verifies that a human-executed planning-policy rollout followed the safe-change plan approved by Project 34.
 
 ## What it checks
@@ -43,3 +52,19 @@ NIST continuous-monitoring guidance motivates ongoing assurance and timely respo
 ## License
 
 MIT
+
+<!-- catalog:connects:start -->
+## How this connects
+
+**Input → output:** rollout observations → stage, dwell, and evidence assurance
+
+**Upstream:** [Product Planning Policy Change & Version Controller](../planning_policy_change_controller/README.md)
+
+**Downstream:** [Product Planning Policy Effectiveness & Drift Monitor](../planning_policy_effectiveness_monitor/README.md)
+
+**Related:** None in this catalog.
+
+**Track:** PM · Advanced.
+
+**Project 7:** Imported by the [Experiment & Learning Workspace](../experiment-data-quality-auditor/README.md).
+<!-- catalog:connects:end -->

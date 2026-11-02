@@ -1,5 +1,14 @@
 # Product Lifecycle & Deprecation Planner
 
+<!-- catalog:io:start -->
+**Input → output:** a lifecycle proposal → migration, notice, dependency, and approval checks
+
+**Quick start:** `cd product_lifecycle_planner && npm install && npm run check`
+
+**Track:** PM · Advanced · built
+<!-- catalog:io:end -->
+
+
 Project 21 turns Project 20 adoption evidence into a governed lifecycle plan. A product team explicitly chooses to **retain, invest, consolidate, or retire** a capability; the engine checks whether the decision has sufficient lineage, ownership, notice, migration, dependency, communication, exit-criteria, and human-approval controls.
 
 It answers: **“Can we responsibly execute this human lifecycle decision without surprising customers or stranding dependencies?”**
@@ -59,3 +68,19 @@ See the [PRD](docs/PRD.md), [architecture](docs/ARCHITECTURE.md), and [metrics](
 ## License
 
 MIT
+
+<!-- catalog:connects:start -->
+## How this connects
+
+**Input → output:** a lifecycle proposal → migration, notice, dependency, and approval checks
+
+**Upstream:** [Feature Adoption Journey Analyzer](../feature_adoption_analyzer/README.md)
+
+**Downstream:** [Customer Migration & Sunset Monitor](../sunset_migration_monitor/README.md)
+
+**Related:** None in this catalog.
+
+**Track:** PM · Advanced.
+
+**Project 7:** Imported by the [Experiment & Learning Workspace](../experiment-data-quality-auditor/README.md).
+<!-- catalog:connects:end -->

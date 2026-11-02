@@ -1,5 +1,14 @@
 # Project 36 — Product Planning Policy Effectiveness & Drift Monitor
 
+<!-- catalog:io:start -->
+**Input → output:** longitudinal observations → effectiveness and drift findings
+
+**Quick start:** `cd planning_policy_effectiveness_monitor && npm install && npm run check`
+
+**Track:** PM · Advanced · built
+<!-- catalog:io:end -->
+
+
 Project 36 verifies whether a fully deployed planning policy continues to deliver its predeclared outcome without violating its guardrail.
 
 ## Why it exists
@@ -50,3 +59,19 @@ NIST SP 800-137 motivates ongoing assessment of control effectiveness as operati
 ## License
 
 MIT
+
+<!-- catalog:connects:start -->
+## How this connects
+
+**Input → output:** longitudinal observations → effectiveness and drift findings
+
+**Upstream:** [Product Planning Policy Rollout Assurance Monitor](../planning_policy_rollout_monitor/README.md)
+
+**Downstream:** [Product Planning Policy Reversion & Recovery Verifier](../planning_policy_recovery_verifier/README.md)
+
+**Related:** None in this catalog.
+
+**Track:** PM · Advanced.
+
+**Project 7:** Imported by the [Experiment & Learning Workspace](../experiment-data-quality-auditor/README.md).
+<!-- catalog:connects:end -->

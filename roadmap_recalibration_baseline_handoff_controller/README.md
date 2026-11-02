@@ -1,5 +1,14 @@
 # Roadmap Recalibration Baseline Handoff Controller
 
+<!-- catalog:io:start -->
+**Input → output:** a retained baseline → a baseline handoff control
+
+**Quick start:** `cd roadmap_recalibration_baseline_handoff_controller && npm install && npm run check`
+
+**Track:** PM · Advanced · built
+<!-- catalog:io:end -->
+
+
 Project 55 closes the operational consistency gap after Project 54 verifies a promoted calibration outcome. It confirms that every governed roadmap-estimation consumer acknowledges one authoritative baseline, while preserving the superseded version, rollback, and future monitoring.
 
 ## Why it matters
@@ -53,3 +62,19 @@ Submit `POST /api/roadmap-recalibration-baseline-handoff` with `Authorization: B
 - [Google SRE release engineering](https://sre.google/sre-book/release-engineering/)
 
 MIT licensed. No paid API, hosted model, database, or proprietary runtime dependency is required.
+
+<!-- catalog:connects:start -->
+## How this connects
+
+**Input → output:** a retained baseline → a baseline handoff control
+
+**Upstream:** [Roadmap Recalibration Promotion Outcome Monitor](../roadmap_recalibration_promotion_outcome_monitor/README.md)
+
+**Downstream:** [Roadmap Recalibration Baseline Configuration Drift Monitor](../roadmap_recalibration_baseline_drift_monitor/README.md)
+
+**Related:** None in this catalog.
+
+**Track:** PM · Advanced.
+
+**Project 7:** Imported by the [Experiment & Learning Workspace](../experiment-data-quality-auditor/README.md).
+<!-- catalog:connects:end -->

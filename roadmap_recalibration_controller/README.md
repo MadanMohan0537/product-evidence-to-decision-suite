@@ -1,5 +1,14 @@
 # Roadmap Estimate Recalibration Proposal & Validation Controller
 
+<!-- catalog:io:start -->
+**Input → output:** training rows and a later holdout → a versioned recalibration proposal
+
+**Quick start:** `cd roadmap_recalibration_controller && npm install && npm run check`
+
+**Track:** PM · Advanced · built
+<!-- catalog:io:end -->
+
+
 **ProdMind Project 48** converts an authorized Project 47 drift signal into a bounded, versioned, holdout-tested recalibration proposal.
 
 Project 44 establishes a reference-class calibration, Project 45 controls its use, Project 46 measures completed-outcome accuracy, and Project 47 detects longitudinal deterioration. Project 48 closes the next control gap: it prevents a team from responding to drift by silently replacing the active factors with values fitted to the same evidence used to judge them.
@@ -138,3 +147,19 @@ Project 48 adapts these principles to bounded product-roadmap estimates. It does
 ## License
 
 MIT
+
+<!-- catalog:connects:start -->
+## How this connects
+
+**Input → output:** training rows and a later holdout → a versioned recalibration proposal
+
+**Upstream:** [Roadmap Estimate Calibration Drift & Recalibration Readiness Monitor](../roadmap_estimate_drift_monitor/README.md)
+
+**Downstream:** [Roadmap Estimate Recalibration Rollout Assurance Monitor](../roadmap_recalibration_rollout_monitor/README.md)
+
+**Related:** None in this catalog.
+
+**Track:** PM · Advanced.
+
+**Project 7:** Imported by the [Experiment & Learning Workspace](../experiment-data-quality-auditor/README.md).
+<!-- catalog:connects:end -->

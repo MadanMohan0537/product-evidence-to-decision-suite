@@ -1,5 +1,14 @@
 # Product Control Improvement Outcome Monitor
 
+<!-- catalog:io:start -->
+**Input → output:** delivery and later surveillance → an improvement-outcome verification
+
+**Quick start:** `cd control_improvement_outcome_monitor && npm install && npm run check`
+
+**Track:** PM · Advanced · built
+<!-- catalog:io:end -->
+
+
 **Project 30 of ProdMind verifies whether an approved Project 29 improvement was delivered and followed by stable Project 28 evidence.**
 
 An approved improvement portfolio is still a plan. This zero-paid-service Cloudflare Workers project checks delivery evidence, schedule and effort variance, evidence lineage, follow-up coverage, the promised verification window, and later recurrence before a named reviewer closes an action.
@@ -49,3 +58,18 @@ These sources inform the workflow; this project is not compliance certification 
 
 See the [PRD](docs/PRD.md), [architecture](docs/ARCHITECTURE.md), and [metrics](docs/METRICS.md). Apache-2.0 licensed.
 
+<!-- catalog:connects:start -->
+## How this connects
+
+**Input → output:** delivery and later surveillance → an improvement-outcome verification
+
+**Upstream:** [Product Control Improvement Portfolio Planner](../control_improvement_planner/README.md)
+
+**Downstream:** [Product Control Improvement Calibration & Learning Engine](../control_improvement_calibration/README.md)
+
+**Related:** None in this catalog.
+
+**Track:** PM · Advanced.
+
+**Project 7:** Imported by the [Experiment & Learning Workspace](../experiment-data-quality-auditor/README.md).
+<!-- catalog:connects:end -->

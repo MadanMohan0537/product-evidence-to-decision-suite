@@ -1,5 +1,14 @@
 # Roadmap Delivery Recovery Action Planner
 
+<!-- catalog:io:start -->
+**Input → output:** failed delivery controls → selected recovery actions
+
+**Quick start:** `cd roadmap_recovery_planner && npm install && npm run check`
+
+**Track:** PM · Advanced · built
+<!-- catalog:io:end -->
+
+
 **ProdMind Project 42 turns failed Project 41 delivery controls into a bounded, evidence-linked corrective-action scenario for named human review.**
 
 Project 40 creates an approved delivery baseline. Project 41 compares that baseline with actual delivery. Project 42 closes the response gap: it evaluates declared recovery actions without rewriting either source report or implying that planning equals execution.
@@ -150,3 +159,19 @@ These sources inform the product controls. A passing report does not establish G
 ## License
 
 [MIT](LICENSE)
+
+<!-- catalog:connects:start -->
+## How this connects
+
+**Input → output:** failed delivery controls → selected recovery actions
+
+**Upstream:** [Roadmap Delivery Execution & Variance Monitor](../roadmap_delivery_monitor/README.md)
+
+**Downstream:** [Roadmap Recovery Execution & Effectiveness Verifier](../roadmap_recovery_verifier/README.md)
+
+**Related:** None in this catalog.
+
+**Track:** PM · Advanced.
+
+**Project 7:** Imported by the [Experiment & Learning Workspace](../experiment-data-quality-auditor/README.md).
+<!-- catalog:connects:end -->

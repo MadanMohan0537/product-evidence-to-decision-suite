@@ -8,6 +8,15 @@
 
 </div>
 
+<!-- catalog:io:start -->
+**Input → output:** a failed control and waiver terms → a time-bounded exception record
+
+**Quick start:** `cd governance_exception_register && npm install && npm run check`
+
+**Track:** PM · Advanced · built
+<!-- catalog:io:end -->
+
+
 Product governance needs a controlled path for the rare case where work must continue while a failed control is being remediated. Informal waivers are dangerous: they lose scope, ownership, evidence, expiry, and accountability. This project consumes Project 25 findings and records a narrow, time-bounded exception with compensating controls, an open remediation obligation, independent approvals, and a named decision.
 
 An active exception never changes Project 25's `blocked_continue` or other upstream status. It documents temporary human risk acceptance; it is not compliance, legal authority, or a permanent bypass.
@@ -66,3 +75,19 @@ These sources inform the workflow only. Organization policy, counsel, and accoun
 - [Metrics](docs/METRICS.md)
 
 Apache-2.0 licensed. See [LICENSE](LICENSE).
+
+<!-- catalog:connects:start -->
+## How this connects
+
+**Input → output:** a failed control and waiver terms → a time-bounded exception record
+
+**Upstream:** [Product Governance Obligation & Review Monitor](../governance_obligation_monitor/README.md)
+
+**Downstream:** [Product Exception Exit & Corrective-Action Verifier](../exception_exit_verifier/README.md)
+
+**Related:** None in this catalog.
+
+**Track:** PM · Advanced.
+
+**Project 7:** Imported by the [Experiment & Learning Workspace](../experiment-data-quality-auditor/README.md).
+<!-- catalog:connects:end -->

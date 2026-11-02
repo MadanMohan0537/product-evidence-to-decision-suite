@@ -1,5 +1,14 @@
 # Customer Migration & Sunset Monitor
 
+<!-- catalog:io:start -->
+**Input → output:** migration snapshots → cohort, notice, exception, and zero-use reconciliation
+
+**Quick start:** `cd sunset_migration_monitor && npm install && npm run check`
+
+**Track:** PM · Advanced · built
+<!-- catalog:io:end -->
+
+
 Project 22 verifies whether a Project 21 consolidation or retirement plan is operationally ready for a human-controlled sunset. It reconciles aggregate customer cohorts, dependencies, delivered notices, exceptions, legacy usage, shutdown checks, and final approvals while preserving the original evidence chain.
 
 It answers: **“Did everyone and everything that must move actually move, and is there evidence to justify a human sunset decision?”**
@@ -60,3 +69,19 @@ See the [PRD](docs/PRD.md), [architecture](docs/ARCHITECTURE.md), and [metrics](
 ## License
 
 MIT
+
+<!-- catalog:connects:start -->
+## How this connects
+
+**Input → output:** migration snapshots → cohort, notice, exception, and zero-use reconciliation
+
+**Upstream:** [Product Lifecycle & Deprecation Planner](../product_lifecycle_planner/README.md)
+
+**Downstream:** [Product Sunset Outcome & Reversibility Monitor](../sunset_outcome_monitor/README.md)
+
+**Related:** None in this catalog.
+
+**Track:** PM · Advanced.
+
+**Project 7:** Imported by the [Experiment & Learning Workspace](../experiment-data-quality-auditor/README.md).
+<!-- catalog:connects:end -->

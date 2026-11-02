@@ -1,5 +1,14 @@
 # Product Planning Policy Incident Learning & Re-entry Controller
 
+<!-- catalog:io:start -->
+**Input → output:** an incident record → a learning review and re-entry gate
+
+**Quick start:** `cd planning_policy_incident_learning_controller && npm install && npm run check`
+
+**Track:** PM · Advanced · built
+<!-- catalog:io:end -->
+
+
 Project 38 prevents a successful rollback from becoming the end of learning. After Project 37 verifies recovery, this project checks whether the incident has a timely, evidence-backed, blameless review and whether the organization is genuinely ready to attempt another policy experiment.
 
 ## Controls
@@ -45,3 +54,19 @@ Deploy after `npx wrangler secret put API_TOKEN`. No paid API, model, database, 
 ## License
 
 MIT
+
+<!-- catalog:connects:start -->
+## How this connects
+
+**Input → output:** an incident record → a learning review and re-entry gate
+
+**Upstream:** [Product Planning Policy Reversion & Recovery Verifier](../planning_policy_recovery_verifier/README.md)
+
+**Downstream:** [Product Planning Policy Re-entry Assurance Monitor](../planning_policy_reentry_monitor/README.md)
+
+**Related:** None in this catalog.
+
+**Track:** PM · Advanced.
+
+**Project 7:** Imported by the [Experiment & Learning Workspace](../experiment-data-quality-auditor/README.md).
+<!-- catalog:connects:end -->

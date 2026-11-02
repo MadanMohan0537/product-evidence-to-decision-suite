@@ -1,5 +1,14 @@
 # Roadmap Recalibration Promotion Outcome Monitor
 
+<!-- catalog:io:start -->
+**Input → output:** activation evidence → a promotion outcome review
+
+**Quick start:** `cd roadmap_recalibration_promotion_outcome_monitor && npm install && npm run check`
+
+**Track:** PM · Advanced · built
+<!-- catalog:io:end -->
+
+
 Project 54 verifies what happened after Project 53's human promotion decision. It separates “ready to promote” from “successfully activated and stable,” preserving a clear evidence trail from incident learning through full operating-baseline adoption.
 
 ## Why this project exists
@@ -65,3 +74,19 @@ The monitor validates supplied evidence. It never activates or reverts a version
 - [GAO Cost Estimating and Assessment Guide](https://www.gao.gov/products/gao-20-195g)
 
 MIT licensed. No paid API, hosted model, database, or proprietary runtime dependency is required.
+
+<!-- catalog:connects:start -->
+## How this connects
+
+**Input → output:** activation evidence → a promotion outcome review
+
+**Upstream:** [Roadmap Recalibration Re-entry Promotion Controller](../roadmap_recalibration_reentry_promotion_controller/README.md)
+
+**Downstream:** [Roadmap Recalibration Baseline Handoff Controller](../roadmap_recalibration_baseline_handoff_controller/README.md)
+
+**Related:** None in this catalog.
+
+**Track:** PM · Advanced.
+
+**Project 7:** Imported by the [Experiment & Learning Workspace](../experiment-data-quality-auditor/README.md).
+<!-- catalog:connects:end -->

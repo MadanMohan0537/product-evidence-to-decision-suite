@@ -1,5 +1,14 @@
 # Roadmap Recalibration Re-entry Promotion Controller
 
+<!-- catalog:io:start -->
+**Input → output:** sustained checkpoints → a promotion gate
+
+**Quick start:** `cd roadmap_recalibration_reentry_promotion_controller && npm install && npm run check`
+
+**Track:** PM · Advanced · built
+<!-- catalog:io:end -->
+
+
 Project 53 closes the recovery loop after a previously failed roadmap-estimation recalibration. Project 51 authorizes a bounded retry and Project 52 verifies that retry. This project determines whether evidence has remained healthy long enough for an independent human to promote the candidate as the durable operating baseline.
 
 ## Why this project exists
@@ -70,3 +79,19 @@ The controller validates supplied evidence; it does not independently verify sou
 - [NIST SP 800-137: Information Security Continuous Monitoring](https://csrc.nist.gov/pubs/sp/800/137/final)
 
 MIT licensed. No paid API, hosted model, database, or proprietary runtime dependency is required.
+
+<!-- catalog:connects:start -->
+## How this connects
+
+**Input → output:** sustained checkpoints → a promotion gate
+
+**Upstream:** [Roadmap Recalibration Re-entry Assurance Monitor](../roadmap_recalibration_reentry_monitor/README.md)
+
+**Downstream:** [Roadmap Recalibration Promotion Outcome Monitor](../roadmap_recalibration_promotion_outcome_monitor/README.md)
+
+**Related:** None in this catalog.
+
+**Track:** PM · Advanced.
+
+**Project 7:** Imported by the [Experiment & Learning Workspace](../experiment-data-quality-auditor/README.md).
+<!-- catalog:connects:end -->

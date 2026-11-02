@@ -1,5 +1,14 @@
 # Product Assumption Risk Register
 
+<!-- catalog:io:start -->
+**Input → output:** declared assumptions and links → validation urgency with evidence links
+
+**Quick start:** `cd assumption_risk_register && npm install && npm run check`
+
+**Track:** PM · Advanced · built
+<!-- catalog:io:end -->
+
+
 Project 18 makes the assumptions behind ProdMind investments explicit, traceable, and testable. It links each assumption to one selected opportunity, validates evidence and experiment references against authoritative run data, and orders unresolved assumptions using a transparent exposure heuristic.
 
 It answers: **“What must be true for this product bet to work, and which uncertainty should we test next?”**
@@ -76,3 +85,19 @@ See [PRD](docs/PRD.md), [architecture](docs/ARCHITECTURE.md), and [metrics](docs
 ## License
 
 MIT
+
+<!-- catalog:connects:start -->
+## How this connects
+
+**Input → output:** declared assumptions and links → validation urgency with evidence links
+
+**Upstream:** [Product Investment Assurance Review](../investment_assurance_review/README.md); [RiskCouncil](../launch_premortem_risk_register/README.md)
+
+**Downstream:** [Product Release Readiness & Rollback Controller](../release_readiness_controller/README.md)
+
+**Related:** None in this catalog.
+
+**Track:** PM · Advanced.
+
+**Project 7:** Imported by the [Experiment & Learning Workspace](../experiment-data-quality-auditor/README.md).
+<!-- catalog:connects:end -->

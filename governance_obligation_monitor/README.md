@@ -8,6 +8,15 @@
 
 </div>
 
+<!-- catalog:io:start -->
+**Input → output:** pack digests and obligations → continuity, review, certification, and retention findings
+
+**Quick start:** `cd governance_obligation_monitor && npm install && npm run check`
+
+**Track:** PM · Advanced · built
+<!-- catalog:io:end -->
+
+
 A decision record does not stay trustworthy merely because it was once certified. Evidence can change, obligations become overdue, reviews and approvals age, and retention periods eventually require an explicit disposition decision. This project turns those time-dependent controls into a deterministic, evidence-linked review.
 
 It consumes Project 24's server-built governance pack and preserves its `portfolioItemId` and `evidenceIds`. It compares the digest actually observed by the reviewer with the current authoritative digest, evaluates dated obligations, and records a named human decision. It never deletes a record, recertifies a decision, or changes a product.
@@ -88,3 +97,19 @@ These references inform the controls; this software does not claim certification
 - [Metrics and guardrails](docs/METRICS.md)
 
 Apache-2.0 licensed. See [LICENSE](LICENSE).
+
+<!-- catalog:connects:start -->
+## How this connects
+
+**Input → output:** pack digests and obligations → continuity, review, certification, and retention findings
+
+**Upstream:** [Product Decision Provenance & Governance Pack](../decision_provenance_pack/README.md)
+
+**Downstream:** [Product Governance Exception & Waiver Register](../governance_exception_register/README.md)
+
+**Related:** None in this catalog.
+
+**Track:** PM · Advanced.
+
+**Project 7:** Imported by the [Experiment & Learning Workspace](../experiment-data-quality-auditor/README.md).
+<!-- catalog:connects:end -->

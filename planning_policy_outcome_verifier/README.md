@@ -1,5 +1,14 @@
 # Project 33 — Product Planning Policy Experiment Outcome Verifier
 
+<!-- catalog:io:start -->
+**Input → output:** trial observations → predeclared-measure verification
+
+**Quick start:** `cd planning_policy_outcome_verifier && npm install && npm run check`
+
+**Track:** PM · Advanced · built
+<!-- catalog:io:end -->
+
+
 Project 33 closes the learning loop opened by Project 32. It verifies whether a completed planning-policy experiment met its **predeclared** primary target without breaching its guardrail, and prevents a human `adopt` decision from being represented as verified when the evidence is incomplete.
 
 ## Why it belongs in ProdMind
@@ -57,3 +66,19 @@ The design follows NIST guidance that confirmation experiments verify prediction
 ## License
 
 MIT
+
+<!-- catalog:connects:start -->
+## How this connects
+
+**Input → output:** trial observations → predeclared-measure verification
+
+**Upstream:** [Product Planning Policy Experiment Planner](../planning_policy_experiment_planner/README.md)
+
+**Downstream:** [Product Planning Policy Change & Version Controller](../planning_policy_change_controller/README.md)
+
+**Related:** None in this catalog.
+
+**Track:** PM · Advanced.
+
+**Project 7:** Imported by the [Experiment & Learning Workspace](../experiment-data-quality-auditor/README.md).
+<!-- catalog:connects:end -->

@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "parityprobe"
+version = "0.2.0"
+description = "Counterfactual fairness audits with validity and intersection coverage checks"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{name = "Madan Mohan"}]
+dependencies = []
+
+[project.scripts]
+parityprobe = "parityprobe.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["parityprobe*"]

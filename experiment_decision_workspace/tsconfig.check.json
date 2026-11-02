@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.json",
+  "include": [
+    "app/page.tsx",
+    "app/layout.tsx",
+    "app/api/ai/design/route.ts",
+    "lib/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    ".next"
+  ]
+}

@@ -10,6 +10,15 @@
 
 </div>
 
+<!-- catalog:io:start -->
+**Input → output:** portfolio selection and event snapshots → an audited experiment plan and a human decision
+
+**Quick start:** `cd experiment-data-quality-auditor && npm install && npm run check`
+
+**Track:** PM · Connected workflow · built
+<!-- catalog:io:end -->
+
+
 Project 7 is both the experiment workspace and the integration host for the fifty-six-project [ProdMind](../README.md) product. It executes Projects 1–6 directly and imports Projects 8–56, including an execution branch that schedules Project 14 portfolio selections, compares them with actual delivery, plans and verifies bounded recovery, calibrates future estimating context, controls its adoption, verifies observed effectiveness, monitors performance drift, validates versioned recalibration proposals, assures shadow-plus-staged rollout evidence, verifies rollback recovery, governs incident learning before re-entry, assures the observed retry, gates sustained promotion, verifies the promoted operating outcome, completes exact baseline handoff, and then monitors ongoing configuration drift.
 
 The folder name is retained because the experiment data-quality auditor remains a core component.
@@ -280,3 +289,19 @@ The Worker fails closed without D1 and `API_TOKEN`, blocks cross-origin API call
 ## License
 
 Project 7 code is [MIT licensed](LICENSE). Imported modules retain their original licenses.
+
+<!-- catalog:connects:start -->
+## How this connects
+
+**Input → output:** portfolio selection and event snapshots → an audited experiment plan and a human decision
+
+**Upstream:** [Experiment decision workspace](../experiment_decision_workspace/README.md); [Prioritization Engine](../prioritization_engine/README.md)
+
+**Downstream:** [Product Outcome Monitor](../product_outcome_monitor/README.md)
+
+**Related:** None in this catalog.
+
+**Track:** PM · Connected workflow.
+
+**Project 7:** This is the connected Worker. It imports projects 1–6 and the engines behind projects 8–56. Imported folders numbered 57 and above are not part of that Worker.
+<!-- catalog:connects:end -->

@@ -9,6 +9,15 @@
 
 </div>
 
+<!-- catalog:io:start -->
+**Input → output:** resolved product forecasts → Brier scores and reliability bands
+
+**Quick start:** `cd decision_calibration_engine && npm install && npm run check`
+
+**Track:** PM · Advanced · built
+<!-- catalog:io:end -->
+
+
 Project 10 closes a judgment-quality gap in [ProdMind](../README.md). Project 6 records a PM’s confidence before prioritization; Projects 7 and 8 later record the decision and monitored result. This engine joins those records and reports whether stated confidence aligns with resolved outcomes across the portfolio.
 
 ## Product impact
@@ -117,3 +126,19 @@ wrangler.jsonc      Cloudflare configuration
 ## License
 
 [MIT](LICENSE)
+
+<!-- catalog:connects:start -->
+## How this connects
+
+**Input → output:** resolved product forecasts → Brier scores and reliability bands
+
+**Upstream:** [Product Learning Memory](../product_learning_memory/README.md)
+
+**Downstream:** [Product Evidence Integrity Monitor](../evidence_integrity_monitor/README.md)
+
+**Related:** None in this catalog.
+
+**Track:** PM · Advanced.
+
+**Project 7:** Imported by the [Experiment & Learning Workspace](../experiment-data-quality-auditor/README.md).
+<!-- catalog:connects:end -->

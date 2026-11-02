@@ -2,7 +2,7 @@
 
 # ProdMind
 
-**A fifty-six-project, evidence-to-execution-and-governance operating system for product teams.**
+**A flagship collection for product evidence, AI engineering, and data analytics.** The connected product-management workspace remains the fifty-six-module Worker in Project 7.
 
 [![Connected lifecycle](https://github.com/MadanMohan0537/prodmind/actions/workflows/experiment-data-quality-auditor.yml/badge.svg)](https://github.com/MadanMohan0537/prodmind/actions/workflows/experiment-data-quality-auditor.yml)
 [![Cloudflare Workers](https://img.shields.io/badge/runtime-Cloudflare%20Workers-F38020)](https://developers.cloudflare.com/workers/)
@@ -15,7 +15,7 @@
 | Goal | Entry point |
 | --- | --- |
 | Experience the composed workflow | [Project 7 workspace](experiment-data-quality-auditor/README.md) |
-| Find a bounded product tool | The fifty-six-project catalog below |
+| Find a bounded product tool | The catalog below, grouped by track |
 | Review what is connected | The implementation and security sections below |
 | Contribute to one module | Its own README and source directory |
 
@@ -26,6 +26,22 @@ When reviewing a recommendation, follow its evidence links and control status th
 ProdMind connects customer evidence, product judgment, experimentation, outcome monitoring, and institutional learning in one traceable workflow. Each project solves one bounded problem; the Project 7 workspace composes their real implementations and preserves the same evidence identities from ingestion through retrieval.
 
 No paid model or software service is required for the tested workflow. The connected application is designed for Cloudflare Workers and D1.
+
+## Run one now
+
+Project 1 runs on Node.js 22 with no install and no paid API:
+
+```bash
+node --test feedback_collector/test/feedback.test.js
+```
+
+The connected suite for Projects 1–56 is:
+
+```bash
+node experiment-data-quality-auditor/scripts/test-all.mjs
+```
+
+Every other folder has its own quick start in the catalog.
 
 ## Product lifecycle
 
@@ -153,72 +169,382 @@ ProdMind is designed around decisions rather than disconnected demos:
 
 The product should be evaluated by evidence-linked decisions, time saved with review quality preserved, prevented data-quality failures, accepted research plans, monitored outcome coverage, and strategy exceptions resolved. None of these measures should reward automatic shipping or unsupported causal claims.
 
-## The fifty-six projects
+<!-- catalog:tracks:start -->
+## Tracks
 
-| # | Project | What it contributes | Frontend |
-|---:|---|---|---|
-| 1 | [Feedback Collector](feedback_collector/) | Validated, normalized and deduplicated feedback | Manual entry, CSV/JSON import, saved records and export |
-| 2 | [Sentiment Analyzer](sentiment_analyzer/) | Explainable sentiment, aspects and review flags | Text/batch analysis with visible evidence |
-| 3 | [Topic Modeler](topic_modeler/) | Topic assignments, keywords, hierarchy and drift | Topic exploration and assignment inspection |
-| 4 | [Feature Request Detector](feature_request_detector/) | Multi-label product intent and evidence sentences | Request, bug, complaint and churn-signal inspection |
-| 5 | [Voice-of-Customer Dashboard](voice_of_customer_dashboard/) | Trends, filters, segments and source evidence | Interactive light/dark dashboard |
-| 6 | [Prioritization Engine](prioritization_engine/) | Transparent scores and capacity-aware portfolio | Weights, rankings, Pareto and dependency views |
-| 7 | [Experiment & Learning Workspace](experiment-data-quality-auditor/) | Connected lifecycle, D1 state, audit and human decisions | Primary fifty-six-stage ProdMind workspace |
-| 8 | [Product Outcome Monitor](product_outcome_monitor/) | Persistence, reversal and guardrail monitoring | Standalone and Project 7 monitoring interfaces |
-| 9 | [Product Learning Memory](product_learning_memory/) | Cross-run retrieval of evidence-linked learning | Standalone and connected search interfaces |
-| 10 | [Product Decision Calibration Engine](decision_calibration_engine/) | Brier scores and reliability bands for resolved product forecasts | Standalone and connected calibration views |
-| 11 | [Product Evidence Integrity Monitor](evidence_integrity_monitor/) | Freshness, coverage, concentration and lineage checks | Standalone and connected integrity views |
-| 12 | [Product Research Portfolio Optimizer](research_portfolio_optimizer/) | Exact capacity-aware selection of evidence-gap research | Standalone and connected planning views |
-| 13 | [Product Strategy Alignment Auditor](strategy_alignment_auditor/) | Effort allocation against declared strategic objectives | Standalone and connected portfolio audits |
-| 14 | [Strategic Portfolio Rebalancing Simulator](portfolio_rebalancing_simulator/) | Minimum-disruption capacity, dependency and strategy scenarios | Standalone and connected scenario review |
-| 15 | [Product Portfolio Resilience Stress Tester](portfolio_resilience_stress_tester/) | Declared capacity, dependency and effort shocks | Standalone and connected resilience review |
-| 16 | [Product Benefits Realization Tracker](benefits_realization_tracker/) | Expected-versus-observed benefits with complete evidence lineage | Standalone and connected realization ledger |
-| 17 | [Product Investment Assurance Review](investment_assurance_review/) | Post-implementation completeness, named decisions and corrective actions | Standalone and connected assurance review |
-| 18 | [Product Assumption Risk Register](assumption_risk_register/) | Explicit assumptions, authoritative links and validation urgency | Standalone and connected assumption review |
-| 19 | [Product Release Readiness & Rollback Controller](release_readiness_controller/) | Progressive exposure, observable triggers and reversible delivery | Standalone and connected release gate |
-| 20 | [Feature Adoption Journey Analyzer](feature_adoption_analyzer/) | Ordered adoption, time-to-value and privacy-safe segment analysis | Standalone and connected adoption view |
-| 21 | [Product Lifecycle & Deprecation Planner](product_lifecycle_planner/) | Migration, notice, dependency and approval safeguards for lifecycle decisions | Standalone and connected lifecycle gate |
-| 22 | [Customer Migration & Sunset Monitor](sunset_migration_monitor/) | Aggregate migration, notice delivery, exception and zero-use reconciliation | Standalone and connected sunset gate |
-| 23 | [Product Sunset Outcome & Reversibility Monitor](sunset_outcome_monitor/) | Post-sunset customer harm, incidents, residual traffic, savings, recovery and corrective-action review | Standalone and connected outcome review |
-| 24 | [Product Decision Provenance & Governance Pack](decision_provenance_pack/) | Canonical SHA-256 artifact chain, approval separation, retention controls and named certification | Standalone and connected governance-pack review |
-| 25 | [Product Governance Obligation & Review Monitor](governance_obligation_monitor/) | Digest continuity, dated obligations, review cadence, certification freshness and retention decisions | Standalone and connected governance-monitor review |
-| 26 | [Product Governance Exception & Waiver Register](governance_exception_register/) | Time-bounded exception scope, compensating controls, remediation linkage and independent approval | Standalone and connected exception review |
-| 27 | [Product Exception Exit & Corrective-Action Verifier](exception_exit_verifier/) | Follow-up control assessment, effectiveness evidence, observation windows and independent exit review | Standalone and connected exit verification |
-| 28 | [Product Control Regression & Recurrence Monitor](control_recurrence_monitor/) | Post-exit target stability, remediation durability, monitoring coverage and cadence | Standalone and connected recurrence review |
-| 29 | [Product Control Improvement Portfolio Planner](control_improvement_planner/) | Evidence-linked, capacity-constrained improvement selection with dependencies and human review | Standalone and connected improvement planning |
-| 30 | [Product Control Improvement Outcome Monitor](control_improvement_outcome_monitor/) | Delivery, effort, lineage, observation-window and later-recurrence verification | Standalone and connected improvement-outcome review |
-| 31 | [Product Control Improvement Calibration & Learning Engine](control_improvement_calibration/) | Portfolio effort accuracy, delivery reliability, effectiveness, recurrence and evidence calibration | Standalone and connected calibration review |
-| 32 | [Product Planning Policy Experiment Planner](planning_policy_experiment_planner/) | Reversible, guarded, capacity-aware policy trials derived from calibration gaps | Standalone and connected policy-experiment planning |
-| 33 | [Product Planning Policy Experiment Outcome Verifier](planning_policy_outcome_verifier/) | Predeclared target, guardrail, sample, timing and evidence verification before policy adoption | Standalone and connected post-trial verification |
-| 34 | [Product Planning Policy Change & Version Controller](planning_policy_change_controller/) | Version, scope, gradual rollout, monitoring, rollback, enablement and approval controls | Standalone and connected policy-change readiness |
-| 35 | [Product Planning Policy Rollout Assurance Monitor](planning_policy_rollout_monitor/) | Approved-stage, dwell, version, monitor, evidence and human-decision verification | Standalone and connected rollout assurance |
-| 36 | [Product Planning Policy Effectiveness & Drift Monitor](planning_policy_effectiveness_monitor/) | Longitudinal predeclared-target, guardrail, cadence, version, sample and drift checks | Standalone and connected sustained-effectiveness review |
-| 37 | [Product Planning Policy Reversion & Recovery Verifier](planning_policy_recovery_verifier/) | Authorized reversion, execution completeness, target-version and stable-recovery checks | Standalone and connected recovery assurance |
-| 38 | [Product Planning Policy Incident Learning & Re-entry Controller](planning_policy_incident_learning_controller/) | Blameless review, corrective actions, cooling controls and independent re-entry approval | Standalone and connected re-entry gate |
-| 39 | [Product Planning Policy Re-entry Assurance Monitor](planning_policy_reentry_monitor/) | Pre-exposure declaration, bounded stages, corrective-control checks, recurrence signals and guardrails | Standalone and connected re-entry assurance |
-| 40 | [Evidence-linked Product Roadmap Delivery Scheduler](roadmap_delivery_scheduler/) | Exact bounded dependency, calendar, capacity and deadline scheduling with retained evidence | Standalone and connected roadmap review |
-| 41 | [Roadmap Delivery Execution & Variance Monitor](roadmap_delivery_monitor/) | Baseline-versus-actual progress, capacity, dependency, deadline, cadence and blocker control | Standalone and connected delivery review |
-| 42 | [Roadmap Delivery Recovery Action Planner](roadmap_recovery_planner/) | Exact bounded corrective-action selection for failed delivery controls with baseline-change minimization | Standalone and connected recovery review |
-| 43 | [Roadmap Recovery Execution & Effectiveness Verifier](roadmap_recovery_verifier/) | Action completion, timing, effort, baseline governance, observation and failed-control restoration checks | Standalone and connected recovery verification |
-| 44 | [Roadmap Delivery Estimate Calibration & Reference-Class Engine](roadmap_estimate_calibration/) | Completed-delivery duration and capacity error, reference classes, sample sufficiency and reviewed factors | Standalone and connected estimate calibration |
-| 45 | [Roadmap Estimate Basis & Calibration Adoption Controller](roadmap_estimate_adoption_controller/) | Prior calibration, per-item factor adoption, arithmetic reconciliation, evidence and independent-exception controls | Standalone and connected estimate-basis control |
-| 46 | [Roadmap Estimate Calibration Effectiveness & Exception Outcome Monitor](roadmap_estimate_effectiveness_monitor/) | Completed-outcome accuracy, base-versus-calibrated error reduction, exception outcomes and evidence lineage | Standalone and connected effectiveness review |
-| 47 | [Roadmap Estimate Calibration Drift & Recalibration Readiness Monitor](roadmap_estimate_drift_monitor/) | Rolling-window accuracy, reference-class coverage, cadence and evidence-backed recalibration candidates | Standalone and connected drift review |
-| 48 | [Roadmap Estimate Recalibration Proposal & Validation Controller](roadmap_recalibration_controller/) | Training-only candidate factors, later holdout comparison, bounded change, versioning, rollback and independent approval | Standalone and connected recalibration review |
-| 49 | [Roadmap Estimate Recalibration Rollout Assurance Monitor](roadmap_recalibration_rollout_monitor/) | Shadow-first staged introduction, exact factors, paired baseline comparison, dwell, sample, incidents and tested rollback | Standalone and connected rollout assurance |
-| 50 | [Roadmap Recalibration Rollback & Recovery Verifier](roadmap_recalibration_recovery_verifier/) | Authorized rollback execution, exact prior version and factor restoration, recovery timing, stable accuracy and incident gates | Standalone and connected recovery verification |
-| 51 | [Roadmap Recalibration Incident Learning & Re-entry Controller](roadmap_recalibration_incident_reentry_controller/) | Blameless learning, corrective actions, cooling, new candidate, shadow-first exposure, rollback, monitoring and independent approval | Standalone and connected re-entry control |
-| 52 | [Roadmap Recalibration Re-entry Assurance Monitor](roadmap_recalibration_reentry_monitor/) | Exact declaration, shadow-first observed stages, paired accuracy, live corrective controls, recurrence signals, incidents and rollback | Standalone and connected re-entry assurance |
-| 53 | [Roadmap Recalibration Re-entry Promotion Controller](roadmap_recalibration_reentry_promotion_controller/) | Sustained checkpoints, paired accuracy, control health, incident limits, current rollback and independent promotion approvals | Standalone and connected promotion gate |
-| 54 | [Roadmap Recalibration Promotion Outcome Monitor](roadmap_recalibration_promotion_outcome_monitor/) | Exact activation, full-scope adoption, longitudinal paired accuracy, control health, incidents and current rollback | Standalone and connected outcome verification |
-| 55 | [Roadmap Recalibration Baseline Handoff Controller](roadmap_recalibration_baseline_handoff_controller/) | Exact factor manifest, class registration, five-consumer convergence, immutable archive, current rollback and downstream monitoring | Standalone and connected baseline-handoff control |
-| 56 | [Roadmap Recalibration Baseline Configuration Drift Monitor](roadmap_recalibration_baseline_drift_monitor/) | Chronological configuration snapshots, manifest and class continuity, five-consumer convergence, archive, rollback and monitoring obligations | Standalone and connected configuration-drift monitoring |
+Projects already in the repo are grouped by area and tier. The quick start is the command for that folder.
 
-`.github/` is supporting CI configuration, not a product project.
+| Area | Built |
+|---|---:|
+| Product management | 67 |
+| AI engineering | 11 |
+| Data analytics | 11 |
+| **Catalog total** | **89** |
+
+Solid arrows in the maps are the connected product-management lifecycle already imported by Project 7. Dotted arrows are intended handoffs. Dotted arrows are not Worker imports, and a downstream project does not read the upstream project’s files.
+
+### Product management
+
+#### Starter
+
+| # | Project | Input → output | Quick start | Track |
+|---:|---|---|---|---|
+| 1 | [Feedback Collector](feedback_collector/) | raw customer feedback → validated, normalized, deduplicated feedback | `cd feedback_collector && npm install && npm run check` | PM |
+| 2 | [Sentiment Analyzer](sentiment_analyzer/) | feedback text → explainable sentiment, aspects, and review flags | `cd sentiment_analyzer && npm install && npm run check` | PM |
+| 3 | [Topic Modeler](topic_modeler/) | feedback text → topic assignments, keywords, hierarchy, and drift | `cd topic_modeler && npm install && npm run check` | PM |
+| 4 | [Feature Request Detector](feature_request_detector/) | feedback text → multi-label product intent and evidence sentences | `cd feature_request_detector && npm install && npm run check` | PM |
+| 5 | [Voice-of-Customer Dashboard](voice_of_customer_dashboard/) | enriched feedback → trends, filters, segments, and source evidence | `cd voice_of_customer_dashboard && npm install && npm run check` | PM |
+| 6 | [Prioritization Engine](prioritization_engine/) | opportunities, weights, and capacity → transparent scores and a capacity-aware portfolio | `cd prioritization_engine && npm install && npm run check` | PM |
+| 77 | [RiskCouncil](launch_premortem_risk_register/) | a launch brief → a multi-perspective premortem risk register | `cd launch_premortem_risk_register && PYTHONPATH=. python -m unittest discover -s tests -v` | PM |
+
+#### Advanced
+
+| # | Project | Input → output | Quick start | Track |
+|---:|---|---|---|---|
+| 8 | [Product Outcome Monitor](product_outcome_monitor/) | a decision and later snapshots → persistence, reversal, and guardrail signals | `cd product_outcome_monitor && npm install && npm run check` | PM |
+| 9 | [Product Learning Memory](product_learning_memory/) | saved run evidence → cross-run lexical retrieval of linked learning | `cd product_learning_memory && npm install && npm run check` | PM |
+| 10 | [Product Decision Calibration Engine](decision_calibration_engine/) | resolved product forecasts → Brier scores and reliability bands | `cd decision_calibration_engine && npm install && npm run check` | PM |
+| 11 | [Product Evidence Integrity Monitor](evidence_integrity_monitor/) | evidence records → freshness, coverage, concentration, and lineage findings | `cd evidence_integrity_monitor && npm install && npm run check` | PM |
+| 12 | [Product Research Portfolio Optimizer](research_portfolio_optimizer/) | evidence gaps and capacity → a selected set of research actions | `cd research_portfolio_optimizer && npm install && npm run check` | PM |
+| 13 | [Product Strategy Alignment Auditor](strategy_alignment_auditor/) | selected effort and declared objectives → an effort-allocation alignment audit | `cd strategy_alignment_auditor && npm install && npm run check` | PM |
+| 14 | [Strategic Portfolio Rebalancing Simulator](portfolio_rebalancing_simulator/) | a portfolio and declared constraints → a minimum-disruption rebalancing scenario | `cd portfolio_rebalancing_simulator && npm install && npm run check` | PM |
+| 15 | [Product Portfolio Resilience Stress Tester](portfolio_resilience_stress_tester/) | a portfolio and declared shocks → scenario stress results | `cd portfolio_resilience_stress_tester && npm install && npm run check` | PM |
+| 16 | [Product Benefits Realization Tracker](benefits_realization_tracker/) | benefit targets and observations → an expected-versus-observed realization ledger | `cd benefits_realization_tracker && npm install && npm run check` | PM |
+| 17 | [Product Investment Assurance Review](investment_assurance_review/) | post-implementation evidence → completeness findings and a named assurance decision | `cd investment_assurance_review && npm install && npm run check` | PM |
+| 18 | [Product Assumption Risk Register](assumption_risk_register/) | declared assumptions and links → validation urgency with evidence links | `cd assumption_risk_register && npm install && npm run check` | PM |
+| 19 | [Product Release Readiness & Rollback Controller](release_readiness_controller/) | a rollout plan and declared controls → progressive-exposure and rollback readiness | `cd release_readiness_controller && npm install && npm run check` | PM |
+| 20 | [Feature Adoption Journey Analyzer](feature_adoption_analyzer/) | ordered product events → adoption, time-to-value, and privacy-suppressed segments | `cd feature_adoption_analyzer && npm install && npm run check` | PM |
+| 21 | [Product Lifecycle & Deprecation Planner](product_lifecycle_planner/) | a lifecycle proposal → migration, notice, dependency, and approval checks | `cd product_lifecycle_planner && npm install && npm run check` | PM |
+| 22 | [Customer Migration & Sunset Monitor](sunset_migration_monitor/) | migration snapshots → cohort, notice, exception, and zero-use reconciliation | `cd sunset_migration_monitor && npm install && npm run check` | PM |
+| 23 | [Product Sunset Outcome & Reversibility Monitor](sunset_outcome_monitor/) | post-sunset evidence → harm, residual-use, savings, and reversibility review | `cd sunset_outcome_monitor && npm install && npm run check` | PM |
+| 24 | [Product Decision Provenance & Governance Pack](decision_provenance_pack/) | decision artifacts → a SHA-256 provenance pack and certification checks | `cd decision_provenance_pack && npm install && npm run check` | PM |
+| 25 | [Product Governance Obligation & Review Monitor](governance_obligation_monitor/) | pack digests and obligations → continuity, review, certification, and retention findings | `cd governance_obligation_monitor && npm install && npm run check` | PM |
+| 26 | [Product Governance Exception & Waiver Register](governance_exception_register/) | a failed control and waiver terms → a time-bounded exception record | `cd governance_exception_register && npm install && npm run check` | PM |
+| 27 | [Product Exception Exit & Corrective-Action Verifier](exception_exit_verifier/) | follow-up evidence → an exception-exit verification result | `cd exception_exit_verifier && npm install && npm run check` | PM |
+| 28 | [Product Control Regression & Recurrence Monitor](control_recurrence_monitor/) | post-exit snapshots → recurrence and coverage findings | `cd control_recurrence_monitor && npm install && npm run check` | PM |
+| 29 | [Product Control Improvement Portfolio Planner](control_improvement_planner/) | recurrence targets and capacity → a selected improvement portfolio | `cd control_improvement_planner && npm install && npm run check` | PM |
+| 30 | [Product Control Improvement Outcome Monitor](control_improvement_outcome_monitor/) | delivery and later surveillance → an improvement-outcome verification | `cd control_improvement_outcome_monitor && npm install && npm run check` | PM |
+| 31 | [Product Control Improvement Calibration & Learning Engine](control_improvement_calibration/) | verified improvements → a planning calibration report | `cd control_improvement_calibration && npm install && npm run check` | PM |
+| 32 | [Product Planning Policy Experiment Planner](planning_policy_experiment_planner/) | calibration gaps → a reversible policy-experiment plan | `cd planning_policy_experiment_planner && npm install && npm run check` | PM |
+| 33 | [Product Planning Policy Experiment Outcome Verifier](planning_policy_outcome_verifier/) | trial observations → predeclared-measure verification | `cd planning_policy_outcome_verifier && npm install && npm run check` | PM |
+| 34 | [Product Planning Policy Change & Version Controller](planning_policy_change_controller/) | an adoption decision → a versioned policy-change readiness result | `cd planning_policy_change_controller && npm install && npm run check` | PM |
+| 35 | [Product Planning Policy Rollout Assurance Monitor](planning_policy_rollout_monitor/) | rollout observations → stage, dwell, and evidence assurance | `cd planning_policy_rollout_monitor && npm install && npm run check` | PM |
+| 36 | [Product Planning Policy Effectiveness & Drift Monitor](planning_policy_effectiveness_monitor/) | longitudinal observations → effectiveness and drift findings | `cd planning_policy_effectiveness_monitor && npm install && npm run check` | PM |
+| 37 | [Product Planning Policy Reversion & Recovery Verifier](planning_policy_recovery_verifier/) | reversion evidence → recovery verification | `cd planning_policy_recovery_verifier && npm install && npm run check` | PM |
+| 38 | [Product Planning Policy Incident Learning & Re-entry Controller](planning_policy_incident_learning_controller/) | an incident record → a learning review and re-entry gate | `cd planning_policy_incident_learning_controller && npm install && npm run check` | PM |
+| 39 | [Product Planning Policy Re-entry Assurance Monitor](planning_policy_reentry_monitor/) | re-entry observations → bounded re-entry assurance | `cd planning_policy_reentry_monitor && npm install && npm run check` | PM |
+| 40 | [Evidence-linked Product Roadmap Delivery Scheduler](roadmap_delivery_scheduler/) | selected items, capacity, and dependencies → a bounded delivery schedule | `cd roadmap_delivery_scheduler && npm install && npm run check` | PM |
+| 41 | [Roadmap Delivery Execution & Variance Monitor](roadmap_delivery_monitor/) | a baseline and actuals → variance, capacity, and blocker controls | `cd roadmap_delivery_monitor && npm install && npm run check` | PM |
+| 42 | [Roadmap Delivery Recovery Action Planner](roadmap_recovery_planner/) | failed delivery controls → selected recovery actions | `cd roadmap_recovery_planner && npm install && npm run check` | PM |
+| 43 | [Roadmap Recovery Execution & Effectiveness Verifier](roadmap_recovery_verifier/) | execution evidence → restoration verification | `cd roadmap_recovery_verifier && npm install && npm run check` | PM |
+| 44 | [Roadmap Delivery Estimate Calibration & Reference-Class Engine](roadmap_estimate_calibration/) | completed comparable work → reviewed estimate factors | `cd roadmap_estimate_calibration && npm install && npm run check` | PM |
+| 45 | [Roadmap Estimate Basis & Calibration Adoption Controller](roadmap_estimate_adoption_controller/) | factors and item bases → an estimate-adoption control result | `cd roadmap_estimate_adoption_controller && npm install && npm run check` | PM |
+| 46 | [Roadmap Estimate Calibration Effectiveness & Exception Outcome Monitor](roadmap_estimate_effectiveness_monitor/) | completed outcomes → an error-reduction review | `cd roadmap_estimate_effectiveness_monitor && npm install && npm run check` | PM |
+| 47 | [Roadmap Estimate Calibration Drift & Recalibration Readiness Monitor](roadmap_estimate_drift_monitor/) | chronological assessment windows → drift findings and recalibration candidates | `cd roadmap_estimate_drift_monitor && npm install && npm run check` | PM |
+| 48 | [Roadmap Estimate Recalibration Proposal & Validation Controller](roadmap_recalibration_controller/) | training rows and a later holdout → a versioned recalibration proposal | `cd roadmap_recalibration_controller && npm install && npm run check` | PM |
+| 49 | [Roadmap Estimate Recalibration Rollout Assurance Monitor](roadmap_recalibration_rollout_monitor/) | staged exposure evidence → recalibration rollout assurance | `cd roadmap_recalibration_rollout_monitor && npm install && npm run check` | PM |
+| 50 | [Roadmap Recalibration Rollback & Recovery Verifier](roadmap_recalibration_recovery_verifier/) | rollback evidence → exact restoration verification | `cd roadmap_recalibration_recovery_verifier && npm install && npm run check` | PM |
+| 51 | [Roadmap Recalibration Incident Learning & Re-entry Controller](roadmap_recalibration_incident_reentry_controller/) | incident learning → a recalibration re-entry control | `cd roadmap_recalibration_incident_reentry_controller && npm install && npm run check` | PM |
+| 52 | [Roadmap Recalibration Re-entry Assurance Monitor](roadmap_recalibration_reentry_monitor/) | observed re-entry stages → re-entry assurance | `cd roadmap_recalibration_reentry_monitor && npm install && npm run check` | PM |
+| 53 | [Roadmap Recalibration Re-entry Promotion Controller](roadmap_recalibration_reentry_promotion_controller/) | sustained checkpoints → a promotion gate | `cd roadmap_recalibration_reentry_promotion_controller && npm install && npm run check` | PM |
+| 54 | [Roadmap Recalibration Promotion Outcome Monitor](roadmap_recalibration_promotion_outcome_monitor/) | activation evidence → a promotion outcome review | `cd roadmap_recalibration_promotion_outcome_monitor && npm install && npm run check` | PM |
+| 55 | [Roadmap Recalibration Baseline Handoff Controller](roadmap_recalibration_baseline_handoff_controller/) | a retained baseline → a baseline handoff control | `cd roadmap_recalibration_baseline_handoff_controller && npm install && npm run check` | PM |
+| 56 | [Roadmap Recalibration Baseline Configuration Drift Monitor](roadmap_recalibration_baseline_drift_monitor/) | configuration snapshots → baseline drift findings | `cd roadmap_recalibration_baseline_drift_monitor && npm install && npm run check` | PM |
+| 68 | [Briefly PRD workspace](briefly_prd_ai/) | a rough product concept → an editable PRD draft | `cd briefly_prd_ai && pnpm install && pnpm test` | PM |
+| 69 | [AI project manager assistant](ai_project_manager_assistant/) | a project description and a team → a work breakdown, assignments, and a RAID register | `cd ai_project_manager_assistant && npm install && npm run check` | PM |
+| 71 | [Experimentation copilot](ab_test_design_and_readout/) | a hypothesis and observed results → a sample-size plan and a validity-first readout | `cd ab_test_design_and_readout && python -m pip install -r requirements.txt && PYTHONPATH=. python -m unittest discover -s tests -v` | PM |
+| 72 | [AB Advisor](bayesian_ab_test_advisor/) | variant assignments and metric outcomes → posterior lift and expected loss | `cd bayesian_ab_test_advisor && python -m pip install numpy scipy pytest && PYTHONPATH=. python -m pytest -q` | PM |
+| 73 | [Signal stakeholder sentiment](ai_stakeholder_sentiment_analyzer/) | stakeholder comments → topic, sentiment, and urgency with source quotes | `cd ai_stakeholder_sentiment_analyzer && python -m pip install -r requirements.txt && PYTHONPATH=. python -m pytest -q` | PM |
+| 74 | [AI product discovery engine](ai_product_discovery_engine/) | customer feedback text → ranked opportunities with evidence links | `cd ai_product_discovery_engine && node --test tests/*.test.js` | PM |
+| 76 | [AI roadmap optimizer](ai_roadmap_optimizer/) | a feature backlog and capacity → feasible, strategy-aware delivery scenarios | `cd ai_roadmap_optimizer && node --test` | PM |
+| 78 | [SecondChance Lab](user_journey_recovery_testing/) | a critical user-journey contract → interruption results and side-effect checks | `cd user_journey_recovery_testing && npm install && npm test` | PM |
+
+#### Connected workflow
+
+| # | Project | Input → output | Quick start | Track |
+|---:|---|---|---|---|
+| 7 | [Experiment & Learning Workspace](experiment-data-quality-auditor/) | portfolio selection and event snapshots → an audited experiment plan and a human decision | `cd experiment-data-quality-auditor && npm install && npm run check` | PM |
+| 70 | [Experiment decision workspace](experiment_decision_workspace/) | a hypothesis, results, and guardrails → a ship, hold, iterate, or rollback record | `cd experiment_decision_workspace && npm install && npm test` | PM |
+| 75 | [Pulse feedback prioritizer](feedback_prioritizer/) | feedback from disconnected channels → normalized evidence and a transparent priority list | `cd feedback_prioritizer && python -m pip install scikit-learn pandas numpy && PYTHONPATH=. python -m unittest discover -s tests -v` | PM |
+
+```mermaid
+flowchart LR
+  subgraph product_management_starter [Product management · Starter]
+    n1["1 Feedback Collector"]
+    n2["2 Sentiment Analyzer"]
+    n3["3 Topic Modeler"]
+    n4["4 Feature Request Detector"]
+    n5["5 Voice-of-Customer Dashboard"]
+    n6["6 Prioritization Engine"]
+    n77["77 RiskCouncil"]
+  end
+  subgraph product_management_advanced [Product management · Advanced]
+    n8["8 Product Outcome Monitor"]
+    n9["9 Product Learning Memory"]
+    n10["10 Product Decision Calibration Engine"]
+    n11["11 Product Evidence Integrity Monitor"]
+    n12["12 Product Research Portfolio Optimizer"]
+    n13["13 Product Strategy Alignment Auditor"]
+    n14["14 Strategic Portfolio Rebalancing Simulator"]
+    n15["15 Product Portfolio Resilience Stress Tester"]
+    n16["16 Product Benefits Realization Tracker"]
+    n17["17 Product Investment Assurance Review"]
+    n18["18 Product Assumption Risk Register"]
+    n19["19 Product Release Readiness and Rollback Controller"]
+    n20["20 Feature Adoption Journey Analyzer"]
+    n21["21 Product Lifecycle and Deprecation Planner"]
+    n22["22 Customer Migration and Sunset Monitor"]
+    n23["23 Product Sunset Outcome and Reversibility Monitor"]
+    n24["24 Product Decision Provenance and Governance Pack"]
+    n25["25 Product Governance Obligation and Review Monitor"]
+    n26["26 Product Governance Exception and Waiver Register"]
+    n27["27 Product Exception Exit and Corrective-Action Verifier"]
+    n28["28 Product Control Regression and Recurrence Monitor"]
+    n29["29 Product Control Improvement Portfolio Planner"]
+    n30["30 Product Control Improvement Outcome Monitor"]
+    n31["31 Product Control Improvement Calibration and Learning Engine"]
+    n32["32 Product Planning Policy Experiment Planner"]
+    n33["33 Product Planning Policy Experiment Outcome Verifier"]
+    n34["34 Product Planning Policy Change and Version Controller"]
+    n35["35 Product Planning Policy Rollout Assurance Monitor"]
+    n36["36 Product Planning Policy Effectiveness and Drift Monitor"]
+    n37["37 Product Planning Policy Reversion and Recovery Verifier"]
+    n38["38 Product Planning Policy Incident Learning and Re-entry Controller"]
+    n39["39 Product Planning Policy Re-entry Assurance Monitor"]
+    n40["40 Evidence-linked Product Roadmap Delivery Scheduler"]
+    n41["41 Roadmap Delivery Execution and Variance Monitor"]
+    n42["42 Roadmap Delivery Recovery Action Planner"]
+    n43["43 Roadmap Recovery Execution and Effectiveness Verifier"]
+    n44["44 Roadmap Delivery Estimate Calibration and Reference-Class Engine"]
+    n45["45 Roadmap Estimate Basis and Calibration Adoption Controller"]
+    n46["46 Roadmap Estimate Calibration Effectiveness and Exception Outcome Monitor"]
+    n47["47 Roadmap Estimate Calibration Drift and Recalibration Readiness Monitor"]
+    n48["48 Roadmap Estimate Recalibration Proposal and Validation Controller"]
+    n49["49 Roadmap Estimate Recalibration Rollout Assurance Monitor"]
+    n50["50 Roadmap Recalibration Rollback and Recovery Verifier"]
+    n51["51 Roadmap Recalibration Incident Learning and Re-entry Controller"]
+    n52["52 Roadmap Recalibration Re-entry Assurance Monitor"]
+    n53["53 Roadmap Recalibration Re-entry Promotion Controller"]
+    n54["54 Roadmap Recalibration Promotion Outcome Monitor"]
+    n55["55 Roadmap Recalibration Baseline Handoff Controller"]
+    n56["56 Roadmap Recalibration Baseline Configuration Drift Monitor"]
+    n68["68 Briefly PRD workspace"]
+    n69["69 AI project manager assistant"]
+    n71["71 Experimentation copilot"]
+    n72["72 AB Advisor"]
+    n73["73 Signal stakeholder sentiment"]
+    n74["74 AI product discovery engine"]
+    n76["76 AI roadmap optimizer"]
+    n78["78 SecondChance Lab"]
+  end
+  subgraph product_management_connected [Product management · Connected workflow]
+    n7["7 Experiment and Learning Workspace"]
+    n70["70 Experiment decision workspace"]
+    n75["75 Pulse feedback prioritizer"]
+  end
+  n1 --> n2
+  n1 --> n3
+  n1 --> n4
+  n2 --> n5
+  n3 --> n5
+  n4 --> n5
+  n5 --> n6
+  n6 --> n7
+  n7 --> n8
+  n8 --> n9
+  n9 --> n10
+  n10 --> n11
+  n11 --> n12
+  n12 --> n13
+  n13 --> n14
+  n14 --> n15
+  n14 --> n16
+  n14 --> n40
+  n16 --> n17
+  n17 --> n18
+  n18 --> n19
+  n19 --> n20
+  n20 --> n21
+  n21 --> n22
+  n22 --> n23
+  n23 --> n24
+  n24 --> n25
+  n25 --> n26
+  n26 --> n27
+  n27 --> n28
+  n28 --> n29
+  n29 --> n30
+  n30 --> n31
+  n31 --> n32
+  n32 --> n33
+  n33 --> n34
+  n34 --> n35
+  n35 --> n36
+  n36 --> n37
+  n37 --> n38
+  n38 --> n39
+  n40 --> n41
+  n41 --> n42
+  n42 --> n43
+  n43 --> n44
+  n44 --> n45
+  n45 --> n46
+  n46 --> n47
+  n47 --> n48
+  n48 --> n49
+  n49 --> n50
+  n50 --> n51
+  n51 --> n52
+  n52 --> n53
+  n53 --> n54
+  n54 --> n55
+  n55 --> n56
+  n68 -.-> n77
+  n68 -.-> n69
+  n69 -.-> n76
+  n70 -.-> n7
+  n71 -.-> n70
+  n72 -.-> n70
+  n73 -.-> n2
+  n74 -.-> n6
+  n75 -.-> n6
+  n76 -.-> n40
+  n77 -.-> n18
+  n78 -.-> n19
+```
+
+### AI engineering
+
+#### Starter
+
+| # | Project | Input → output | Quick start | Track |
+|---:|---|---|---|---|
+| 58 | [ScopeLock](scopelock/) | an agent tool call and a policy → an allow or deny decision with an audit record | `cd scopelock && PYTHONPATH=. python -m unittest discover -s tests -v` | AI Engineer |
+| 65 | [PromptHarbor](prompt_release_management/) | a prompt bundle change and eval evidence → a versioned release with canary and rollback records | `cd prompt_release_management && PYTHONPATH=. python -m unittest discover -s tests -v` | AI Engineer |
+| 66 | [ReleaseProof](releaseproof/) | baseline and candidate evaluation runs → a PASS or BLOCK decision with case-level evidence | `cd releaseproof && PYTHONPATH=. python -m unittest discover -s tests -v` | AI Engineer |
+| 67 | [ControlLedger](ai_use_case_risk_registry/) | structured AI system intake → a tiered control checklist and evidence inventory | `cd ai_use_case_risk_registry && PYTHONPATH=. python -m unittest discover -s tests -v` | AI Engineer |
+
+#### Advanced
+
+| # | Project | Input → output | Quick start | Track |
+|---:|---|---|---|---|
+| 59 | [TraceLoom](agent_trace_debugger/) | multi-step agent spans → a replayable timeline, failure class, and cost per successful task | `cd agent_trace_debugger && PYTHONPATH=. python -m unittest discover -s tests -v` | AI Engineer |
+| 60 | [CaseFoundry](requirements_traced_test_generator/) | numbered PRD clauses → traceable cases and a mutation-detection report | `cd requirements_traced_test_generator && PYTHONPATH=. python -m unittest discover -s tests -v` | AI Engineer |
+| 61 | [Sentinel eval harness](sentinel_eval_harness/) | a versioned evaluation set → a pass-rate gate with cost evidence | `cd sentinel_eval_harness && python -m pip install pytest && PYTHONPATH=. python -m pytest -q` | AI Engineer |
+| 62 | [VerdictLens](llm_judge_calibration_workbench/) | pairwise judge votes and reference labels → agreement, kappa, and order or length bias probes | `cd llm_judge_calibration_workbench && PYTHONPATH=. python -m unittest discover -s tests -v` | AI Engineer |
+| 63 | [ShadowGauge](shadow_eval_drift_monitor/) | sampled AI interactions → off-path grades and a two-window drift incident | `cd shadow_eval_drift_monitor && PYTHONPATH=. python -m unittest discover -s tests -v` | AI Engineer |
+| 64 | [GuardrailCI](ai_red_team_regression_suite/) | a versioned multi-step attack library → rubric scores and a release regression report | `cd ai_red_team_regression_suite && PYTHONPATH=. python -m unittest discover -s tests -v` | AI Engineer |
+
+#### Connected workflow
+
+| # | Project | Input → output | Quick start | Track |
+|---:|---|---|---|---|
+| 57 | [Issue to draft PR agent](issue_to_draft_pr_agent/) | a GitHub issue and a local repository → a tested draft-PR record with execution evidence | `cd issue_to_draft_pr_agent && python -m pip install -e '.[dev]' && PYTHONPATH=. python -m pytest -q` | AI Engineer |
+
+```mermaid
+flowchart LR
+  subgraph ai_engineering_starter [AI engineering · Starter]
+    n58["58 ScopeLock"]
+    n65["65 PromptHarbor"]
+    n66["66 ReleaseProof"]
+    n67["67 ControlLedger"]
+  end
+  subgraph ai_engineering_advanced [AI engineering · Advanced]
+    n59["59 TraceLoom"]
+    n60["60 CaseFoundry"]
+    n61["61 Sentinel eval harness"]
+    n62["62 VerdictLens"]
+    n63["63 ShadowGauge"]
+    n64["64 GuardrailCI"]
+  end
+  subgraph ai_engineering_connected [AI engineering · Connected workflow]
+    n57["57 Issue to draft PR agent"]
+  end
+  n57 -.-> n59
+  n58 -.-> n57
+  n60 -.-> n57
+  n61 -.-> n65
+  n62 -.-> n61
+  n64 -.-> n65
+  n65 -.-> n66
+  n66 -.-> n63
+  n67 -.-> n65
+```
+
+### Data analytics
+
+#### Starter
+
+| # | Project | Input → output | Quick start | Track |
+|---:|---|---|---|---|
+| 81 | [SchemaPact](data_contract_impact_checker/) | a versioned data contract and a batch or schema change → a pass, warn, or block decision and consumer impact | `cd data_contract_impact_checker && PYTHONPATH=. python -m unittest discover -s tests -v` | Data analytics |
+| 83 | [MCP price tracker](mcp_price_tracker/) | public price and availability observations → price history and threshold checks | `cd mcp_price_tracker && PYTHONPATH=. python -m unittest discover -s tests -v` | Data analytics |
+| 84 | [MCP review intelligence](mcp_review_intelligence/) | a review export → deduplicated themes and sentiment with source rows | `cd mcp_review_intelligence && PYTHONPATH=. python -m unittest discover -s tests -v` | Data analytics |
+
+#### Advanced
+
+| # | Project | Input → output | Quick start | Track |
+|---:|---|---|---|---|
+| 80 | [MetricPact](governed_metric_query_engine/) | a business question and an allow-listed metric layer → a metric answer inside the scan budget | `cd governed_metric_query_engine && PYTHONPATH=. python -m unittest discover -s tests -v` | Data analytics |
+| 82 | [FraudShield](explainable_order_risk_scoring/) | order features → an explainable risk score | `cd explainable_order_risk_scoring && node --check worker/index.js` | Data analytics |
+| 85 | [DriftDocket](model_drift_retraining_decisions/) | feature and mature-label snapshots → drift findings and an evidence-backed retraining ticket | `cd model_drift_retraining_decisions && PYTHONPATH=. python -m unittest discover -s tests -v` | Data analytics |
+| 86 | [SynthSeal](synthetic_data_release_audit/) | a synthetic table and a real holdout → fidelity, utility, privacy, and a data card | `cd synthetic_data_release_audit && PYTHONPATH=. python -m unittest discover -s tests -v` | Data analytics |
+| 87 | [ParityProbe](counterfactual_fairness_audit/) | scored records and attribute-swap pairs → flip rates with uncertainty and a mitigation comparison | `cd counterfactual_fairness_audit && PYTHONPATH=. python -m unittest discover -s tests -v` | Data analytics |
+| 88 | [QueueCal](confidence_routing_review_queue/) | confidence scores, error cost, and reviewer capacity → a threshold and an SLA queue plan | `cd confidence_routing_review_queue && PYTHONPATH=. python -m unittest discover -s tests -v` | Data analytics |
+| 89 | [Shop risk intelligence](marketplace_risk_intelligence/) | synthetic marketplace orders and rules → a risk investigation report | `cd marketplace_risk_intelligence && python -m pip install -r requirements.txt && PYTHONPATH=. python -m pytest -q` | Data analytics |
+
+#### Connected workflow
+
+| # | Project | Input → output | Quick start | Track |
+|---:|---|---|---|---|
+| 79 | [Autonomous product analyst](autonomous_product_analyst/) | a question about a governed metric → a segment investigation with the queries that support it | `cd autonomous_product_analyst && python -m pip install -r requirements.txt && PYTHONPATH=. python -m unittest discover -s tests -v` | Data analytics |
+
+```mermaid
+flowchart LR
+  subgraph data_analytics_starter [Data analytics · Starter]
+    n81["81 SchemaPact"]
+    n83["83 MCP price tracker"]
+    n84["84 MCP review intelligence"]
+  end
+  subgraph data_analytics_advanced [Data analytics · Advanced]
+    n80["80 MetricPact"]
+    n82["82 FraudShield"]
+    n85["85 DriftDocket"]
+    n86["86 SynthSeal"]
+    n87["87 ParityProbe"]
+    n88["88 QueueCal"]
+    n89["89 Shop risk intelligence"]
+  end
+  subgraph data_analytics_connected [Data analytics · Connected workflow]
+    n79["79 Autonomous product analyst"]
+  end
+  n80 -.-> n79
+  n81 -.-> n80
+  n82 -.-> n88
+  n85 -.-> n87
+  n86 -.-> n85
+  n87 -.-> n88
+```
+
+### Cross-area handoffs
+
+```mermaid
+flowchart LR
+  x68["68 Briefly PRD workspace"]
+  x60["60 CaseFoundry"]
+  x68 -.-> x60
+  x79["79 Autonomous product analyst"]
+  x8["8 Product Outcome Monitor"]
+  x79 -.-> x8
+  x84["84 MCP review intelligence"]
+  x5["5 Voice-of-Customer Dashboard"]
+  x84 -.-> x5
+```
+<!-- catalog:tracks:end -->
 
 ## What is genuinely connected
 
-Project 7 imports and executes Projects 1–6 and the engines behind Projects 8–56. The connected path spans customer evidence, portfolio selection, executable roadmap scheduling, actual delivery control, bounded recovery planning, recovery effectiveness verification, estimate calibration, adoption control, completed-outcome effectiveness review, performance-drift monitoring, holdout-tested recalibration proposals, controlled rollout assurance, verified rollback recovery, governed incident learning, observed re-entry assurance, sustained promotion control, verified promotion outcomes, exact baseline handoff and ongoing configuration-drift monitoring, decisions, lifecycle governance, verified policy recovery, incident learning, controlled re-entry, and re-entry assurance.
+Project 7 imports and executes Projects 1–6 and the engines behind Projects 8–56. Folders numbered 57 and above are standalone imports. They are not loaded by the Project 7 Worker. Dotted catalog arrows are intended handoffs: the downstream folder does not read the upstream folder’s files. The connected path spans customer evidence, portfolio selection, executable roadmap scheduling, actual delivery control, bounded recovery planning, recovery effectiveness verification, estimate calibration, adoption control, completed-outcome effectiveness review, performance-drift monitoring, holdout-tested recalibration proposals, controlled rollout assurance, verified rollback recovery, governed incident learning, observed re-entry assurance, sustained promotion control, verified promotion outcomes, exact baseline handoff and ongoing configuration-drift monitoring, decisions, lifecycle governance, verified policy recovery, incident learning, controlled re-entry, and re-entry assurance.
 
 Identity lineage:
 
@@ -344,6 +670,12 @@ node experiment-data-quality-auditor/scripts/test-all.mjs
 ```
 
 The suite covers all fifty-six projects, shared contracts, authenticated routes, SQLite migrations, evidence lineage, deterministic roadmap scheduling, delivery control, recovery planning and verification, estimate calibration, adoption control, effectiveness review, performance- and configuration-drift monitoring, recalibration validation, rollout assurance, rollback recovery verification, governed re-entry, observed re-entry assurance, sustained promotion control, verified promotion outcomes and exact baseline handoff, decision gates, lifecycle safeguards, verified policy recovery, incident learning, safe re-entry, and re-entry assurance.
+
+That command covers Projects 1–56 only. Folders 57 and above keep the test command in their catalog quick start. Catalog links are checked separately:
+
+```bash
+node scripts/check-catalog.mjs
+```
 
 Run one project independently:
 
@@ -481,71 +813,117 @@ Projects 1–6 and 8–56 are bundled into the connected Worker through imports.
 | Authentication | Shared bearer token for a small trusted deployment |
 | Cost | No paid API required; Cloudflare quotas still apply |
 
+<!-- catalog:honest:start -->
+## Imported folder status
+
+These rows cover folders 57 and above. They do not change the Project 1–56 behavior described above.
+
+| Folder group | Current behavior |
+|---|---|
+| AI engineering imports (11 folders) | Standalone code with the tests shipped in that folder. Not imported by the Project 7 Worker. |
+| Product management imports (11 folders) | Standalone code. Overlapping A/B, discovery, feedback, and roadmap tools are cross-linked in the catalog rather than copied into Project 7. |
+| Data analytics imports (11 folders) | Standalone code. Metric, contract, drift, fairness, and review tools do not replace Projects 2, 5, 8, or 10. |
+| Intended links | Documented in each folder under How this connects and drawn as dotted arrows. Not executed by the connected Worker. |
+<!-- catalog:honest:end -->
+
 ## Repository structure
 
-```text
-.
-├── feedback_collector/                 Project 1
-├── sentiment_analyzer/                 Project 2
-├── topic_modeler/                      Project 3
-├── feature_request_detector/           Project 4
-├── voice_of_customer_dashboard/        Project 5
-├── prioritization_engine/              Project 6
-├── experiment-data-quality-auditor/    Project 7 and connected app
-├── product_outcome_monitor/            Project 8
-├── product_learning_memory/            Project 9
-├── decision_calibration_engine/        Project 10
-├── evidence_integrity_monitor/         Project 11
-├── research_portfolio_optimizer/       Project 12
-├── strategy_alignment_auditor/         Project 13
-├── portfolio_rebalancing_simulator/    Project 14
-├── portfolio_resilience_stress_tester/ Project 15
-├── benefits_realization_tracker/       Project 16
-├── investment_assurance_review/        Project 17
-├── assumption_risk_register/           Project 18
-├── release_readiness_controller/       Project 19
-├── feature_adoption_analyzer/          Project 20
-├── product_lifecycle_planner/          Project 21
-├── sunset_migration_monitor/           Project 22
-├── sunset_outcome_monitor/             Project 23
-├── decision_provenance_pack/           Project 24
-├── governance_obligation_monitor/      Project 25
-├── governance_exception_register/     Project 26
-├── exception_exit_verifier/           Project 27
-├── control_recurrence_monitor/        Project 28
-├── control_improvement_planner/       Project 29
-├── control_improvement_outcome_monitor/ Project 30
-├── control_improvement_calibration/     Project 31
-├── planning_policy_experiment_planner/  Project 32
-├── planning_policy_outcome_verifier/    Project 33
-├── planning_policy_change_controller/   Project 34
-├── planning_policy_rollout_monitor/      Project 35
-├── planning_policy_effectiveness_monitor/ Project 36
-├── planning_policy_recovery_verifier/      Project 37
-├── planning_policy_incident_learning_controller/ Project 38
-├── planning_policy_reentry_monitor/              Project 39
-├── roadmap_delivery_scheduler/                    Project 40
-├── roadmap_delivery_monitor/                      Project 41
-├── roadmap_recovery_planner/                      Project 42
-├── roadmap_recovery_verifier/                     Project 43
-├── roadmap_estimate_calibration/                  Project 44
-├── roadmap_estimate_adoption_controller/          Project 45
-├── roadmap_estimate_effectiveness_monitor/         Project 46
-├── roadmap_estimate_drift_monitor/                 Project 47
-├── roadmap_recalibration_controller/               Project 48
-├── roadmap_recalibration_rollout_monitor/           Project 49
-├── roadmap_recalibration_recovery_verifier/          Project 50
-├── roadmap_recalibration_incident_reentry_controller/ Project 51
-├── roadmap_recalibration_reentry_monitor/              Project 52
-├── roadmap_recalibration_reentry_promotion_controller/   Project 53
-├── roadmap_recalibration_promotion_outcome_monitor/        Project 54
-├── roadmap_recalibration_baseline_handoff_controller/       Project 55
-├── roadmap_recalibration_baseline_drift_monitor/             Project 56
-├── .github/                            CI workflow
-├── .gitignore
-├── LICENSE
-└── README.md
-```
+The connected modules and imported folders are top-level directories. `.github/` is CI configuration, not a product project.
+
+<!-- catalog:folders:start -->
+Imported and existing catalog folders:
+
+- `feedback_collector/` — 1. Feedback Collector (PM, Starter)
+- `sentiment_analyzer/` — 2. Sentiment Analyzer (PM, Starter)
+- `topic_modeler/` — 3. Topic Modeler (PM, Starter)
+- `feature_request_detector/` — 4. Feature Request Detector (PM, Starter)
+- `voice_of_customer_dashboard/` — 5. Voice-of-Customer Dashboard (PM, Starter)
+- `prioritization_engine/` — 6. Prioritization Engine (PM, Starter)
+- `experiment-data-quality-auditor/` — 7. Experiment & Learning Workspace (PM, Connected workflow)
+- `product_outcome_monitor/` — 8. Product Outcome Monitor (PM, Advanced)
+- `product_learning_memory/` — 9. Product Learning Memory (PM, Advanced)
+- `decision_calibration_engine/` — 10. Product Decision Calibration Engine (PM, Advanced)
+- `evidence_integrity_monitor/` — 11. Product Evidence Integrity Monitor (PM, Advanced)
+- `research_portfolio_optimizer/` — 12. Product Research Portfolio Optimizer (PM, Advanced)
+- `strategy_alignment_auditor/` — 13. Product Strategy Alignment Auditor (PM, Advanced)
+- `portfolio_rebalancing_simulator/` — 14. Strategic Portfolio Rebalancing Simulator (PM, Advanced)
+- `portfolio_resilience_stress_tester/` — 15. Product Portfolio Resilience Stress Tester (PM, Advanced)
+- `benefits_realization_tracker/` — 16. Product Benefits Realization Tracker (PM, Advanced)
+- `investment_assurance_review/` — 17. Product Investment Assurance Review (PM, Advanced)
+- `assumption_risk_register/` — 18. Product Assumption Risk Register (PM, Advanced)
+- `release_readiness_controller/` — 19. Product Release Readiness & Rollback Controller (PM, Advanced)
+- `feature_adoption_analyzer/` — 20. Feature Adoption Journey Analyzer (PM, Advanced)
+- `product_lifecycle_planner/` — 21. Product Lifecycle & Deprecation Planner (PM, Advanced)
+- `sunset_migration_monitor/` — 22. Customer Migration & Sunset Monitor (PM, Advanced)
+- `sunset_outcome_monitor/` — 23. Product Sunset Outcome & Reversibility Monitor (PM, Advanced)
+- `decision_provenance_pack/` — 24. Product Decision Provenance & Governance Pack (PM, Advanced)
+- `governance_obligation_monitor/` — 25. Product Governance Obligation & Review Monitor (PM, Advanced)
+- `governance_exception_register/` — 26. Product Governance Exception & Waiver Register (PM, Advanced)
+- `exception_exit_verifier/` — 27. Product Exception Exit & Corrective-Action Verifier (PM, Advanced)
+- `control_recurrence_monitor/` — 28. Product Control Regression & Recurrence Monitor (PM, Advanced)
+- `control_improvement_planner/` — 29. Product Control Improvement Portfolio Planner (PM, Advanced)
+- `control_improvement_outcome_monitor/` — 30. Product Control Improvement Outcome Monitor (PM, Advanced)
+- `control_improvement_calibration/` — 31. Product Control Improvement Calibration & Learning Engine (PM, Advanced)
+- `planning_policy_experiment_planner/` — 32. Product Planning Policy Experiment Planner (PM, Advanced)
+- `planning_policy_outcome_verifier/` — 33. Product Planning Policy Experiment Outcome Verifier (PM, Advanced)
+- `planning_policy_change_controller/` — 34. Product Planning Policy Change & Version Controller (PM, Advanced)
+- `planning_policy_rollout_monitor/` — 35. Product Planning Policy Rollout Assurance Monitor (PM, Advanced)
+- `planning_policy_effectiveness_monitor/` — 36. Product Planning Policy Effectiveness & Drift Monitor (PM, Advanced)
+- `planning_policy_recovery_verifier/` — 37. Product Planning Policy Reversion & Recovery Verifier (PM, Advanced)
+- `planning_policy_incident_learning_controller/` — 38. Product Planning Policy Incident Learning & Re-entry Controller (PM, Advanced)
+- `planning_policy_reentry_monitor/` — 39. Product Planning Policy Re-entry Assurance Monitor (PM, Advanced)
+- `roadmap_delivery_scheduler/` — 40. Evidence-linked Product Roadmap Delivery Scheduler (PM, Advanced)
+- `roadmap_delivery_monitor/` — 41. Roadmap Delivery Execution & Variance Monitor (PM, Advanced)
+- `roadmap_recovery_planner/` — 42. Roadmap Delivery Recovery Action Planner (PM, Advanced)
+- `roadmap_recovery_verifier/` — 43. Roadmap Recovery Execution & Effectiveness Verifier (PM, Advanced)
+- `roadmap_estimate_calibration/` — 44. Roadmap Delivery Estimate Calibration & Reference-Class Engine (PM, Advanced)
+- `roadmap_estimate_adoption_controller/` — 45. Roadmap Estimate Basis & Calibration Adoption Controller (PM, Advanced)
+- `roadmap_estimate_effectiveness_monitor/` — 46. Roadmap Estimate Calibration Effectiveness & Exception Outcome Monitor (PM, Advanced)
+- `roadmap_estimate_drift_monitor/` — 47. Roadmap Estimate Calibration Drift & Recalibration Readiness Monitor (PM, Advanced)
+- `roadmap_recalibration_controller/` — 48. Roadmap Estimate Recalibration Proposal & Validation Controller (PM, Advanced)
+- `roadmap_recalibration_rollout_monitor/` — 49. Roadmap Estimate Recalibration Rollout Assurance Monitor (PM, Advanced)
+- `roadmap_recalibration_recovery_verifier/` — 50. Roadmap Recalibration Rollback & Recovery Verifier (PM, Advanced)
+- `roadmap_recalibration_incident_reentry_controller/` — 51. Roadmap Recalibration Incident Learning & Re-entry Controller (PM, Advanced)
+- `roadmap_recalibration_reentry_monitor/` — 52. Roadmap Recalibration Re-entry Assurance Monitor (PM, Advanced)
+- `roadmap_recalibration_reentry_promotion_controller/` — 53. Roadmap Recalibration Re-entry Promotion Controller (PM, Advanced)
+- `roadmap_recalibration_promotion_outcome_monitor/` — 54. Roadmap Recalibration Promotion Outcome Monitor (PM, Advanced)
+- `roadmap_recalibration_baseline_handoff_controller/` — 55. Roadmap Recalibration Baseline Handoff Controller (PM, Advanced)
+- `roadmap_recalibration_baseline_drift_monitor/` — 56. Roadmap Recalibration Baseline Configuration Drift Monitor (PM, Advanced)
+- `issue_to_draft_pr_agent/` — 57. Issue to draft PR agent (AI Engineer, Connected workflow)
+- `scopelock/` — 58. ScopeLock (AI Engineer, Starter)
+- `agent_trace_debugger/` — 59. TraceLoom (AI Engineer, Advanced)
+- `requirements_traced_test_generator/` — 60. CaseFoundry (AI Engineer, Advanced)
+- `sentinel_eval_harness/` — 61. Sentinel eval harness (AI Engineer, Advanced)
+- `llm_judge_calibration_workbench/` — 62. VerdictLens (AI Engineer, Advanced)
+- `shadow_eval_drift_monitor/` — 63. ShadowGauge (AI Engineer, Advanced)
+- `ai_red_team_regression_suite/` — 64. GuardrailCI (AI Engineer, Advanced)
+- `prompt_release_management/` — 65. PromptHarbor (AI Engineer, Starter)
+- `releaseproof/` — 66. ReleaseProof (AI Engineer, Starter)
+- `ai_use_case_risk_registry/` — 67. ControlLedger (AI Engineer, Starter)
+- `briefly_prd_ai/` — 68. Briefly PRD workspace (PM, Advanced)
+- `ai_project_manager_assistant/` — 69. AI project manager assistant (PM, Advanced)
+- `experiment_decision_workspace/` — 70. Experiment decision workspace (PM, Connected workflow)
+- `ab_test_design_and_readout/` — 71. Experimentation copilot (PM, Advanced)
+- `bayesian_ab_test_advisor/` — 72. AB Advisor (PM, Advanced)
+- `ai_stakeholder_sentiment_analyzer/` — 73. Signal stakeholder sentiment (PM, Advanced)
+- `ai_product_discovery_engine/` — 74. AI product discovery engine (PM, Advanced)
+- `feedback_prioritizer/` — 75. Pulse feedback prioritizer (PM, Connected workflow)
+- `ai_roadmap_optimizer/` — 76. AI roadmap optimizer (PM, Advanced)
+- `launch_premortem_risk_register/` — 77. RiskCouncil (PM, Starter)
+- `user_journey_recovery_testing/` — 78. SecondChance Lab (PM, Advanced)
+- `autonomous_product_analyst/` — 79. Autonomous product analyst (Data analytics, Connected workflow)
+- `governed_metric_query_engine/` — 80. MetricPact (Data analytics, Advanced)
+- `data_contract_impact_checker/` — 81. SchemaPact (Data analytics, Starter)
+- `explainable_order_risk_scoring/` — 82. FraudShield (Data analytics, Advanced)
+- `mcp_price_tracker/` — 83. MCP price tracker (Data analytics, Starter)
+- `mcp_review_intelligence/` — 84. MCP review intelligence (Data analytics, Starter)
+- `model_drift_retraining_decisions/` — 85. DriftDocket (Data analytics, Advanced)
+- `synthetic_data_release_audit/` — 86. SynthSeal (Data analytics, Advanced)
+- `counterfactual_fairness_audit/` — 87. ParityProbe (Data analytics, Advanced)
+- `confidence_routing_review_queue/` — 88. QueueCal (Data analytics, Advanced)
+- `marketplace_risk_intelligence/` — 89. Shop risk intelligence (Data analytics, Advanced)
+<!-- catalog:folders:end -->
+
 
 ## Documentation
 
@@ -564,4 +942,4 @@ Projects 1–6 and 8–56 are bundled into the connected Worker through imports.
 
 ## License
 
-The repository-level modules use [Apache License 2.0](LICENSE). Project folders retain their included license notices.
+Projects 1–56 keep the license file already in each folder. The repository root uses [Apache License 2.0](LICENSE). Imported folders numbered 57 and above do not add a separate license file and are covered by that root license. Public repositories whose code is derived from a third party were not imported, because that code cannot be included without its original license notice.

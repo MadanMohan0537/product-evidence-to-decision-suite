@@ -1,5 +1,14 @@
 # Product Release Readiness & Rollback Controller
 
+<!-- catalog:io:start -->
+**Input → output:** a rollout plan and declared controls → progressive-exposure and rollback readiness
+
+**Quick start:** `cd release_readiness_controller && npm install && npm run check`
+
+**Track:** PM · Advanced · built
+<!-- catalog:io:end -->
+
+
 Project 19 bridges a reviewed ProdMind `ship` decision and a safe production rollout. It checks progressive exposure, production monitoring, rollback triggers, a last-known-good version, ownership, compatibility, communications, and unresolved Project 18 assumptions.
 
 It answers: **“Is this product decision operationally ready to release, and can the team reverse it quickly?”**
@@ -57,3 +66,19 @@ See [PRD](docs/PRD.md), [architecture](docs/ARCHITECTURE.md), and [metrics](docs
 ## License
 
 MIT
+
+<!-- catalog:connects:start -->
+## How this connects
+
+**Input → output:** a rollout plan and declared controls → progressive-exposure and rollback readiness
+
+**Upstream:** [Product Assumption Risk Register](../assumption_risk_register/README.md); [SecondChance Lab](../user_journey_recovery_testing/README.md)
+
+**Downstream:** [Feature Adoption Journey Analyzer](../feature_adoption_analyzer/README.md)
+
+**Related:** [ReleaseProof](../releaseproof/README.md)
+
+**Track:** PM · Advanced.
+
+**Project 7:** Imported by the [Experiment & Learning Workspace](../experiment-data-quality-auditor/README.md).
+<!-- catalog:connects:end -->

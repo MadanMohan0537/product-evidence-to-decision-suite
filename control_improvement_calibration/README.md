@@ -1,5 +1,14 @@
 # Product Control Improvement Calibration & Learning Engine
 
+<!-- catalog:io:start -->
+**Input → output:** verified improvements → a planning calibration report
+
+**Quick start:** `cd control_improvement_calibration && npm install && npm run check`
+
+**Track:** PM · Advanced · built
+<!-- catalog:io:end -->
+
+
 **Project 31 of ProdMind turns verified Project 30 outcomes into evidence for better portfolio planning.**
 
 Closing an improvement is not the end of the learning loop. Product organizations also need to know whether effort estimates were biased, work arrived on time, controls stayed effective, and addressed conditions recurred. This zero-paid-service Cloudflare Workers project measures those signals across a portfolio, compares them with explicit thresholds, and requires a named human to accept the baseline, adjust planning, or collect more evidence.
@@ -52,3 +61,19 @@ The engine returns descriptive evidence—not statistical inference, compliance 
 These sources inform the measurement loop; they do not make this project a compliance or audit product.
 
 See the [PRD](docs/PRD.md), [architecture](docs/ARCHITECTURE.md), and [metrics](docs/METRICS.md). Apache-2.0 licensed.
+
+<!-- catalog:connects:start -->
+## How this connects
+
+**Input → output:** verified improvements → a planning calibration report
+
+**Upstream:** [Product Control Improvement Outcome Monitor](../control_improvement_outcome_monitor/README.md)
+
+**Downstream:** [Product Planning Policy Experiment Planner](../planning_policy_experiment_planner/README.md)
+
+**Related:** None in this catalog.
+
+**Track:** PM · Advanced.
+
+**Project 7:** Imported by the [Experiment & Learning Workspace](../experiment-data-quality-auditor/README.md).
+<!-- catalog:connects:end -->

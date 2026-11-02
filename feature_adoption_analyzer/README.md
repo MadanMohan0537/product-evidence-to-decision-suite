@@ -1,5 +1,14 @@
 # Feature Adoption Journey Analyzer
 
+<!-- catalog:io:start -->
+**Input → output:** ordered product events → adoption, time-to-value, and privacy-suppressed segments
+
+**Quick start:** `cd feature_adoption_analyzer && npm install && npm run check`
+
+**Track:** PM · Advanced · built
+<!-- catalog:io:end -->
+
+
 Project 20 closes the loop after a ProdMind release. It turns pseudonymous product events into an ordered journey—from exposure and activation to repeated value and retention—while preserving the release, decision, opportunity, and customer-evidence lineage that justified the work.
 
 It answers: **“Are customers reaching value after this release, where do they stop, and which sufficiently large segments differ?”**
@@ -60,3 +69,19 @@ See the [PRD](docs/PRD.md), [architecture](docs/ARCHITECTURE.md), and [metrics](
 ## License
 
 MIT
+
+<!-- catalog:connects:start -->
+## How this connects
+
+**Input → output:** ordered product events → adoption, time-to-value, and privacy-suppressed segments
+
+**Upstream:** [Product Release Readiness & Rollback Controller](../release_readiness_controller/README.md)
+
+**Downstream:** [Product Lifecycle & Deprecation Planner](../product_lifecycle_planner/README.md)
+
+**Related:** [SecondChance Lab](../user_journey_recovery_testing/README.md)
+
+**Track:** PM · Advanced.
+
+**Project 7:** Imported by the [Experiment & Learning Workspace](../experiment-data-quality-auditor/README.md).
+<!-- catalog:connects:end -->

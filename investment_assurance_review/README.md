@@ -1,5 +1,14 @@
 # Product Investment Assurance Review
 
+<!-- catalog:io:start -->
+**Input → output:** post-implementation evidence → completeness findings and a named assurance decision
+
+**Quick start:** `cd investment_assurance_review && npm install && npm run check`
+
+**Track:** PM · Advanced · built
+<!-- catalog:io:end -->
+
+
 Project 17 is ProdMind’s post-implementation decision gate. It combines selected-work lineage with Project 16 benefit measurements, checks whether an investment review is evidence-complete, records a named human decision, and tracks corrective actions.
 
 It answers: **“Can we close, continue, correct, or escalate this product investment—and is the review record complete?”**
@@ -75,3 +84,19 @@ See [PRD](docs/PRD.md), [architecture](docs/ARCHITECTURE.md), and [metrics](docs
 ## License
 
 MIT
+
+<!-- catalog:connects:start -->
+## How this connects
+
+**Input → output:** post-implementation evidence → completeness findings and a named assurance decision
+
+**Upstream:** [Product Benefits Realization Tracker](../benefits_realization_tracker/README.md)
+
+**Downstream:** [Product Assumption Risk Register](../assumption_risk_register/README.md)
+
+**Related:** None in this catalog.
+
+**Track:** PM · Advanced.
+
+**Project 7:** Imported by the [Experiment & Learning Workspace](../experiment-data-quality-auditor/README.md).
+<!-- catalog:connects:end -->

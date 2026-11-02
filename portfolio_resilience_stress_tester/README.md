@@ -9,6 +9,15 @@
 
 </div>
 
+<!-- catalog:io:start -->
+**Input → output:** a portfolio and declared shocks → scenario stress results
+
+**Quick start:** `cd portfolio_resilience_stress_tester && npm install && npm run check`
+
+**Track:** PM · Advanced · built
+<!-- catalog:io:end -->
+
+
 Projects 6, 13, and 14 can select, audit, and rebalance a portfolio. Project 15 asks the next question: does that portfolio remain feasible when an explicitly defined scenario changes capacity, removes a dependency, or expands effort?
 
 ## Product impact
@@ -100,3 +109,19 @@ These sources support explicit risk analysis, alternative evaluation, scenario p
 ## License
 
 [MIT](LICENSE)
+
+<!-- catalog:connects:start -->
+## How this connects
+
+**Input → output:** a portfolio and declared shocks → scenario stress results
+
+**Upstream:** [Strategic Portfolio Rebalancing Simulator](../portfolio_rebalancing_simulator/README.md)
+
+**Downstream:** None in this catalog.
+
+**Related:** None in this catalog.
+
+**Track:** PM · Advanced.
+
+**Project 7:** Imported by the [Experiment & Learning Workspace](../experiment-data-quality-auditor/README.md).
+<!-- catalog:connects:end -->

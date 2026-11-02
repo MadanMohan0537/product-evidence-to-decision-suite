@@ -9,6 +9,15 @@
 
 </div>
 
+<!-- catalog:io:start -->
+**Input → output:** a decision and later snapshots → persistence, reversal, and guardrail signals
+
+**Quick start:** `cd product_outcome_monitor && npm install && npm run check`
+
+**Track:** PM · Advanced · built
+<!-- catalog:io:end -->
+
+
 Project 8 follows a Project 7 decision into the post-decision period. It compares baseline and observed metric series, detects persistence or reversal, checks declared guardrails, and retains the original opportunity, experiment, decision, and evidence identities.
 
 ## Product impact
@@ -91,3 +100,19 @@ docs/            PRD, architecture and metrics
 ## License
 
 [MIT](LICENSE)
+
+<!-- catalog:connects:start -->
+## How this connects
+
+**Input → output:** a decision and later snapshots → persistence, reversal, and guardrail signals
+
+**Upstream:** [Autonomous product analyst](../autonomous_product_analyst/README.md); [Experiment & Learning Workspace](../experiment-data-quality-auditor/README.md)
+
+**Downstream:** [Product Learning Memory](../product_learning_memory/README.md)
+
+**Related:** None in this catalog.
+
+**Track:** PM · Advanced.
+
+**Project 7:** Imported by the [Experiment & Learning Workspace](../experiment-data-quality-auditor/README.md).
+<!-- catalog:connects:end -->

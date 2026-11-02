@@ -1,5 +1,14 @@
 # Roadmap Delivery Estimate Calibration & Reference-Class Engine
 
+<!-- catalog:io:start -->
+**Input → output:** completed comparable work → reviewed estimate factors
+
+**Quick start:** `cd roadmap_estimate_calibration && npm install && npm run check`
+
+**Track:** PM · Advanced · built
+<!-- catalog:io:end -->
+
+
 **ProdMind Project 44 turns completed Projects 40–41 delivery evidence into transparent reference-class calibration factors for future roadmap estimates.**
 
 Project 40 schedules declared duration and capacity. Project 41 captures actual dates and capacity consumed. Project 44 closes the learning loop: it groups comparable completed work, measures historical error, and produces reviewable duration and capacity factors only when the class has enough fresh evidence.
@@ -124,3 +133,19 @@ These sources inform the control model. Product-delivery reference classes are s
 ## License
 
 [MIT](LICENSE)
+
+<!-- catalog:connects:start -->
+## How this connects
+
+**Input → output:** completed comparable work → reviewed estimate factors
+
+**Upstream:** [Roadmap Recovery Execution & Effectiveness Verifier](../roadmap_recovery_verifier/README.md)
+
+**Downstream:** [Roadmap Estimate Basis & Calibration Adoption Controller](../roadmap_estimate_adoption_controller/README.md)
+
+**Related:** None in this catalog.
+
+**Track:** PM · Advanced.
+
+**Project 7:** Imported by the [Experiment & Learning Workspace](../experiment-data-quality-auditor/README.md).
+<!-- catalog:connects:end -->

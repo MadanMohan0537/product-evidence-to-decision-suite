@@ -1,0 +1,1783 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "name": "Feedback Collector",
+      "folder": "feedback_collector",
+      "area": "product_management",
+      "tier": "starter",
+      "track": "PM",
+      "input": "raw customer feedback",
+      "output": "validated, normalized, deduplicated feedback",
+      "feeds_into": [
+        "sentiment_analyzer",
+        "topic_modeler",
+        "feature_request_detector"
+      ],
+      "depends_on": [],
+      "related": [],
+      "quick_start": "cd feedback_collector && npm install && npm run check",
+      "status": "built",
+      "connection": "wired"
+    },
+    {
+      "id": 2,
+      "name": "Sentiment Analyzer",
+      "folder": "sentiment_analyzer",
+      "area": "product_management",
+      "tier": "starter",
+      "track": "PM",
+      "input": "feedback text",
+      "output": "explainable sentiment, aspects, and review flags",
+      "feeds_into": [
+        "voice_of_customer_dashboard"
+      ],
+      "depends_on": [
+        "ai_stakeholder_sentiment_analyzer",
+        "feedback_collector"
+      ],
+      "related": [],
+      "quick_start": "cd sentiment_analyzer && npm install && npm run check",
+      "status": "built",
+      "connection": "wired"
+    },
+    {
+      "id": 3,
+      "name": "Topic Modeler",
+      "folder": "topic_modeler",
+      "area": "product_management",
+      "tier": "starter",
+      "track": "PM",
+      "input": "feedback text",
+      "output": "topic assignments, keywords, hierarchy, and drift",
+      "feeds_into": [
+        "voice_of_customer_dashboard"
+      ],
+      "depends_on": [
+        "feedback_collector"
+      ],
+      "related": [],
+      "quick_start": "cd topic_modeler && npm install && npm run check",
+      "status": "built",
+      "connection": "wired"
+    },
+    {
+      "id": 4,
+      "name": "Feature Request Detector",
+      "folder": "feature_request_detector",
+      "area": "product_management",
+      "tier": "starter",
+      "track": "PM",
+      "input": "feedback text",
+      "output": "multi-label product intent and evidence sentences",
+      "feeds_into": [
+        "voice_of_customer_dashboard"
+      ],
+      "depends_on": [
+        "feedback_collector"
+      ],
+      "related": [],
+      "quick_start": "cd feature_request_detector && npm install && npm run check",
+      "status": "built",
+      "connection": "wired"
+    },
+    {
+      "id": 5,
+      "name": "Voice-of-Customer Dashboard",
+      "folder": "voice_of_customer_dashboard",
+      "area": "product_management",
+      "tier": "starter",
+      "track": "PM",
+      "input": "enriched feedback",
+      "output": "trends, filters, segments, and source evidence",
+      "feeds_into": [
+        "prioritization_engine"
+      ],
+      "depends_on": [
+        "feature_request_detector",
+        "mcp_review_intelligence",
+        "sentiment_analyzer",
+        "topic_modeler"
+      ],
+      "related": [],
+      "quick_start": "cd voice_of_customer_dashboard && npm install && npm run check",
+      "status": "built",
+      "connection": "wired"
+    },
+    {
+      "id": 6,
+      "name": "Prioritization Engine",
+      "folder": "prioritization_engine",
+      "area": "product_management",
+      "tier": "starter",
+      "track": "PM",
+      "input": "opportunities, weights, and capacity",
+      "output": "transparent scores and a capacity-aware portfolio",
+      "feeds_into": [
+        "experiment-data-quality-auditor"
+      ],
+      "depends_on": [
+        "ai_product_discovery_engine",
+        "feedback_prioritizer",
+        "voice_of_customer_dashboard"
+      ],
+      "related": [],
+      "quick_start": "cd prioritization_engine && npm install && npm run check",
+      "status": "built",
+      "connection": "wired"
+    },
+    {
+      "id": 7,
+      "name": "Experiment & Learning Workspace",
+      "folder": "experiment-data-quality-auditor",
+      "area": "product_management",
+      "tier": "connected",
+      "track": "PM",
+      "input": "portfolio selection and event snapshots",
+      "output": "an audited experiment plan and a human decision",
+      "feeds_into": [
+        "product_outcome_monitor"
+      ],
+      "depends_on": [
+        "experiment_decision_workspace",
+        "prioritization_engine"
+      ],
+      "related": [],
+      "quick_start": "cd experiment-data-quality-auditor && npm install && npm run check",
+      "status": "built",
+      "connection": "wired"
+    },
+    {
+      "id": 8,
+      "name": "Product Outcome Monitor",
+      "folder": "product_outcome_monitor",
+      "area": "product_management",
+      "tier": "advanced",
+      "track": "PM",
+      "input": "a decision and later snapshots",
+      "output": "persistence, reversal, and guardrail signals",
+      "feeds_into": [
+        "product_learning_memory"
+      ],
+      "depends_on": [
+        "autonomous_product_analyst",
+        "experiment-data-quality-auditor"
+      ],
+      "related": [],
+      "quick_start": "cd product_outcome_monitor && npm install && npm run check",
+      "status": "built",
+      "connection": "wired"
+    },
+    {
+      "id": 9,
+      "name": "Product Learning Memory",
+      "folder": "product_learning_memory",
+      "area": "product_management",
+      "tier": "advanced",
+      "track": "PM",
+      "input": "saved run evidence",
+      "output": "cross-run lexical retrieval of linked learning",
+      "feeds_into": [
+        "decision_calibration_engine"
+      ],
+      "depends_on": [
+        "product_outcome_monitor"
+      ],
+      "related": [],
+      "quick_start": "cd product_learning_memory && npm install && npm run check",
+      "status": "built",
+      "connection": "wired"
+    },
+    {
+      "id": 10,
+      "name": "Product Decision Calibration Engine",
+      "folder": "decision_calibration_engine",
+      "area": "product_management",
+      "tier": "advanced",
+      "track": "PM",
+      "input": "resolved product forecasts",
+      "output": "Brier scores and reliability bands",
+      "feeds_into": [
+        "evidence_integrity_monitor"
+      ],
+      "depends_on": [
+        "product_learning_memory"
+      ],
+      "related": [],
+      "quick_start": "cd decision_calibration_engine && npm install && npm run check",
+      "status": "built",
+      "connection": "wired"
+    },
+    {
+      "id": 11,
+      "name": "Product Evidence Integrity Monitor",
+      "folder": "evidence_integrity_monitor",
+      "area": "product_management",
+      "tier": "advanced",
+      "track": "PM",
+      "input": "evidence records",
+      "output": "freshness, coverage, concentration, and lineage findings",
+      "feeds_into": [
+        "research_portfolio_optimizer"
+      ],
+      "depends_on": [
+        "decision_calibration_engine"
+      ],
+      "related": [],
+      "quick_start": "cd evidence_integrity_monitor && npm install && npm run check",
+      "status": "built",
+      "connection": "wired"
+    },
+    {
+      "id": 12,
+      "name": "Product Research Portfolio Optimizer",
+      "folder": "research_portfolio_optimizer",
+      "area": "product_management",
+      "tier": "advanced",
+      "track": "PM",
+      "input": "evidence gaps and capacity",
+      "output": "a selected set of research actions",
+      "feeds_into": [
+        "strategy_alignment_auditor"
+      ],
+      "depends_on": [
+        "evidence_integrity_monitor"
+      ],
+      "related": [],
+      "quick_start": "cd research_portfolio_optimizer && npm install && npm run check",
+      "status": "built",
+      "connection": "wired"
+    },
+    {
+      "id": 13,
+      "name": "Product Strategy Alignment Auditor",
+      "folder": "strategy_alignment_auditor",
+      "area": "product_management",
+      "tier": "advanced",
+      "track": "PM",
+      "input": "selected effort and declared objectives",
+      "output": "an effort-allocation alignment audit",
+      "feeds_into": [
+        "portfolio_rebalancing_simulator"
+      ],
+      "depends_on": [
+        "research_portfolio_optimizer"
+      ],
+      "related": [],
+      "quick_start": "cd strategy_alignment_auditor && npm install && npm run check",
+      "status": "built",
+      "connection": "wired"
+    },
+    {
+      "id": 14,
+      "name": "Strategic Portfolio Rebalancing Simulator",
+      "folder": "portfolio_rebalancing_simulator",
+      "area": "product_management",
+      "tier": "advanced",
+      "track": "PM",
+      "input": "a portfolio and declared constraints",
+      "output": "a minimum-disruption rebalancing scenario",
+      "feeds_into": [
+        "portfolio_resilience_stress_tester",
+        "benefits_realization_tracker",
+        "roadmap_delivery_scheduler"
+      ],
+      "depends_on": [
+        "strategy_alignment_auditor"
+      ],
+      "related": [],
+      "quick_start": "cd portfolio_rebalancing_simulator && npm install && npm run check",
+      "status": "built",
+      "connection": "wired"
+    },
+    {
+      "id": 15,
+      "name": "Product Portfolio Resilience Stress Tester",
+      "folder": "portfolio_resilience_stress_tester",
+      "area": "product_management",
+      "tier": "advanced",
+      "track": "PM",
+      "input": "a portfolio and declared shocks",
+      "output": "scenario stress results",
+      "feeds_into": [],
+      "depends_on": [
+        "portfolio_rebalancing_simulator"
+      ],
+      "related": [],
+      "quick_start": "cd portfolio_resilience_stress_tester && npm install && npm run check",
+      "status": "built",
+      "connection": "wired"
+    },
+    {
+      "id": 16,
+      "name": "Product Benefits Realization Tracker",
+      "folder": "benefits_realization_tracker",
+      "area": "product_management",
+      "tier": "advanced",
+      "track": "PM",
+      "input": "benefit targets and observations",
+      "output": "an expected-versus-observed realization ledger",
+      "feeds_into": [
+        "investment_assurance_review"
+      ],
+      "depends_on": [
+        "portfolio_rebalancing_simulator"
+      ],
+      "related": [],
+      "quick_start": "cd benefits_realization_tracker && npm install && npm run check",
+      "status": "built",
+      "connection": "wired"
+    },
+    {
+      "id": 17,
+      "name": "Product Investment Assurance Review",
+      "folder": "investment_assurance_review",
+      "area": "product_management",
+      "tier": "advanced",
+      "track": "PM",
+      "input": "post-implementation evidence",
+      "output": "completeness findings and a named assurance decision",
+      "feeds_into": [
+        "assumption_risk_register"
+      ],
+      "depends_on": [
+        "benefits_realization_tracker"
+      ],
+      "related": [],
+      "quick_start": "cd investment_assurance_review && npm install && npm run check",
+      "status": "built",
+      "connection": "wired"
+    },
+    {
+      "id": 18,
+      "name": "Product Assumption Risk Register",
+      "folder": "assumption_risk_register",
+      "area": "product_management",
+      "tier": "advanced",
+      "track": "PM",
+      "input": "declared assumptions and links",
+      "output": "validation urgency with evidence links",
+      "feeds_into": [
+        "release_readiness_controller"
+      ],
+      "depends_on": [
+        "investment_assurance_review",
+        "launch_premortem_risk_register"
+      ],
+      "related": [],
+      "quick_start": "cd assumption_risk_register && npm install && npm run check",
+      "status": "built",
+      "connection": "wired"
+    },
+    {
+      "id": 19,
+      "name": "Product Release Readiness & Rollback Controller",
+      "folder": "release_readiness_controller",
+      "area": "product_management",
+      "tier": "advanced",
+      "track": "PM",
+      "input": "a rollout plan and declared controls",
+      "output": "progressive-exposure and rollback readiness",
+      "feeds_into": [
+        "feature_adoption_analyzer"
+      ],
+      "depends_on": [
+        "assumption_risk_register",
+        "user_journey_recovery_testing"
+      ],
+      "related": [],
+      "quick_start": "cd release_readiness_controller && npm install && npm run check",
+      "status": "built",
+      "connection": "wired"
+    },
+    {
+      "id": 20,
+      "name": "Feature Adoption Journey Analyzer",
+      "folder": "feature_adoption_analyzer",
+      "area": "product_management",
+      "tier": "advanced",
+      "track": "PM",
+      "input": "ordered product events",
+      "output": "adoption, time-to-value, and privacy-suppressed segments",
+      "feeds_into": [
+        "product_lifecycle_planner"
+      ],
+      "depends_on": [
+        "release_readiness_controller"
+      ],
+      "related": [],
+      "quick_start": "cd feature_adoption_analyzer && npm install && npm run check",
+      "status": "built",
+      "connection": "wired"
+    },
+    {
+      "id": 21,
+      "name": "Product Lifecycle & Deprecation Planner",
+      "folder": "product_lifecycle_planner",
+      "area": "product_management",
+      "tier": "advanced",
+      "track": "PM",
+      "input": "a lifecycle proposal",
+      "output": "migration, notice, dependency, and approval checks",
+      "feeds_into": [
+        "sunset_migration_monitor"
+      ],
+      "depends_on": [
+        "feature_adoption_analyzer"
+      ],
+      "related": [],
+      "quick_start": "cd product_lifecycle_planner && npm install && npm run check",
+      "status": "built",
+      "connection": "wired"
+    },
+    {
+      "id": 22,
+      "name": "Customer Migration & Sunset Monitor",
+      "folder": "sunset_migration_monitor",
+      "area": "product_management",
+      "tier": "advanced",
+      "track": "PM",
+      "input": "migration snapshots",
+      "output": "cohort, notice, exception, and zero-use reconciliation",
+      "feeds_into": [
+        "sunset_outcome_monitor"
+      ],
+      "depends_on": [
+        "product_lifecycle_planner"
+      ],
+      "related": [],
+      "quick_start": "cd sunset_migration_monitor && npm install && npm run check",
+      "status": "built",
+      "connection": "wired"
+    },
+    {
+      "id": 23,
+      "name": "Product Sunset Outcome & Reversibility Monitor",
+      "folder": "sunset_outcome_monitor",
+      "area": "product_management",
+      "tier": "advanced",
+      "track": "PM",
+      "input": "post-sunset evidence",
+      "output": "harm, residual-use, savings, and reversibility review",
+      "feeds_into": [
+        "decision_provenance_pack"
+      ],
+      "depends_on": [
+        "sunset_migration_monitor"
+      ],
+      "related": [],
+      "quick_start": "cd sunset_outcome_monitor && npm install && npm run check",
+      "status": "built",
+      "connection": "wired"
+    },
+    {
+      "id": 24,
+      "name": "Product Decision Provenance & Governance Pack",
+      "folder": "decision_provenance_pack",
+      "area": "product_management",
+      "tier": "advanced",
+      "track": "PM",
+      "input": "decision artifacts",
+      "output": "a SHA-256 provenance pack and certification checks",
+      "feeds_into": [
+        "governance_obligation_monitor"
+      ],
+      "depends_on": [
+        "sunset_outcome_monitor"
+      ],
+      "related": [],
+      "quick_start": "cd decision_provenance_pack && npm install && npm run check",
+      "status": "built",
+      "connection": "wired"
+    },
+    {
+      "id": 25,
+      "name": "Product Governance Obligation & Review Monitor",
+      "folder": "governance_obligation_monitor",
+      "area": "product_management",
+      "tier": "advanced",
+      "track": "PM",
+      "input": "pack digests and obligations",
+      "output": "continuity, review, certification, and retention findings",
+      "feeds_into": [
+        "governance_exception_register"
+      ],
+      "depends_on": [
+        "decision_provenance_pack"
+      ],
+      "related": [],
+      "quick_start": "cd governance_obligation_monitor && npm install && npm run check",
+      "status": "built",
+      "connection": "wired"
+    },
+    {
+      "id": 26,
+      "name": "Product Governance Exception & Waiver Register",
+      "folder": "governance_exception_register",
+      "area": "product_management",
+      "tier": "advanced",
+      "track": "PM",
+      "input": "a failed control and waiver terms",
+      "output": "a time-bounded exception record",
+      "feeds_into": [
+        "exception_exit_verifier"
+      ],
+      "depends_on": [
+        "governance_obligation_monitor"
+      ],
+      "related": [],
+      "quick_start": "cd governance_exception_register && npm install && npm run check",
+      "status": "built",
+      "connection": "wired"
+    },
+    {
+      "id": 27,
+      "name": "Product Exception Exit & Corrective-Action Verifier",
+      "folder": "exception_exit_verifier",
+      "area": "product_management",
+      "tier": "advanced",
+      "track": "PM",
+      "input": "follow-up evidence",
+      "output": "an exception-exit verification result",
+      "feeds_into": [
+        "control_recurrence_monitor"
+      ],
+      "depends_on": [
+        "governance_exception_register"
+      ],
+      "related": [],
+      "quick_start": "cd exception_exit_verifier && npm install && npm run check",
+      "status": "built",
+      "connection": "wired"
+    },
+    {
+      "id": 28,
+      "name": "Product Control Regression & Recurrence Monitor",
+      "folder": "control_recurrence_monitor",
+      "area": "product_management",
+      "tier": "advanced",
+      "track": "PM",
+      "input": "post-exit snapshots",
+      "output": "recurrence and coverage findings",
+      "feeds_into": [
+        "control_improvement_planner"
+      ],
+      "depends_on": [
+        "exception_exit_verifier"
+      ],
+      "related": [],
+      "quick_start": "cd control_recurrence_monitor && npm install && npm run check",
+      "status": "built",
+      "connection": "wired"
+    },
+    {
+      "id": 29,
+      "name": "Product Control Improvement Portfolio Planner",
+      "folder": "control_improvement_planner",
+      "area": "product_management",
+      "tier": "advanced",
+      "track": "PM",
+      "input": "recurrence targets and capacity",
+      "output": "a selected improvement portfolio",
+      "feeds_into": [
+        "control_improvement_outcome_monitor"
+      ],
+      "depends_on": [
+        "control_recurrence_monitor"
+      ],
+      "related": [],
+      "quick_start": "cd control_improvement_planner && npm install && npm run check",
+      "status": "built",
+      "connection": "wired"
+    },
+    {
+      "id": 30,
+      "name": "Product Control Improvement Outcome Monitor",
+      "folder": "control_improvement_outcome_monitor",
+      "area": "product_management",
+      "tier": "advanced",
+      "track": "PM",
+      "input": "delivery and later surveillance",
+      "output": "an improvement-outcome verification",
+      "feeds_into": [
+        "control_improvement_calibration"
+      ],
+      "depends_on": [
+        "control_improvement_planner"
+      ],
+      "related": [],
+      "quick_start": "cd control_improvement_outcome_monitor && npm install && npm run check",
+      "status": "built",
+      "connection": "wired"
+    },
+    {
+      "id": 31,
+      "name": "Product Control Improvement Calibration & Learning Engine",
+      "folder": "control_improvement_calibration",
+      "area": "product_management",
+      "tier": "advanced",
+      "track": "PM",
+      "input": "verified improvements",
+      "output": "a planning calibration report",
+      "feeds_into": [
+        "planning_policy_experiment_planner"
+      ],
+      "depends_on": [
+        "control_improvement_outcome_monitor"
+      ],
+      "related": [],
+      "quick_start": "cd control_improvement_calibration && npm install && npm run check",
+      "status": "built",
+      "connection": "wired"
+    },
+    {
+      "id": 32,
+      "name": "Product Planning Policy Experiment Planner",
+      "folder": "planning_policy_experiment_planner",
+      "area": "product_management",
+      "tier": "advanced",
+      "track": "PM",
+      "input": "calibration gaps",
+      "output": "a reversible policy-experiment plan",
+      "feeds_into": [
+        "planning_policy_outcome_verifier"
+      ],
+      "depends_on": [
+        "control_improvement_calibration"
+      ],
+      "related": [],
+      "quick_start": "cd planning_policy_experiment_planner && npm install && npm run check",
+      "status": "built",
+      "connection": "wired"
+    },
+    {
+      "id": 33,
+      "name": "Product Planning Policy Experiment Outcome Verifier",
+      "folder": "planning_policy_outcome_verifier",
+      "area": "product_management",
+      "tier": "advanced",
+      "track": "PM",
+      "input": "trial observations",
+      "output": "predeclared-measure verification",
+      "feeds_into": [
+        "planning_policy_change_controller"
+      ],
+      "depends_on": [
+        "planning_policy_experiment_planner"
+      ],
+      "related": [],
+      "quick_start": "cd planning_policy_outcome_verifier && npm install && npm run check",
+      "status": "built",
+      "connection": "wired"
+    },
+    {
+      "id": 34,
+      "name": "Product Planning Policy Change & Version Controller",
+      "folder": "planning_policy_change_controller",
+      "area": "product_management",
+      "tier": "advanced",
+      "track": "PM",
+      "input": "an adoption decision",
+      "output": "a versioned policy-change readiness result",
+      "feeds_into": [
+        "planning_policy_rollout_monitor"
+      ],
+      "depends_on": [
+        "planning_policy_outcome_verifier"
+      ],
+      "related": [],
+      "quick_start": "cd planning_policy_change_controller && npm install && npm run check",
+      "status": "built",
+      "connection": "wired"
+    },
+    {
+      "id": 35,
+      "name": "Product Planning Policy Rollout Assurance Monitor",
+      "folder": "planning_policy_rollout_monitor",
+      "area": "product_management",
+      "tier": "advanced",
+      "track": "PM",
+      "input": "rollout observations",
+      "output": "stage, dwell, and evidence assurance",
+      "feeds_into": [
+        "planning_policy_effectiveness_monitor"
+      ],
+      "depends_on": [
+        "planning_policy_change_controller"
+      ],
+      "related": [],
+      "quick_start": "cd planning_policy_rollout_monitor && npm install && npm run check",
+      "status": "built",
+      "connection": "wired"
+    },
+    {
+      "id": 36,
+      "name": "Product Planning Policy Effectiveness & Drift Monitor",
+      "folder": "planning_policy_effectiveness_monitor",
+      "area": "product_management",
+      "tier": "advanced",
+      "track": "PM",
+      "input": "longitudinal observations",
+      "output": "effectiveness and drift findings",
+      "feeds_into": [
+        "planning_policy_recovery_verifier"
+      ],
+      "depends_on": [
+        "planning_policy_rollout_monitor"
+      ],
+      "related": [],
+      "quick_start": "cd planning_policy_effectiveness_monitor && npm install && npm run check",
+      "status": "built",
+      "connection": "wired"
+    },
+    {
+      "id": 37,
+      "name": "Product Planning Policy Reversion & Recovery Verifier",
+      "folder": "planning_policy_recovery_verifier",
+      "area": "product_management",
+      "tier": "advanced",
+      "track": "PM",
+      "input": "reversion evidence",
+      "output": "recovery verification",
+      "feeds_into": [
+        "planning_policy_incident_learning_controller"
+      ],
+      "depends_on": [
+        "planning_policy_effectiveness_monitor"
+      ],
+      "related": [],
+      "quick_start": "cd planning_policy_recovery_verifier && npm install && npm run check",
+      "status": "built",
+      "connection": "wired"
+    },
+    {
+      "id": 38,
+      "name": "Product Planning Policy Incident Learning & Re-entry Controller",
+      "folder": "planning_policy_incident_learning_controller",
+      "area": "product_management",
+      "tier": "advanced",
+      "track": "PM",
+      "input": "an incident record",
+      "output": "a learning review and re-entry gate",
+      "feeds_into": [
+        "planning_policy_reentry_monitor"
+      ],
+      "depends_on": [
+        "planning_policy_recovery_verifier"
+      ],
+      "related": [],
+      "quick_start": "cd planning_policy_incident_learning_controller && npm install && npm run check",
+      "status": "built",
+      "connection": "wired"
+    },
+    {
+      "id": 39,
+      "name": "Product Planning Policy Re-entry Assurance Monitor",
+      "folder": "planning_policy_reentry_monitor",
+      "area": "product_management",
+      "tier": "advanced",
+      "track": "PM",
+      "input": "re-entry observations",
+      "output": "bounded re-entry assurance",
+      "feeds_into": [],
+      "depends_on": [
+        "planning_policy_incident_learning_controller"
+      ],
+      "related": [],
+      "quick_start": "cd planning_policy_reentry_monitor && npm install && npm run check",
+      "status": "built",
+      "connection": "wired"
+    },
+    {
+      "id": 40,
+      "name": "Evidence-linked Product Roadmap Delivery Scheduler",
+      "folder": "roadmap_delivery_scheduler",
+      "area": "product_management",
+      "tier": "advanced",
+      "track": "PM",
+      "input": "selected items, capacity, and dependencies",
+      "output": "a bounded delivery schedule",
+      "feeds_into": [
+        "roadmap_delivery_monitor"
+      ],
+      "depends_on": [
+        "ai_roadmap_optimizer",
+        "portfolio_rebalancing_simulator"
+      ],
+      "related": [],
+      "quick_start": "cd roadmap_delivery_scheduler && npm install && npm run check",
+      "status": "built",
+      "connection": "wired"
+    },
+    {
+      "id": 41,
+      "name": "Roadmap Delivery Execution & Variance Monitor",
+      "folder": "roadmap_delivery_monitor",
+      "area": "product_management",
+      "tier": "advanced",
+      "track": "PM",
+      "input": "a baseline and actuals",
+      "output": "variance, capacity, and blocker controls",
+      "feeds_into": [
+        "roadmap_recovery_planner"
+      ],
+      "depends_on": [
+        "roadmap_delivery_scheduler"
+      ],
+      "related": [],
+      "quick_start": "cd roadmap_delivery_monitor && npm install && npm run check",
+      "status": "built",
+      "connection": "wired"
+    },
+    {
+      "id": 42,
+      "name": "Roadmap Delivery Recovery Action Planner",
+      "folder": "roadmap_recovery_planner",
+      "area": "product_management",
+      "tier": "advanced",
+      "track": "PM",
+      "input": "failed delivery controls",
+      "output": "selected recovery actions",
+      "feeds_into": [
+        "roadmap_recovery_verifier"
+      ],
+      "depends_on": [
+        "roadmap_delivery_monitor"
+      ],
+      "related": [],
+      "quick_start": "cd roadmap_recovery_planner && npm install && npm run check",
+      "status": "built",
+      "connection": "wired"
+    },
+    {
+      "id": 43,
+      "name": "Roadmap Recovery Execution & Effectiveness Verifier",
+      "folder": "roadmap_recovery_verifier",
+      "area": "product_management",
+      "tier": "advanced",
+      "track": "PM",
+      "input": "execution evidence",
+      "output": "restoration verification",
+      "feeds_into": [
+        "roadmap_estimate_calibration"
+      ],
+      "depends_on": [
+        "roadmap_recovery_planner"
+      ],
+      "related": [],
+      "quick_start": "cd roadmap_recovery_verifier && npm install && npm run check",
+      "status": "built",
+      "connection": "wired"
+    },
+    {
+      "id": 44,
+      "name": "Roadmap Delivery Estimate Calibration & Reference-Class Engine",
+      "folder": "roadmap_estimate_calibration",
+      "area": "product_management",
+      "tier": "advanced",
+      "track": "PM",
+      "input": "completed comparable work",
+      "output": "reviewed estimate factors",
+      "feeds_into": [
+        "roadmap_estimate_adoption_controller"
+      ],
+      "depends_on": [
+        "roadmap_recovery_verifier"
+      ],
+      "related": [],
+      "quick_start": "cd roadmap_estimate_calibration && npm install && npm run check",
+      "status": "built",
+      "connection": "wired"
+    },
+    {
+      "id": 45,
+      "name": "Roadmap Estimate Basis & Calibration Adoption Controller",
+      "folder": "roadmap_estimate_adoption_controller",
+      "area": "product_management",
+      "tier": "advanced",
+      "track": "PM",
+      "input": "factors and item bases",
+      "output": "an estimate-adoption control result",
+      "feeds_into": [
+        "roadmap_estimate_effectiveness_monitor"
+      ],
+      "depends_on": [
+        "roadmap_estimate_calibration"
+      ],
+      "related": [],
+      "quick_start": "cd roadmap_estimate_adoption_controller && npm install && npm run check",
+      "status": "built",
+      "connection": "wired"
+    },
+    {
+      "id": 46,
+      "name": "Roadmap Estimate Calibration Effectiveness & Exception Outcome Monitor",
+      "folder": "roadmap_estimate_effectiveness_monitor",
+      "area": "product_management",
+      "tier": "advanced",
+      "track": "PM",
+      "input": "completed outcomes",
+      "output": "an error-reduction review",
+      "feeds_into": [
+        "roadmap_estimate_drift_monitor"
+      ],
+      "depends_on": [
+        "roadmap_estimate_adoption_controller"
+      ],
+      "related": [],
+      "quick_start": "cd roadmap_estimate_effectiveness_monitor && npm install && npm run check",
+      "status": "built",
+      "connection": "wired"
+    },
+    {
+      "id": 47,
+      "name": "Roadmap Estimate Calibration Drift & Recalibration Readiness Monitor",
+      "folder": "roadmap_estimate_drift_monitor",
+      "area": "product_management",
+      "tier": "advanced",
+      "track": "PM",
+      "input": "chronological assessment windows",
+      "output": "drift findings and recalibration candidates",
+      "feeds_into": [
+        "roadmap_recalibration_controller"
+      ],
+      "depends_on": [
+        "roadmap_estimate_effectiveness_monitor"
+      ],
+      "related": [],
+      "quick_start": "cd roadmap_estimate_drift_monitor && npm install && npm run check",
+      "status": "built",
+      "connection": "wired"
+    },
+    {
+      "id": 48,
+      "name": "Roadmap Estimate Recalibration Proposal & Validation Controller",
+      "folder": "roadmap_recalibration_controller",
+      "area": "product_management",
+      "tier": "advanced",
+      "track": "PM",
+      "input": "training rows and a later holdout",
+      "output": "a versioned recalibration proposal",
+      "feeds_into": [
+        "roadmap_recalibration_rollout_monitor"
+      ],
+      "depends_on": [
+        "roadmap_estimate_drift_monitor"
+      ],
+      "related": [],
+      "quick_start": "cd roadmap_recalibration_controller && npm install && npm run check",
+      "status": "built",
+      "connection": "wired"
+    },
+    {
+      "id": 49,
+      "name": "Roadmap Estimate Recalibration Rollout Assurance Monitor",
+      "folder": "roadmap_recalibration_rollout_monitor",
+      "area": "product_management",
+      "tier": "advanced",
+      "track": "PM",
+      "input": "staged exposure evidence",
+      "output": "recalibration rollout assurance",
+      "feeds_into": [
+        "roadmap_recalibration_recovery_verifier"
+      ],
+      "depends_on": [
+        "roadmap_recalibration_controller"
+      ],
+      "related": [],
+      "quick_start": "cd roadmap_recalibration_rollout_monitor && npm install && npm run check",
+      "status": "built",
+      "connection": "wired"
+    },
+    {
+      "id": 50,
+      "name": "Roadmap Recalibration Rollback & Recovery Verifier",
+      "folder": "roadmap_recalibration_recovery_verifier",
+      "area": "product_management",
+      "tier": "advanced",
+      "track": "PM",
+      "input": "rollback evidence",
+      "output": "exact restoration verification",
+      "feeds_into": [
+        "roadmap_recalibration_incident_reentry_controller"
+      ],
+      "depends_on": [
+        "roadmap_recalibration_rollout_monitor"
+      ],
+      "related": [],
+      "quick_start": "cd roadmap_recalibration_recovery_verifier && npm install && npm run check",
+      "status": "built",
+      "connection": "wired"
+    },
+    {
+      "id": 51,
+      "name": "Roadmap Recalibration Incident Learning & Re-entry Controller",
+      "folder": "roadmap_recalibration_incident_reentry_controller",
+      "area": "product_management",
+      "tier": "advanced",
+      "track": "PM",
+      "input": "incident learning",
+      "output": "a recalibration re-entry control",
+      "feeds_into": [
+        "roadmap_recalibration_reentry_monitor"
+      ],
+      "depends_on": [
+        "roadmap_recalibration_recovery_verifier"
+      ],
+      "related": [],
+      "quick_start": "cd roadmap_recalibration_incident_reentry_controller && npm install && npm run check",
+      "status": "built",
+      "connection": "wired"
+    },
+    {
+      "id": 52,
+      "name": "Roadmap Recalibration Re-entry Assurance Monitor",
+      "folder": "roadmap_recalibration_reentry_monitor",
+      "area": "product_management",
+      "tier": "advanced",
+      "track": "PM",
+      "input": "observed re-entry stages",
+      "output": "re-entry assurance",
+      "feeds_into": [
+        "roadmap_recalibration_reentry_promotion_controller"
+      ],
+      "depends_on": [
+        "roadmap_recalibration_incident_reentry_controller"
+      ],
+      "related": [],
+      "quick_start": "cd roadmap_recalibration_reentry_monitor && npm install && npm run check",
+      "status": "built",
+      "connection": "wired"
+    },
+    {
+      "id": 53,
+      "name": "Roadmap Recalibration Re-entry Promotion Controller",
+      "folder": "roadmap_recalibration_reentry_promotion_controller",
+      "area": "product_management",
+      "tier": "advanced",
+      "track": "PM",
+      "input": "sustained checkpoints",
+      "output": "a promotion gate",
+      "feeds_into": [
+        "roadmap_recalibration_promotion_outcome_monitor"
+      ],
+      "depends_on": [
+        "roadmap_recalibration_reentry_monitor"
+      ],
+      "related": [],
+      "quick_start": "cd roadmap_recalibration_reentry_promotion_controller && npm install && npm run check",
+      "status": "built",
+      "connection": "wired"
+    },
+    {
+      "id": 54,
+      "name": "Roadmap Recalibration Promotion Outcome Monitor",
+      "folder": "roadmap_recalibration_promotion_outcome_monitor",
+      "area": "product_management",
+      "tier": "advanced",
+      "track": "PM",
+      "input": "activation evidence",
+      "output": "a promotion outcome review",
+      "feeds_into": [
+        "roadmap_recalibration_baseline_handoff_controller"
+      ],
+      "depends_on": [
+        "roadmap_recalibration_reentry_promotion_controller"
+      ],
+      "related": [],
+      "quick_start": "cd roadmap_recalibration_promotion_outcome_monitor && npm install && npm run check",
+      "status": "built",
+      "connection": "wired"
+    },
+    {
+      "id": 55,
+      "name": "Roadmap Recalibration Baseline Handoff Controller",
+      "folder": "roadmap_recalibration_baseline_handoff_controller",
+      "area": "product_management",
+      "tier": "advanced",
+      "track": "PM",
+      "input": "a retained baseline",
+      "output": "a baseline handoff control",
+      "feeds_into": [
+        "roadmap_recalibration_baseline_drift_monitor"
+      ],
+      "depends_on": [
+        "roadmap_recalibration_promotion_outcome_monitor"
+      ],
+      "related": [],
+      "quick_start": "cd roadmap_recalibration_baseline_handoff_controller && npm install && npm run check",
+      "status": "built",
+      "connection": "wired"
+    },
+    {
+      "id": 56,
+      "name": "Roadmap Recalibration Baseline Configuration Drift Monitor",
+      "folder": "roadmap_recalibration_baseline_drift_monitor",
+      "area": "product_management",
+      "tier": "advanced",
+      "track": "PM",
+      "input": "configuration snapshots",
+      "output": "baseline drift findings",
+      "feeds_into": [],
+      "depends_on": [
+        "roadmap_recalibration_baseline_handoff_controller"
+      ],
+      "related": [],
+      "quick_start": "cd roadmap_recalibration_baseline_drift_monitor && npm install && npm run check",
+      "status": "built",
+      "connection": "wired"
+    },
+    {
+      "id": 57,
+      "name": "Issue to draft PR agent",
+      "folder": "issue_to_draft_pr_agent",
+      "area": "ai_engineering",
+      "tier": "connected",
+      "track": "AI Engineer",
+      "input": "a GitHub issue and a local repository",
+      "output": "a tested draft-PR record with execution evidence",
+      "feeds_into": [
+        "agent_trace_debugger"
+      ],
+      "depends_on": [
+        "requirements_traced_test_generator",
+        "scopelock"
+      ],
+      "related": [],
+      "quick_start": "cd issue_to_draft_pr_agent && python -m pip install -e '.[dev]' && PYTHONPATH=. python -m pytest -q",
+      "status": "built",
+      "connection": "planned"
+    },
+    {
+      "id": 58,
+      "name": "ScopeLock",
+      "folder": "scopelock",
+      "area": "ai_engineering",
+      "tier": "starter",
+      "track": "AI Engineer",
+      "input": "an agent tool call and a policy",
+      "output": "an allow or deny decision with an audit record",
+      "feeds_into": [
+        "issue_to_draft_pr_agent"
+      ],
+      "depends_on": [],
+      "related": [],
+      "quick_start": "cd scopelock && PYTHONPATH=. python -m unittest discover -s tests -v",
+      "status": "built",
+      "connection": "planned"
+    },
+    {
+      "id": 59,
+      "name": "TraceLoom",
+      "folder": "agent_trace_debugger",
+      "area": "ai_engineering",
+      "tier": "advanced",
+      "track": "AI Engineer",
+      "input": "multi-step agent spans",
+      "output": "a replayable timeline, failure class, and cost per successful task",
+      "feeds_into": [],
+      "depends_on": [
+        "issue_to_draft_pr_agent"
+      ],
+      "related": [],
+      "quick_start": "cd agent_trace_debugger && PYTHONPATH=. python -m unittest discover -s tests -v",
+      "status": "built",
+      "connection": "planned"
+    },
+    {
+      "id": 60,
+      "name": "CaseFoundry",
+      "folder": "requirements_traced_test_generator",
+      "area": "ai_engineering",
+      "tier": "advanced",
+      "track": "AI Engineer",
+      "input": "numbered PRD clauses",
+      "output": "traceable cases and a mutation-detection report",
+      "feeds_into": [
+        "issue_to_draft_pr_agent"
+      ],
+      "depends_on": [
+        "briefly_prd_ai"
+      ],
+      "related": [],
+      "quick_start": "cd requirements_traced_test_generator && PYTHONPATH=. python -m unittest discover -s tests -v",
+      "status": "built",
+      "connection": "planned"
+    },
+    {
+      "id": 61,
+      "name": "Sentinel eval harness",
+      "folder": "sentinel_eval_harness",
+      "area": "ai_engineering",
+      "tier": "advanced",
+      "track": "AI Engineer",
+      "input": "a versioned evaluation set",
+      "output": "a pass-rate gate with cost evidence",
+      "feeds_into": [
+        "prompt_release_management"
+      ],
+      "depends_on": [
+        "llm_judge_calibration_workbench"
+      ],
+      "related": [],
+      "quick_start": "cd sentinel_eval_harness && python -m pip install pytest && PYTHONPATH=. python -m pytest -q",
+      "status": "built",
+      "connection": "planned"
+    },
+    {
+      "id": 62,
+      "name": "VerdictLens",
+      "folder": "llm_judge_calibration_workbench",
+      "area": "ai_engineering",
+      "tier": "advanced",
+      "track": "AI Engineer",
+      "input": "pairwise judge votes and reference labels",
+      "output": "agreement, kappa, and order or length bias probes",
+      "feeds_into": [
+        "sentinel_eval_harness"
+      ],
+      "depends_on": [],
+      "related": [],
+      "quick_start": "cd llm_judge_calibration_workbench && PYTHONPATH=. python -m unittest discover -s tests -v",
+      "status": "built",
+      "connection": "planned"
+    },
+    {
+      "id": 63,
+      "name": "ShadowGauge",
+      "folder": "shadow_eval_drift_monitor",
+      "area": "ai_engineering",
+      "tier": "advanced",
+      "track": "AI Engineer",
+      "input": "sampled AI interactions",
+      "output": "off-path grades and a two-window drift incident",
+      "feeds_into": [],
+      "depends_on": [
+        "releaseproof"
+      ],
+      "related": [],
+      "quick_start": "cd shadow_eval_drift_monitor && PYTHONPATH=. python -m unittest discover -s tests -v",
+      "status": "built",
+      "connection": "planned"
+    },
+    {
+      "id": 64,
+      "name": "GuardrailCI",
+      "folder": "ai_red_team_regression_suite",
+      "area": "ai_engineering",
+      "tier": "advanced",
+      "track": "AI Engineer",
+      "input": "a versioned multi-step attack library",
+      "output": "rubric scores and a release regression report",
+      "feeds_into": [
+        "prompt_release_management"
+      ],
+      "depends_on": [],
+      "related": [
+        "ai_use_case_risk_registry"
+      ],
+      "quick_start": "cd ai_red_team_regression_suite && PYTHONPATH=. python -m unittest discover -s tests -v",
+      "status": "built",
+      "connection": "planned"
+    },
+    {
+      "id": 65,
+      "name": "PromptHarbor",
+      "folder": "prompt_release_management",
+      "area": "ai_engineering",
+      "tier": "starter",
+      "track": "AI Engineer",
+      "input": "a prompt bundle change and eval evidence",
+      "output": "a versioned release with canary and rollback records",
+      "feeds_into": [
+        "releaseproof"
+      ],
+      "depends_on": [
+        "ai_red_team_regression_suite",
+        "ai_use_case_risk_registry",
+        "sentinel_eval_harness"
+      ],
+      "related": [],
+      "quick_start": "cd prompt_release_management && PYTHONPATH=. python -m unittest discover -s tests -v",
+      "status": "built",
+      "connection": "planned"
+    },
+    {
+      "id": 66,
+      "name": "ReleaseProof",
+      "folder": "releaseproof",
+      "area": "ai_engineering",
+      "tier": "starter",
+      "track": "AI Engineer",
+      "input": "baseline and candidate evaluation runs",
+      "output": "a PASS or BLOCK decision with case-level evidence",
+      "feeds_into": [
+        "shadow_eval_drift_monitor"
+      ],
+      "depends_on": [
+        "prompt_release_management"
+      ],
+      "related": [
+        "release_readiness_controller"
+      ],
+      "quick_start": "cd releaseproof && PYTHONPATH=. python -m unittest discover -s tests -v",
+      "status": "built",
+      "connection": "planned"
+    },
+    {
+      "id": 67,
+      "name": "ControlLedger",
+      "folder": "ai_use_case_risk_registry",
+      "area": "ai_engineering",
+      "tier": "starter",
+      "track": "AI Engineer",
+      "input": "structured AI system intake",
+      "output": "a tiered control checklist and evidence inventory",
+      "feeds_into": [
+        "prompt_release_management"
+      ],
+      "depends_on": [],
+      "related": [],
+      "quick_start": "cd ai_use_case_risk_registry && PYTHONPATH=. python -m unittest discover -s tests -v",
+      "status": "built",
+      "connection": "planned"
+    },
+    {
+      "id": 68,
+      "name": "Briefly PRD workspace",
+      "folder": "briefly_prd_ai",
+      "area": "product_management",
+      "tier": "advanced",
+      "track": "PM",
+      "input": "a rough product concept",
+      "output": "an editable PRD draft",
+      "feeds_into": [
+        "requirements_traced_test_generator",
+        "launch_premortem_risk_register",
+        "ai_project_manager_assistant"
+      ],
+      "depends_on": [],
+      "related": [],
+      "quick_start": "cd briefly_prd_ai && pnpm install && pnpm test",
+      "status": "built",
+      "connection": "planned"
+    },
+    {
+      "id": 69,
+      "name": "AI project manager assistant",
+      "folder": "ai_project_manager_assistant",
+      "area": "product_management",
+      "tier": "advanced",
+      "track": "PM",
+      "input": "a project description and a team",
+      "output": "a work breakdown, assignments, and a RAID register",
+      "feeds_into": [
+        "ai_roadmap_optimizer"
+      ],
+      "depends_on": [
+        "briefly_prd_ai"
+      ],
+      "related": [
+        "roadmap_delivery_scheduler"
+      ],
+      "quick_start": "cd ai_project_manager_assistant && npm install && npm run check",
+      "status": "built",
+      "connection": "planned"
+    },
+    {
+      "id": 70,
+      "name": "Experiment decision workspace",
+      "folder": "experiment_decision_workspace",
+      "area": "product_management",
+      "tier": "connected",
+      "track": "PM",
+      "input": "a hypothesis, results, and guardrails",
+      "output": "a ship, hold, iterate, or rollback record",
+      "feeds_into": [
+        "experiment-data-quality-auditor"
+      ],
+      "depends_on": [
+        "ab_test_design_and_readout",
+        "bayesian_ab_test_advisor"
+      ],
+      "related": [],
+      "quick_start": "cd experiment_decision_workspace && npm install && npm test",
+      "status": "built",
+      "connection": "planned"
+    },
+    {
+      "id": 71,
+      "name": "Experimentation copilot",
+      "folder": "ab_test_design_and_readout",
+      "area": "product_management",
+      "tier": "advanced",
+      "track": "PM",
+      "input": "a hypothesis and observed results",
+      "output": "a sample-size plan and a validity-first readout",
+      "feeds_into": [
+        "experiment_decision_workspace"
+      ],
+      "depends_on": [],
+      "related": [
+        "bayesian_ab_test_advisor"
+      ],
+      "quick_start": "cd ab_test_design_and_readout && python -m pip install -r requirements.txt && PYTHONPATH=. python -m unittest discover -s tests -v",
+      "status": "built",
+      "connection": "planned"
+    },
+    {
+      "id": 72,
+      "name": "AB Advisor",
+      "folder": "bayesian_ab_test_advisor",
+      "area": "product_management",
+      "tier": "advanced",
+      "track": "PM",
+      "input": "variant assignments and metric outcomes",
+      "output": "posterior lift and expected loss",
+      "feeds_into": [
+        "experiment_decision_workspace"
+      ],
+      "depends_on": [],
+      "related": [
+        "ab_test_design_and_readout"
+      ],
+      "quick_start": "cd bayesian_ab_test_advisor && python -m pip install numpy scipy pytest && PYTHONPATH=. python -m pytest -q",
+      "status": "built",
+      "connection": "planned"
+    },
+    {
+      "id": 73,
+      "name": "Signal stakeholder sentiment",
+      "folder": "ai_stakeholder_sentiment_analyzer",
+      "area": "product_management",
+      "tier": "advanced",
+      "track": "PM",
+      "input": "stakeholder comments",
+      "output": "topic, sentiment, and urgency with source quotes",
+      "feeds_into": [
+        "sentiment_analyzer"
+      ],
+      "depends_on": [],
+      "related": [],
+      "quick_start": "cd ai_stakeholder_sentiment_analyzer && python -m pip install -r requirements.txt && PYTHONPATH=. python -m pytest -q",
+      "status": "built",
+      "connection": "planned"
+    },
+    {
+      "id": 74,
+      "name": "AI product discovery engine",
+      "folder": "ai_product_discovery_engine",
+      "area": "product_management",
+      "tier": "advanced",
+      "track": "PM",
+      "input": "customer feedback text",
+      "output": "ranked opportunities with evidence links",
+      "feeds_into": [
+        "prioritization_engine"
+      ],
+      "depends_on": [],
+      "related": [
+        "feedback_collector",
+        "voice_of_customer_dashboard"
+      ],
+      "quick_start": "cd ai_product_discovery_engine && node --test tests/*.test.js",
+      "status": "built",
+      "connection": "planned"
+    },
+    {
+      "id": 75,
+      "name": "Pulse feedback prioritizer",
+      "folder": "feedback_prioritizer",
+      "area": "product_management",
+      "tier": "connected",
+      "track": "PM",
+      "input": "feedback from disconnected channels",
+      "output": "normalized evidence and a transparent priority list",
+      "feeds_into": [
+        "prioritization_engine"
+      ],
+      "depends_on": [],
+      "related": [
+        "feedback_collector"
+      ],
+      "quick_start": "cd feedback_prioritizer && python -m pip install scikit-learn pandas numpy && PYTHONPATH=. python -m unittest discover -s tests -v",
+      "status": "built",
+      "connection": "planned"
+    },
+    {
+      "id": 76,
+      "name": "AI roadmap optimizer",
+      "folder": "ai_roadmap_optimizer",
+      "area": "product_management",
+      "tier": "advanced",
+      "track": "PM",
+      "input": "a feature backlog and capacity",
+      "output": "feasible, strategy-aware delivery scenarios",
+      "feeds_into": [
+        "roadmap_delivery_scheduler"
+      ],
+      "depends_on": [
+        "ai_project_manager_assistant"
+      ],
+      "related": [
+        "portfolio_rebalancing_simulator"
+      ],
+      "quick_start": "cd ai_roadmap_optimizer && node --test",
+      "status": "built",
+      "connection": "planned"
+    },
+    {
+      "id": 77,
+      "name": "RiskCouncil",
+      "folder": "launch_premortem_risk_register",
+      "area": "product_management",
+      "tier": "starter",
+      "track": "PM",
+      "input": "a launch brief",
+      "output": "a multi-perspective premortem risk register",
+      "feeds_into": [
+        "assumption_risk_register"
+      ],
+      "depends_on": [
+        "briefly_prd_ai"
+      ],
+      "related": [],
+      "quick_start": "cd launch_premortem_risk_register && PYTHONPATH=. python -m unittest discover -s tests -v",
+      "status": "built",
+      "connection": "planned"
+    },
+    {
+      "id": 78,
+      "name": "SecondChance Lab",
+      "folder": "user_journey_recovery_testing",
+      "area": "product_management",
+      "tier": "advanced",
+      "track": "PM",
+      "input": "a critical user-journey contract",
+      "output": "interruption results and side-effect checks",
+      "feeds_into": [
+        "release_readiness_controller"
+      ],
+      "depends_on": [],
+      "related": [
+        "feature_adoption_analyzer"
+      ],
+      "quick_start": "cd user_journey_recovery_testing && npm install && npm test",
+      "status": "built",
+      "connection": "planned"
+    },
+    {
+      "id": 79,
+      "name": "Autonomous product analyst",
+      "folder": "autonomous_product_analyst",
+      "area": "data_analytics",
+      "tier": "connected",
+      "track": "Data analytics",
+      "input": "a question about a governed metric",
+      "output": "a segment investigation with the queries that support it",
+      "feeds_into": [
+        "product_outcome_monitor"
+      ],
+      "depends_on": [
+        "governed_metric_query_engine"
+      ],
+      "related": [],
+      "quick_start": "cd autonomous_product_analyst && python -m pip install -r requirements.txt && PYTHONPATH=. python -m unittest discover -s tests -v",
+      "status": "built",
+      "connection": "planned"
+    },
+    {
+      "id": 80,
+      "name": "MetricPact",
+      "folder": "governed_metric_query_engine",
+      "area": "data_analytics",
+      "tier": "advanced",
+      "track": "Data analytics",
+      "input": "a business question and an allow-listed metric layer",
+      "output": "a metric answer inside the scan budget",
+      "feeds_into": [
+        "autonomous_product_analyst"
+      ],
+      "depends_on": [
+        "data_contract_impact_checker"
+      ],
+      "related": [],
+      "quick_start": "cd governed_metric_query_engine && PYTHONPATH=. python -m unittest discover -s tests -v",
+      "status": "built",
+      "connection": "planned"
+    },
+    {
+      "id": 81,
+      "name": "SchemaPact",
+      "folder": "data_contract_impact_checker",
+      "area": "data_analytics",
+      "tier": "starter",
+      "track": "Data analytics",
+      "input": "a versioned data contract and a batch or schema change",
+      "output": "a pass, warn, or block decision and consumer impact",
+      "feeds_into": [
+        "governed_metric_query_engine"
+      ],
+      "depends_on": [],
+      "related": [],
+      "quick_start": "cd data_contract_impact_checker && PYTHONPATH=. python -m unittest discover -s tests -v",
+      "status": "built",
+      "connection": "planned"
+    },
+    {
+      "id": 82,
+      "name": "FraudShield",
+      "folder": "explainable_order_risk_scoring",
+      "area": "data_analytics",
+      "tier": "advanced",
+      "track": "Data analytics",
+      "input": "order features",
+      "output": "an explainable risk score",
+      "feeds_into": [
+        "confidence_routing_review_queue"
+      ],
+      "depends_on": [],
+      "related": [
+        "marketplace_risk_intelligence"
+      ],
+      "quick_start": "cd explainable_order_risk_scoring && node --check worker/index.js",
+      "status": "built",
+      "connection": "planned"
+    },
+    {
+      "id": 83,
+      "name": "MCP price tracker",
+      "folder": "mcp_price_tracker",
+      "area": "data_analytics",
+      "tier": "starter",
+      "track": "Data analytics",
+      "input": "public price and availability observations",
+      "output": "price history and threshold checks",
+      "feeds_into": [],
+      "depends_on": [],
+      "related": [
+        "marketplace_risk_intelligence",
+        "strategy_alignment_auditor"
+      ],
+      "quick_start": "cd mcp_price_tracker && PYTHONPATH=. python -m unittest discover -s tests -v",
+      "status": "built",
+      "connection": "planned"
+    },
+    {
+      "id": 84,
+      "name": "MCP review intelligence",
+      "folder": "mcp_review_intelligence",
+      "area": "data_analytics",
+      "tier": "starter",
+      "track": "Data analytics",
+      "input": "a review export",
+      "output": "deduplicated themes and sentiment with source rows",
+      "feeds_into": [
+        "voice_of_customer_dashboard"
+      ],
+      "depends_on": [],
+      "related": [
+        "sentiment_analyzer",
+        "topic_modeler"
+      ],
+      "quick_start": "cd mcp_review_intelligence && PYTHONPATH=. python -m unittest discover -s tests -v",
+      "status": "built",
+      "connection": "planned"
+    },
+    {
+      "id": 85,
+      "name": "DriftDocket",
+      "folder": "model_drift_retraining_decisions",
+      "area": "data_analytics",
+      "tier": "advanced",
+      "track": "Data analytics",
+      "input": "feature and mature-label snapshots",
+      "output": "drift findings and an evidence-backed retraining ticket",
+      "feeds_into": [
+        "counterfactual_fairness_audit"
+      ],
+      "depends_on": [
+        "synthetic_data_release_audit"
+      ],
+      "related": [],
+      "quick_start": "cd model_drift_retraining_decisions && PYTHONPATH=. python -m unittest discover -s tests -v",
+      "status": "built",
+      "connection": "planned"
+    },
+    {
+      "id": 86,
+      "name": "SynthSeal",
+      "folder": "synthetic_data_release_audit",
+      "area": "data_analytics",
+      "tier": "advanced",
+      "track": "Data analytics",
+      "input": "a synthetic table and a real holdout",
+      "output": "fidelity, utility, privacy, and a data card",
+      "feeds_into": [
+        "model_drift_retraining_decisions"
+      ],
+      "depends_on": [],
+      "related": [],
+      "quick_start": "cd synthetic_data_release_audit && PYTHONPATH=. python -m unittest discover -s tests -v",
+      "status": "built",
+      "connection": "planned"
+    },
+    {
+      "id": 87,
+      "name": "ParityProbe",
+      "folder": "counterfactual_fairness_audit",
+      "area": "data_analytics",
+      "tier": "advanced",
+      "track": "Data analytics",
+      "input": "scored records and attribute-swap pairs",
+      "output": "flip rates with uncertainty and a mitigation comparison",
+      "feeds_into": [
+        "confidence_routing_review_queue"
+      ],
+      "depends_on": [
+        "model_drift_retraining_decisions"
+      ],
+      "related": [],
+      "quick_start": "cd counterfactual_fairness_audit && PYTHONPATH=. python -m unittest discover -s tests -v",
+      "status": "built",
+      "connection": "planned"
+    },
+    {
+      "id": 88,
+      "name": "QueueCal",
+      "folder": "confidence_routing_review_queue",
+      "area": "data_analytics",
+      "tier": "advanced",
+      "track": "Data analytics",
+      "input": "confidence scores, error cost, and reviewer capacity",
+      "output": "a threshold and an SLA queue plan",
+      "feeds_into": [],
+      "depends_on": [
+        "counterfactual_fairness_audit",
+        "explainable_order_risk_scoring"
+      ],
+      "related": [],
+      "quick_start": "cd confidence_routing_review_queue && PYTHONPATH=. python -m unittest discover -s tests -v",
+      "status": "built",
+      "connection": "planned"
+    },
+    {
+      "id": 89,
+      "name": "Shop risk intelligence",
+      "folder": "marketplace_risk_intelligence",
+      "area": "data_analytics",
+      "tier": "advanced",
+      "track": "Data analytics",
+      "input": "synthetic marketplace orders and rules",
+      "output": "a risk investigation report",
+      "feeds_into": [],
+      "depends_on": [],
+      "related": [
+        "explainable_order_risk_scoring"
+      ],
+      "quick_start": "cd marketplace_risk_intelligence && python -m pip install -r requirements.txt && PYTHONPATH=. python -m pytest -q",
+      "status": "built",
+      "connection": "planned"
+    }
+  ]
+}

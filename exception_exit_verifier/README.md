@@ -1,5 +1,14 @@
 # Product Exception Exit & Corrective-Action Verifier
 
+<!-- catalog:io:start -->
+**Input → output:** follow-up evidence → an exception-exit verification result
+
+**Quick start:** `cd exception_exit_verifier && npm install && npm run check`
+
+**Track:** PM · Advanced · built
+<!-- catalog:io:end -->
+
+
 **Project 27 of ProdMind verifies that remediation is effective before an exception is closed.**
 
 It joins a Project 26 active exception to a later Project 25 monitor, verifies that the original target and remediation obligation are resolved, evaluates explicit effectiveness tests over a declared observation window, and requires independent approval. It preserves the failed-control history and never mutates either upstream report.
@@ -48,3 +57,19 @@ The standalone endpoint is `POST /api/exception-exits`. Project 7 reconstructs t
 These sources inform the workflow; the result is not certification or legal compliance.
 
 See [PRD](docs/PRD.md), [architecture](docs/ARCHITECTURE.md), and [metrics](docs/METRICS.md). Apache-2.0 licensed.
+
+<!-- catalog:connects:start -->
+## How this connects
+
+**Input → output:** follow-up evidence → an exception-exit verification result
+
+**Upstream:** [Product Governance Exception & Waiver Register](../governance_exception_register/README.md)
+
+**Downstream:** [Product Control Regression & Recurrence Monitor](../control_recurrence_monitor/README.md)
+
+**Related:** None in this catalog.
+
+**Track:** PM · Advanced.
+
+**Project 7:** Imported by the [Experiment & Learning Workspace](../experiment-data-quality-auditor/README.md).
+<!-- catalog:connects:end -->

@@ -9,6 +9,15 @@
 
 </div>
 
+<!-- catalog:io:start -->
+**Input → output:** feedback text → topic assignments, keywords, hierarchy, and drift
+
+**Quick start:** `cd topic_modeler && npm install && npm run check`
+
+**Track:** PM · Starter · built
+<!-- catalog:io:end -->
+
+
 Project 3 converts enriched feedback into lightweight topics, weighted keywords, document assignments, a topic hierarchy, and a descriptive drift signal. Every assignment retains the Project 1 evidence ID used by downstream opportunities.
 
 ## Product impact
@@ -93,3 +102,19 @@ test/                    Core and Worker tests
 ## License
 
 Licensed under the repository-level [Apache License 2.0](../LICENSE).
+
+<!-- catalog:connects:start -->
+## How this connects
+
+**Input → output:** feedback text → topic assignments, keywords, hierarchy, and drift
+
+**Upstream:** [Feedback Collector](../feedback_collector/README.md)
+
+**Downstream:** [Voice-of-Customer Dashboard](../voice_of_customer_dashboard/README.md)
+
+**Related:** [MCP review intelligence](../mcp_review_intelligence/README.md)
+
+**Track:** PM · Starter.
+
+**Project 7:** Imported by the [Experiment & Learning Workspace](../experiment-data-quality-auditor/README.md).
+<!-- catalog:connects:end -->

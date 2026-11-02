@@ -1,0 +1,12 @@
+﻿__pycache__/
+*.pyc
+.streamlit/
+*.log
+.env
+.feedback-prioritizer/
+data/*.db
+data/*.db-*
+exports/
+__pycache__/
+*.py[cod]
+.venv/
