@@ -123,7 +123,7 @@ Licensed under the repository-level [Apache License 2.0](../LICENSE).
 
 **Downstream:** [Sentiment Analyzer](../sentiment_analyzer/README.md); [Topic Modeler](../topic_modeler/README.md); [Feature Request Detector](../feature_request_detector/README.md)
 
-**Related:** [AI product discovery engine](../ai_product_discovery_engine/README.md); [Pulse feedback prioritizer](../feedback_prioritizer/README.md); Semantic feedback embedder *(planned, not in the repo)*
+**Related:** [AI product discovery engine](../ai_product_discovery_engine/README.md); [Pulse feedback prioritizer](../feedback_prioritizer/README.md)
 
 **Track:** PM · Starter.
 

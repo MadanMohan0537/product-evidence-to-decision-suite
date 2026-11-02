@@ -103,7 +103,7 @@ MIT
 
 **Downstream:** [Product Investment Assurance Review](../investment_assurance_review/README.md)
 
-**Related:** Causal impact estimator *(planned, not in the repo)*
+**Related:** None in this catalog.
 
 **Track:** PM · Advanced.
 

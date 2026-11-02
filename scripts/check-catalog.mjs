@@ -117,8 +117,6 @@ function walkMarkdown(directory) {
 walkMarkdown(root);
 
 const readme = readFileSync(join(root, 'README.md'), 'utf8');
-if (!readme.includes('](ROADMAP_50_DAYS.md)')) fail('root README does not link to ROADMAP_50_DAYS.md');
-if (!existsSync(join(root, 'ROADMAP_50_DAYS.md'))) fail('ROADMAP_50_DAYS.md is missing');
 for (const project of projects.filter(project => project.status === 'planned')) {
   if (readme.includes(`](${project.id}/)`)) fail(`README links to planned id ${project.id} as a folder`);
 }

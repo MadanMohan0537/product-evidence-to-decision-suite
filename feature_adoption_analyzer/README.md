@@ -79,7 +79,7 @@ MIT
 
 **Downstream:** [Product Lifecycle & Deprecation Planner](../product_lifecycle_planner/README.md)
 
-**Related:** [SecondChance Lab](../user_journey_recovery_testing/README.md); Cohort retention modeler *(planned, not in the repo)*
+**Related:** [SecondChance Lab](../user_journey_recovery_testing/README.md)
 
 **Track:** PM · Advanced.
 

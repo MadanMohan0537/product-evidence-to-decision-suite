@@ -16,7 +16,6 @@
 | --- | --- |
 | Experience the composed workflow | [Project 7 workspace](experiment-data-quality-auditor/README.md) |
 | Find a bounded product tool | The catalog below, grouped by track |
-| See work that is not built yet | [50-day roadmap](ROADMAP_50_DAYS.md) |
 | Review what is connected | The implementation and security sections below |
 | Contribute to one module | Its own README and source directory |
 
@@ -42,7 +41,7 @@ The connected suite for Projects 1–56 is:
 node experiment-data-quality-auditor/scripts/test-all.mjs
 ```
 
-Every other folder has its own quick start in the catalog. Proposed projects that are not folders yet are listed in [ROADMAP_50_DAYS.md](ROADMAP_50_DAYS.md).
+Every other folder has its own quick start in the catalog.
 
 ## Product lifecycle
 
@@ -173,14 +172,14 @@ The product should be evaluated by evidence-linked decisions, time saved with re
 <!-- catalog:tracks:start -->
 ## Tracks
 
-Projects already in the repo are grouped by area and tier. The quick start is the command for that folder. [ROADMAP_50_DAYS.md](ROADMAP_50_DAYS.md) is the separate proposal for projects that are not built yet. Planned rows in this catalog are gaps only; they are not folders.
+Projects already in the repo are grouped by area and tier. The quick start is the command for that folder.
 
-| Area | Built | Planned in this catalog |
-|---|---:|---:|
-| Product management | 67 | 0 |
-| AI engineering | 11 | 1 |
-| Data analytics | 11 | 2 |
-| **Catalog total** | **89** | **3** |
+| Area | Built |
+|---|---:|
+| Product management | 67 |
+| AI engineering | 11 |
+| Data analytics | 11 |
+| **Catalog total** | **89** |
 
 Solid arrows in the maps are the connected product-management lifecycle already imported by Project 7. Dotted arrows are intended handoffs. Dotted arrows are not Worker imports, and a downstream project does not read the upstream project’s files.
 
@@ -436,12 +435,6 @@ flowchart LR
 | 63 | [ShadowGauge](shadow_eval_drift_monitor/) | sampled AI interactions → off-path grades and a two-window drift incident | `cd shadow_eval_drift_monitor && PYTHONPATH=. python -m unittest discover -s tests -v` | AI Engineer |
 | 64 | [GuardrailCI](ai_red_team_regression_suite/) | a versioned multi-step attack library → rubric scores and a release regression report | `cd ai_red_team_regression_suite && PYTHONPATH=. python -m unittest discover -s tests -v` | AI Engineer |
 
-Planned. Not built, and not a folder in this repo:
-
-| # | Project | Input → output | Quick start | Track |
-|---:|---|---|---|---|
-| — | Semantic feedback embedder *(planned)* | raw feedback text → a vector index and duplicate clusters | `Not built. See ROADMAP_50_DAYS.md day 1.` | AI Engineer |
-
 #### Connected workflow
 
 | # | Project | Input → output | Quick start | Track |
@@ -499,13 +492,6 @@ flowchart LR
 | 87 | [ParityProbe](counterfactual_fairness_audit/) | scored records and attribute-swap pairs → flip rates with uncertainty and a mitigation comparison | `cd counterfactual_fairness_audit && PYTHONPATH=. python -m unittest discover -s tests -v` | Data analytics |
 | 88 | [QueueCal](confidence_routing_review_queue/) | confidence scores, error cost, and reviewer capacity → a threshold and an SLA queue plan | `cd confidence_routing_review_queue && PYTHONPATH=. python -m unittest discover -s tests -v` | Data analytics |
 | 89 | [Shop risk intelligence](marketplace_risk_intelligence/) | synthetic marketplace orders and rules → a risk investigation report | `cd marketplace_risk_intelligence && python -m pip install -r requirements.txt && PYTHONPATH=. python -m pytest -q` | Data analytics |
-
-Planned. Not built, and not a folder in this repo:
-
-| # | Project | Input → output | Quick start | Track |
-|---:|---|---|---|---|
-| — | Causal impact estimator *(planned)* | a launch date and a metric time series → a synthetic-control or difference-in-differences interval | `Not built. See ROADMAP_50_DAYS.md day 14.` | Data analytics |
-| — | Cohort retention modeler *(planned)* | product events → cohort curves and a survival summary | `Not built. See ROADMAP_50_DAYS.md day 15.` | Data analytics |
 
 #### Connected workflow
 
@@ -838,7 +824,6 @@ These rows cover folders 57 and above. They do not change the Project 1–56 beh
 | Product management imports (11 folders) | Standalone code. Overlapping A/B, discovery, feedback, and roadmap tools are cross-linked in the catalog rather than copied into Project 7. |
 | Data analytics imports (11 folders) | Standalone code. Metric, contract, drift, fairness, and review tools do not replace Projects 2, 5, 8, or 10. |
 | Intended links | Documented in each folder under How this connects and drawn as dotted arrows. Not executed by the connected Worker. |
-| Planned catalog rows | Names only. No folder, tests, or UI. The full proposal is ROADMAP_50_DAYS.md. |
 <!-- catalog:honest:end -->
 
 ## Repository structure
@@ -942,7 +927,6 @@ Imported and existing catalog folders:
 
 ## Documentation
 
-- [50-day portfolio roadmap](ROADMAP_50_DAYS.md) (planned only; nothing in that file is a folder yet)
 - [Connected contracts and limits](experiment-data-quality-auditor/docs/CONNECTED_WORKFLOW.md)
 - [Connected workspace PRD](experiment-data-quality-auditor/docs/PRD.md)
 - Each project folder contains its own implementation-aligned README and supporting schemas or documentation.

@@ -110,7 +110,7 @@ docs/            PRD, architecture and metrics
 
 **Downstream:** [Product Learning Memory](../product_learning_memory/README.md)
 
-**Related:** Causal impact estimator *(planned, not in the repo)*
+**Related:** None in this catalog.
 
 **Track:** PM · Advanced.
 

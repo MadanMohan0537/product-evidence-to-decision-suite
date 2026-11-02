@@ -4,7 +4,6 @@ on:
     paths:
       - 'catalog.json'
       - 'README.md'
-      - 'ROADMAP_50_DAYS.md'
       - 'scripts/check-catalog.mjs'
       - 'scripts/generate-catalog.mjs'
       - '.github/workflows/catalog-consistency.yml'
@@ -13,7 +12,6 @@ on:
     paths:
       - 'catalog.json'
       - 'README.md'
-      - 'ROADMAP_50_DAYS.md'
       - 'scripts/check-catalog.mjs'
       - 'scripts/generate-catalog.mjs'
       - '.github/workflows/catalog-consistency.yml'

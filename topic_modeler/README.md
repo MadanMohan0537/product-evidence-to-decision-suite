@@ -112,7 +112,7 @@ Licensed under the repository-level [Apache License 2.0](../LICENSE).
 
 **Downstream:** [Voice-of-Customer Dashboard](../voice_of_customer_dashboard/README.md)
 
-**Related:** [MCP review intelligence](../mcp_review_intelligence/README.md); Semantic feedback embedder *(planned, not in the repo)*
+**Related:** [MCP review intelligence](../mcp_review_intelligence/README.md)
 
 **Track:** PM · Starter.
 

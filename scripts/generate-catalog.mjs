@@ -167,15 +167,13 @@ function sectionTable(area, tier, status) {
 }
 
 function counts() {
-  const lines = ['| Area | Built | Planned in this catalog |', '|---|---:|---:|'];
+  const lines = ['| Area | Built |', '|---|---:|'];
   for (const area of AREA_ORDER) {
     const built = projects.filter(project => project.area === area && project.status === 'built').length;
-    const planned = projects.filter(project => project.area === area && project.status === 'planned').length;
-    lines.push(`| ${AREA_LABEL[area]} | ${built} | ${planned} |`);
+    lines.push(`| ${AREA_LABEL[area]} | ${built} |`);
   }
   const built = projects.filter(project => project.status === 'built').length;
-  const planned = projects.filter(project => project.status === 'planned').length;
-  lines.push(`| **Catalog total** | **${built}** | **${planned}** |`);
+  lines.push(`| **Catalog total** | **${built}** |`);
   return lines.join('\n');
 }
 
@@ -233,7 +231,7 @@ function tracksMarkdown() {
   const parts = [];
   parts.push('## Tracks');
   parts.push('');
-  parts.push('Projects already in the repo are grouped by area and tier. The quick start is the command for that folder. [ROADMAP_50_DAYS.md](ROADMAP_50_DAYS.md) is the separate proposal for projects that are not built yet. Planned rows in this catalog are gaps only; they are not folders.');
+  parts.push('Projects already in the repo are grouped by area and tier. The quick start is the command for that folder.');
   parts.push('');
   parts.push(counts());
   parts.push('');
@@ -282,7 +280,6 @@ function honestMarkdown() {
     `| Product management imports (${imported.filter(project => project.area === 'product_management').length} folders) | Standalone code. Overlapping A/B, discovery, feedback, and roadmap tools are cross-linked in the catalog rather than copied into Project 7. |`,
     `| Data analytics imports (${imported.filter(project => project.area === 'data_analytics').length} folders) | Standalone code. Metric, contract, drift, fairness, and review tools do not replace Projects 2, 5, 8, or 10. |`,
     '| Intended links | Documented in each folder under How this connects and drawn as dotted arrows. Not executed by the connected Worker. |',
-    '| Planned catalog rows | Names only. No folder, tests, or UI. The full proposal is ROADMAP_50_DAYS.md. |',
   ];
   return lines.join('\n');
 }

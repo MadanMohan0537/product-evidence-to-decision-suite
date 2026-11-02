@@ -1778,62 +1778,6 @@
       "quick_start": "cd marketplace_risk_intelligence && python -m pip install -r requirements.txt && PYTHONPATH=. python -m pytest -q",
       "status": "built",
       "connection": "planned"
-    },
-    {
-      "id": "planned-semantic-feedback-embedder",
-      "name": "Semantic feedback embedder",
-      "folder": null,
-      "area": "ai_engineering",
-      "tier": "advanced",
-      "track": "AI Engineer",
-      "input": "raw feedback text",
-      "output": "a vector index and duplicate clusters",
-      "feeds_into": [],
-      "depends_on": [],
-      "related": [
-        "feedback_collector",
-        "topic_modeler"
-      ],
-      "quick_start": "Not built. See ROADMAP_50_DAYS.md day 1.",
-      "status": "planned",
-      "connection": "planned"
-    },
-    {
-      "id": "planned-causal-impact-estimator",
-      "name": "Causal impact estimator",
-      "folder": null,
-      "area": "data_analytics",
-      "tier": "advanced",
-      "track": "Data analytics",
-      "input": "a launch date and a metric time series",
-      "output": "a synthetic-control or difference-in-differences interval",
-      "feeds_into": [],
-      "depends_on": [],
-      "related": [
-        "product_outcome_monitor",
-        "benefits_realization_tracker"
-      ],
-      "quick_start": "Not built. See ROADMAP_50_DAYS.md day 14.",
-      "status": "planned",
-      "connection": "planned"
-    },
-    {
-      "id": "planned-cohort-retention-modeler",
-      "name": "Cohort retention modeler",
-      "folder": null,
-      "area": "data_analytics",
-      "tier": "advanced",
-      "track": "Data analytics",
-      "input": "product events",
-      "output": "cohort curves and a survival summary",
-      "feeds_into": [],
-      "depends_on": [],
-      "related": [
-        "feature_adoption_analyzer"
-      ],
-      "quick_start": "Not built. See ROADMAP_50_DAYS.md day 15.",
-      "status": "planned",
-      "connection": "planned"
     }
   ]
 }
