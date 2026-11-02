@@ -9,6 +9,15 @@
 
 </div>
 
+<!-- catalog:io:start -->
+**Input → output:** evidence records → freshness, coverage, concentration, and lineage findings
+
+**Quick start:** `cd evidence_integrity_monitor && npm install && npm run check`
+
+**Track:** PM · Advanced · built
+<!-- catalog:io:end -->
+
+
 Product teams rarely fail because they have no feedback. They fail because five old tickets from one channel can look like broad customer evidence, missing IDs can silently break traceability, or opposing customer segments can be collapsed into one apparent signal.
 
 Project 11 adds a deterministic evidence-quality gate to [ProdMind](../README.md). It inspects the evidence already linked to every opportunity and shows what a PM must review before reusing that evidence for prioritization, experimentation, or future planning.
@@ -171,3 +180,19 @@ These references support continuous evidence collection, explicit quality checks
 ## License
 
 [MIT](LICENSE)
+
+<!-- catalog:connects:start -->
+## How this connects
+
+**Input → output:** evidence records → freshness, coverage, concentration, and lineage findings
+
+**Upstream:** [Product Decision Calibration Engine](../decision_calibration_engine/README.md)
+
+**Downstream:** [Product Research Portfolio Optimizer](../research_portfolio_optimizer/README.md)
+
+**Related:** None in this catalog.
+
+**Track:** PM · Advanced.
+
+**Project 7:** Imported by the [Experiment & Learning Workspace](../experiment-data-quality-auditor/README.md).
+<!-- catalog:connects:end -->

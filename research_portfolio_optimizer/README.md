@@ -9,6 +9,15 @@
 
 </div>
 
+<!-- catalog:io:start -->
+**Input → output:** evidence gaps and capacity → a selected set of research actions
+
+**Quick start:** `cd research_portfolio_optimizer && npm install && npm run check`
+
+**Track:** PM · Advanced · built
+<!-- catalog:io:end -->
+
+
 Project 11 can reveal stale, concentrated, narrow, polarized, or disconnected evidence. That still leaves a practical PM problem: the research team cannot investigate every gap at once.
 
 Project 12 converts those findings into a research backlog and selects the combination that covers the most important evidence risk within available capacity. The result is deterministic, inspectable, and connected to the original opportunity and finding identities.
@@ -178,3 +187,19 @@ The current JavaScript engine is a bounded exhaustive solver, not an OR-Tools wr
 ## License
 
 [MIT](LICENSE)
+
+<!-- catalog:connects:start -->
+## How this connects
+
+**Input → output:** evidence gaps and capacity → a selected set of research actions
+
+**Upstream:** [Product Evidence Integrity Monitor](../evidence_integrity_monitor/README.md)
+
+**Downstream:** [Product Strategy Alignment Auditor](../strategy_alignment_auditor/README.md)
+
+**Related:** None in this catalog.
+
+**Track:** PM · Advanced.
+
+**Project 7:** Imported by the [Experiment & Learning Workspace](../experiment-data-quality-auditor/README.md).
+<!-- catalog:connects:end -->

@@ -1,5 +1,14 @@
 # Roadmap Recovery Execution & Effectiveness Verifier
 
+<!-- catalog:io:start -->
+**Input → output:** execution evidence → restoration verification
+
+**Quick start:** `cd roadmap_recovery_verifier && npm install && npm run check`
+
+**Track:** PM · Advanced · built
+<!-- catalog:io:end -->
+
+
 **ProdMind Project 43 verifies that Project 42 recovery actions were executed as approved and that the originally failed Project 41 controls subsequently recovered.**
 
 Project 42 creates a bounded action scenario. Project 43 prevents the workflow from treating approval—or even task completion—as proof of recovery. It requires action-level execution and exit evidence plus a later Project 41 control report.
@@ -125,3 +134,19 @@ These sources inform the controls. A passing result is not proof of causality, f
 ## License
 
 [MIT](LICENSE)
+
+<!-- catalog:connects:start -->
+## How this connects
+
+**Input → output:** execution evidence → restoration verification
+
+**Upstream:** [Roadmap Delivery Recovery Action Planner](../roadmap_recovery_planner/README.md)
+
+**Downstream:** [Roadmap Delivery Estimate Calibration & Reference-Class Engine](../roadmap_estimate_calibration/README.md)
+
+**Related:** None in this catalog.
+
+**Track:** PM · Advanced.
+
+**Project 7:** Imported by the [Experiment & Learning Workspace](../experiment-data-quality-auditor/README.md).
+<!-- catalog:connects:end -->

@@ -1,5 +1,14 @@
 # Product Decision Provenance & Governance Pack
 
+<!-- catalog:io:start -->
+**Input → output:** decision artifacts → a SHA-256 provenance pack and certification checks
+
+**Quick start:** `cd decision_provenance_pack && npm install && npm run check`
+
+**Track:** PM · Advanced · built
+<!-- catalog:io:end -->
+
+
 Project 24 turns ProdMind’s connected lifecycle into a portable, reviewable governance record. It answers a question the first 23 projects could not answer on their own: **can another reviewer reconstruct the product decision, verify the artifact sequence, and see who accepted responsibility?**
 
 ## What it builds
@@ -52,3 +61,19 @@ Set `API_TOKEN` and submit `POST /api/governance-pack` with `runs`, `reports`, a
 - [Metrics](docs/METRICS.md)
 
 MIT licensed. The connected repository retains its Apache 2.0 license.
+
+<!-- catalog:connects:start -->
+## How this connects
+
+**Input → output:** decision artifacts → a SHA-256 provenance pack and certification checks
+
+**Upstream:** [Product Sunset Outcome & Reversibility Monitor](../sunset_outcome_monitor/README.md)
+
+**Downstream:** [Product Governance Obligation & Review Monitor](../governance_obligation_monitor/README.md)
+
+**Related:** None in this catalog.
+
+**Track:** PM · Advanced.
+
+**Project 7:** Imported by the [Experiment & Learning Workspace](../experiment-data-quality-auditor/README.md).
+<!-- catalog:connects:end -->

@@ -1,5 +1,14 @@
 # Product Planning Policy Re-entry Assurance Monitor
 
+<!-- catalog:io:start -->
+**Input → output:** re-entry observations → bounded re-entry assurance
+
+**Quick start:** `cd planning_policy_reentry_monitor && npm install && npm run check`
+
+**Track:** PM · Advanced · built
+<!-- catalog:io:end -->
+
+
 **ProdMind Project 39 turns an approved post-incident re-entry into a monitored, bounded, evidence-backed human decision.**
 
 Project 38 decides whether incident learning, corrective actions, cooling time, and independent approvals make a new policy trial eligible to begin. Eligibility is not execution assurance. Project 39 checks whether the actual re-entry remained inside that approval and whether the incident-specific controls continued to work during exposure.
@@ -129,3 +138,18 @@ These sources inform the controls; passing them is not proof of NIST compliance,
 
 [MIT](LICENSE)
 
+<!-- catalog:connects:start -->
+## How this connects
+
+**Input → output:** re-entry observations → bounded re-entry assurance
+
+**Upstream:** [Product Planning Policy Incident Learning & Re-entry Controller](../planning_policy_incident_learning_controller/README.md)
+
+**Downstream:** None in this catalog.
+
+**Related:** None in this catalog.
+
+**Track:** PM · Advanced.
+
+**Project 7:** Imported by the [Experiment & Learning Workspace](../experiment-data-quality-auditor/README.md).
+<!-- catalog:connects:end -->

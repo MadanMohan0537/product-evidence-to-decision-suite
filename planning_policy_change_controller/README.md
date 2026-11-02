@@ -1,5 +1,14 @@
 # Project 34 — Product Planning Policy Change & Version Controller
 
+<!-- catalog:io:start -->
+**Input → output:** an adoption decision → a versioned policy-change readiness result
+
+**Quick start:** `cd planning_policy_change_controller && npm install && npm run check`
+
+**Track:** PM · Advanced · built
+<!-- catalog:io:end -->
+
+
 Project 34 turns a Project 33 `verified_adopt` outcome into a **controlled, versioned, and reversible change proposal**. It closes the gap between “the trial met its declared conditions” and “the organization is ready to adopt the policy safely.”
 
 ## What it verifies
@@ -47,3 +56,19 @@ NIST configuration change control motivates reviewed, documented, monitored, tes
 ## License
 
 MIT
+
+<!-- catalog:connects:start -->
+## How this connects
+
+**Input → output:** an adoption decision → a versioned policy-change readiness result
+
+**Upstream:** [Product Planning Policy Experiment Outcome Verifier](../planning_policy_outcome_verifier/README.md)
+
+**Downstream:** [Product Planning Policy Rollout Assurance Monitor](../planning_policy_rollout_monitor/README.md)
+
+**Related:** None in this catalog.
+
+**Track:** PM · Advanced.
+
+**Project 7:** Imported by the [Experiment & Learning Workspace](../experiment-data-quality-auditor/README.md).
+<!-- catalog:connects:end -->

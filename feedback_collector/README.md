@@ -9,6 +9,15 @@
 
 </div>
 
+<!-- catalog:io:start -->
+**Input → output:** raw customer feedback → validated, normalized, deduplicated feedback
+
+**Quick start:** `cd feedback_collector && npm install && npm run check`
+
+**Track:** PM · Starter · built
+<!-- catalog:io:end -->
+
+
 Feedback Collector is the ingestion boundary for [ProdMind](../README.md). It accepts individual records or bounded batches, validates the normalized contract, creates a canonical SHA-256 fingerprint, and stores unique feedback in Cloudflare D1. Original source IDs remain available for every downstream decision.
 
 ## Product impact
@@ -104,3 +113,19 @@ wrangler.jsonc   Cloudflare bindings
 ## License
 
 Licensed under the repository-level [Apache License 2.0](../LICENSE).
+
+<!-- catalog:connects:start -->
+## How this connects
+
+**Input → output:** raw customer feedback → validated, normalized, deduplicated feedback
+
+**Upstream:** None in this catalog.
+
+**Downstream:** [Sentiment Analyzer](../sentiment_analyzer/README.md); [Topic Modeler](../topic_modeler/README.md); [Feature Request Detector](../feature_request_detector/README.md)
+
+**Related:** [AI product discovery engine](../ai_product_discovery_engine/README.md); [Pulse feedback prioritizer](../feedback_prioritizer/README.md); Semantic feedback embedder *(planned, not in the repo)*
+
+**Track:** PM · Starter.
+
+**Project 7:** Imported by the [Experiment & Learning Workspace](../experiment-data-quality-auditor/README.md).
+<!-- catalog:connects:end -->

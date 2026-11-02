@@ -1,5 +1,14 @@
 # Roadmap Estimate Calibration Drift & Recalibration Readiness Monitor
 
+<!-- catalog:io:start -->
+**Input → output:** chronological assessment windows → drift findings and recalibration candidates
+
+**Quick start:** `cd roadmap_estimate_drift_monitor && npm install && npm run check`
+
+**Track:** PM · Advanced · built
+<!-- catalog:io:end -->
+
+
 **ProdMind Project 47** detects whether roadmap-estimate calibration is losing accuracy across successive completed-delivery reviews.
 
 Project 44 creates reference-class factors, Project 45 governs their adoption, and Project 46 checks one estimate basis against actual outcomes. Project 47 adds the missing longitudinal control: it compares non-overlapping baseline and recent Project 46 windows, class by class, and identifies where investigation or recalibration is justified.
@@ -118,3 +127,19 @@ Project 47 borrows the feedback-loop principle, not a claim of certified cost es
 ## License
 
 MIT
+
+<!-- catalog:connects:start -->
+## How this connects
+
+**Input → output:** chronological assessment windows → drift findings and recalibration candidates
+
+**Upstream:** [Roadmap Estimate Calibration Effectiveness & Exception Outcome Monitor](../roadmap_estimate_effectiveness_monitor/README.md)
+
+**Downstream:** [Roadmap Estimate Recalibration Proposal & Validation Controller](../roadmap_recalibration_controller/README.md)
+
+**Related:** None in this catalog.
+
+**Track:** PM · Advanced.
+
+**Project 7:** Imported by the [Experiment & Learning Workspace](../experiment-data-quality-auditor/README.md).
+<!-- catalog:connects:end -->

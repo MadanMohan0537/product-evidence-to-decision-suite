@@ -1,0 +1,23 @@
+name: CI
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python -m pip install -e .
+      - run: python -m unittest discover -s tests -v
+      - run: |
+          riskcouncil --markdown premortem.md --json premortem.json
+          python -c "import json; r=json.load(open('premortem.json')); x=r['falsification_experiment']; assert x['cards'] == 8; assert x['retire_candidates'] == 4; assert not r['falsification_errors']"
+

@@ -9,6 +9,15 @@
 
 </div>
 
+<!-- catalog:io:start -->
+**Input → output:** selected effort and declared objectives → an effort-allocation alignment audit
+
+**Quick start:** `cd strategy_alignment_auditor && npm install && npm run check`
+
+**Track:** PM · Advanced · built
+<!-- catalog:io:end -->
+
+
 Product teams commonly give individual opportunities a “strategic alignment” score. That number cannot answer portfolio questions such as:
 
 - Which objective receives most of the selected delivery capacity?
@@ -209,3 +218,19 @@ These sources support alignment, capacity awareness, transparent prioritization,
 ## License
 
 [MIT](LICENSE)
+
+<!-- catalog:connects:start -->
+## How this connects
+
+**Input → output:** selected effort and declared objectives → an effort-allocation alignment audit
+
+**Upstream:** [Product Research Portfolio Optimizer](../research_portfolio_optimizer/README.md)
+
+**Downstream:** [Strategic Portfolio Rebalancing Simulator](../portfolio_rebalancing_simulator/README.md)
+
+**Related:** [MCP price tracker](../mcp_price_tracker/README.md)
+
+**Track:** PM · Advanced.
+
+**Project 7:** Imported by the [Experiment & Learning Workspace](../experiment-data-quality-auditor/README.md).
+<!-- catalog:connects:end -->

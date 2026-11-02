@@ -1,5 +1,14 @@
 # Product Planning Policy Reversion & Recovery Verifier
 
+<!-- catalog:io:start -->
+**Input → output:** reversion evidence → recovery verification
+
+**Quick start:** `cd planning_policy_recovery_verifier && npm install && npm run check`
+
+**Track:** PM · Advanced · built
+<!-- catalog:io:end -->
+
+
 Project 37 closes the failure path in ProdMind's evidence-to-policy lifecycle. Project 36 can recommend a human-approved reversion when a planning policy no longer sustains its intended outcome. This project verifies that the approved prior version was actually restored, the rollback began inside its decision SLA, the full scope was reverted, and recovery remained stable before a human closes the event.
 
 It does **not** execute a rollback, change policy, infer causality, or close an incident automatically.
@@ -92,3 +101,19 @@ Cloudflare Workers and static assets can run within Cloudflare's free allowances
 ## License
 
 MIT
+
+<!-- catalog:connects:start -->
+## How this connects
+
+**Input → output:** reversion evidence → recovery verification
+
+**Upstream:** [Product Planning Policy Effectiveness & Drift Monitor](../planning_policy_effectiveness_monitor/README.md)
+
+**Downstream:** [Product Planning Policy Incident Learning & Re-entry Controller](../planning_policy_incident_learning_controller/README.md)
+
+**Related:** None in this catalog.
+
+**Track:** PM · Advanced.
+
+**Project 7:** Imported by the [Experiment & Learning Workspace](../experiment-data-quality-auditor/README.md).
+<!-- catalog:connects:end -->

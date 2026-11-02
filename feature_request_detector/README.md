@@ -9,6 +9,15 @@
 
 </div>
 
+<!-- catalog:io:start -->
+**Input → output:** feedback text → multi-label product intent and evidence sentences
+
+**Quick start:** `cd feature_request_detector && npm install && npm run check`
+
+**Track:** PM · Starter · built
+<!-- catalog:io:end -->
+
+
 Project 4 adds explainable multi-label intent detection to the same normalized feedback records used by Projects 2 and 3. It identifies candidate product requests without treating classifier output as roadmap priority.
 
 ## Product impact
@@ -85,3 +94,19 @@ test/               Detector, evaluation and route tests
 ## License
 
 Licensed under the repository-level [Apache License 2.0](../LICENSE).
+
+<!-- catalog:connects:start -->
+## How this connects
+
+**Input → output:** feedback text → multi-label product intent and evidence sentences
+
+**Upstream:** [Feedback Collector](../feedback_collector/README.md)
+
+**Downstream:** [Voice-of-Customer Dashboard](../voice_of_customer_dashboard/README.md)
+
+**Related:** None in this catalog.
+
+**Track:** PM · Starter.
+
+**Project 7:** Imported by the [Experiment & Learning Workspace](../experiment-data-quality-auditor/README.md).
+<!-- catalog:connects:end -->

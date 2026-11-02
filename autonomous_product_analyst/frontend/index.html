@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Evidence-first autonomous product analytics without manually writing SQL.">
+  <title>Autonomous Product Analyst</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <header><a href="/" class="brand"><span>APA</span> Autonomous Product Analyst</a><div class="status"><i></i> Governed analysis</div></header>
+  <main>
+    <section class="hero">
+      <p class="eyebrow">PRODUCT INTELLIGENCE · EVIDENCE FIRST</p>
+      <h1>Ask why a metric changed.<br><em>Get the investigation, not a guess.</em></h1>
+      <p>The analyst checks every governed dimension, validates read-only SQL, measures statistical contribution, correlates releases, and returns a PM-ready explanation.</p>
+    </section>
+    <section class="ask panel">
+      <label for="question">Ask about activation, conversion, or retention</label>
+      <div><input id="question" value="Why did activation fall last week?" maxlength="500"><button id="analyze">Investigate</button></div>
+      <p id="error" role="alert"></p>
+    </section>
+    <section id="results" class="results hidden" aria-live="polite">
+      <div class="metrics">
+        <article class="panel"><span>Current rate</span><strong id="current">—</strong><small id="currentPeriod"></small></article>
+        <article class="panel"><span>Previous rate</span><strong id="previous">—</strong><small id="previousPeriod"></small></article>
+        <article class="panel"><span>Absolute change</span><strong id="delta">—</strong><small>percentage points</small></article>
+        <article class="panel"><span>Confidence</span><strong id="confidence">—</strong><small>statistical evidence</small></article>
+      </div>
+      <div class="grid">
+        <article class="panel narrative wide"><p class="eyebrow">ANSWER</p><h2 id="answer"></h2><p id="contributor"></p><div class="recommend"><b>Recommended investigation</b><span id="recommend"></span></div><p id="guardrail" class="guardrail"></p></article>
+        <article class="panel"><div class="card-head"><div><p class="eyebrow">ROOT CAUSE</p><h2>Top contributors</h2></div><span>ranked association</span></div><div id="contributors" class="bars"></div></article>
+        <article class="panel"><div class="card-head"><div><p class="eyebrow">RELEASE CONTEXT</p><h2>Change correlation</h2></div></div><div id="release" class="release"></div></article>
+        <article class="panel wide"><div class="card-head"><div><p class="eyebrow">INVESTIGATION TRACE</p><h2>Dimensions checked</h2></div><span id="dimensionCount"></span></div><div id="dimensions" class="chips"></div></article>
+      </div>
+    </section>
+  </main>
+  <footer>Association is not causation · Every conclusion stays linked to computed evidence</footer>
+  <script src="/assets/app.js" defer></script>
+</body>
+</html>

@@ -1,5 +1,14 @@
 # Roadmap Recalibration Baseline Configuration Drift Monitor
 
+<!-- catalog:io:start -->
+**Input → output:** configuration snapshots → baseline drift findings
+
+**Quick start:** `cd roadmap_recalibration_baseline_drift_monitor && npm install && npm run check`
+
+**Track:** PM · Advanced · built
+<!-- catalog:io:end -->
+
+
 Project 56 continuously checks whether the baseline completed by [Project 55](../roadmap_recalibration_baseline_handoff_controller/) remains one coherent configuration across ProdMind's roadmap-estimation workflow.
 
 ## Why this project exists
@@ -74,3 +83,19 @@ Send `POST /api/roadmap-recalibration-baseline-drift` with `Authorization: Beare
 - No paid API, model, hosted database, or runtime dependency is required.
 
 Apache-2.0 licensed.
+
+<!-- catalog:connects:start -->
+## How this connects
+
+**Input → output:** configuration snapshots → baseline drift findings
+
+**Upstream:** [Roadmap Recalibration Baseline Handoff Controller](../roadmap_recalibration_baseline_handoff_controller/README.md)
+
+**Downstream:** None in this catalog.
+
+**Related:** None in this catalog.
+
+**Track:** PM · Advanced.
+
+**Project 7:** Imported by the [Experiment & Learning Workspace](../experiment-data-quality-auditor/README.md).
+<!-- catalog:connects:end -->

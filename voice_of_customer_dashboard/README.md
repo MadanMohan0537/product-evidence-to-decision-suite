@@ -9,6 +9,15 @@
 
 </div>
 
+<!-- catalog:io:start -->
+**Input → output:** enriched feedback → trends, filters, segments, and source evidence
+
+**Quick start:** `cd voice_of_customer_dashboard && npm install && npm run check`
+
+**Track:** PM · Starter · built
+<!-- catalog:io:end -->
+
+
 Project 5 combines the normalized records, sentiment, topics, and request intents produced by Projects 1–4. It calculates bounded aggregates and exposes the records behind them so a PM can inspect evidence before assessing an opportunity.
 
 ## Product impact
@@ -93,3 +102,19 @@ test/                Analytics and route tests
 ## License
 
 Licensed under the repository-level [Apache License 2.0](../LICENSE).
+
+<!-- catalog:connects:start -->
+## How this connects
+
+**Input → output:** enriched feedback → trends, filters, segments, and source evidence
+
+**Upstream:** [Feature Request Detector](../feature_request_detector/README.md); [MCP review intelligence](../mcp_review_intelligence/README.md); [Sentiment Analyzer](../sentiment_analyzer/README.md); [Topic Modeler](../topic_modeler/README.md)
+
+**Downstream:** [Prioritization Engine](../prioritization_engine/README.md)
+
+**Related:** [AI product discovery engine](../ai_product_discovery_engine/README.md)
+
+**Track:** PM · Starter.
+
+**Project 7:** Imported by the [Experiment & Learning Workspace](../experiment-data-quality-auditor/README.md).
+<!-- catalog:connects:end -->

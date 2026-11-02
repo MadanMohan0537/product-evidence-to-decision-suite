@@ -1,5 +1,14 @@
 # Evidence-linked Product Roadmap Delivery Scheduler
 
+<!-- catalog:io:start -->
+**Input → output:** selected items, capacity, and dependencies → a bounded delivery schedule
+
+**Quick start:** `cd roadmap_delivery_scheduler && npm install && npm run check`
+
+**Track:** PM · Advanced · built
+<!-- catalog:io:end -->
+
+
 **ProdMind Project 40 turns the selected Project 14 portfolio into an executable, evidence-linked delivery calendar without changing the roadmap or silently assigning people.**
 
 The existing portfolio projects decide _what_ deserves investment and how the portfolio should rebalance. Project 40 closes the execution-planning gap: it places approved work on declared team calendars while respecting dependencies, capacity, earliest starts, deadlines, and non-working days.
@@ -145,3 +154,19 @@ These sources inform the design. A passing report is not proof of delivery certa
 ## License
 
 [MIT](LICENSE)
+
+<!-- catalog:connects:start -->
+## How this connects
+
+**Input → output:** selected items, capacity, and dependencies → a bounded delivery schedule
+
+**Upstream:** [AI roadmap optimizer](../ai_roadmap_optimizer/README.md); [Strategic Portfolio Rebalancing Simulator](../portfolio_rebalancing_simulator/README.md)
+
+**Downstream:** [Roadmap Delivery Execution & Variance Monitor](../roadmap_delivery_monitor/README.md)
+
+**Related:** [AI project manager assistant](../ai_project_manager_assistant/README.md)
+
+**Track:** PM · Advanced.
+
+**Project 7:** Imported by the [Experiment & Learning Workspace](../experiment-data-quality-auditor/README.md).
+<!-- catalog:connects:end -->

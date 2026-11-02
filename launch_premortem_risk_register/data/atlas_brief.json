@@ -1,0 +1,14 @@
+{
+  "name": "Atlas launch",
+  "summary": "Launch an AI-assisted support workflow to a controlled customer cohort.",
+  "assumptions": {
+    "audience": "small pilot of 100 customers",
+    "support_model": "specialist review for every exception"
+  },
+  "human_premortem": [
+    "Launch load exceeds the tested operating envelope",
+    "Mainstream users fail the new workflow",
+    "Training backlog slows support"
+  ],
+  "provenance": "Synthetic fixture authored for RiskCouncil; contains no customer or personal data."
+}

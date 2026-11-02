@@ -1,5 +1,14 @@
 # Roadmap Recalibration Re-entry Assurance Monitor
 
+<!-- catalog:io:start -->
+**Input → output:** observed re-entry stages → re-entry assurance
+
+**Quick start:** `cd roadmap_recalibration_reentry_monitor && npm install && npm run check`
+
+**Track:** PM · Advanced · built
+<!-- catalog:io:end -->
+
+
 Project 52 verifies the first observed retry after Project 51 authorizes a post-incident roadmap-estimation recalibration. It makes sure the actual trial still matches the approved candidate, scope, owner, exposure, controls, rollback, and monitoring plan before a human allows it to continue.
 
 ## Why it belongs in ProdMind
@@ -111,3 +120,19 @@ Project 52 does not change exposure, activate or promote a policy version, edit 
 - [Metrics](docs/METRICS.md)
 
 MIT licensed.
+
+<!-- catalog:connects:start -->
+## How this connects
+
+**Input → output:** observed re-entry stages → re-entry assurance
+
+**Upstream:** [Roadmap Recalibration Incident Learning & Re-entry Controller](../roadmap_recalibration_incident_reentry_controller/README.md)
+
+**Downstream:** [Roadmap Recalibration Re-entry Promotion Controller](../roadmap_recalibration_reentry_promotion_controller/README.md)
+
+**Related:** None in this catalog.
+
+**Track:** PM · Advanced.
+
+**Project 7:** Imported by the [Experiment & Learning Workspace](../experiment-data-quality-auditor/README.md).
+<!-- catalog:connects:end -->

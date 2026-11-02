@@ -1,0 +1,12 @@
+services:
+  analyst:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      ANALYTICS_DB: /app/data/product_analytics.db
+    volumes:
+      - analyst-data:/app/data
+
+volumes:
+  analyst-data:

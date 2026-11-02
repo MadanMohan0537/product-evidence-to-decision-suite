@@ -9,6 +9,15 @@
 
 </div>
 
+<!-- catalog:io:start -->
+**Input → output:** saved run evidence → cross-run lexical retrieval of linked learning
+
+**Quick start:** `cd product_learning_memory && npm install && npm run check`
+
+**Track:** PM · Advanced · built
+<!-- catalog:io:end -->
+
+
 Project 9 turns completed ProdMind runs into searchable decision cards. Each result retains the original run, opportunity, experiment, decision, monitoring status, and customer-evidence IDs so historical context never becomes an unsupported recommendation.
 
 ## Product impact
@@ -100,3 +109,19 @@ docs/            PRD, architecture and metrics
 ## License
 
 [MIT](LICENSE)
+
+<!-- catalog:connects:start -->
+## How this connects
+
+**Input → output:** saved run evidence → cross-run lexical retrieval of linked learning
+
+**Upstream:** [Product Outcome Monitor](../product_outcome_monitor/README.md)
+
+**Downstream:** [Product Decision Calibration Engine](../decision_calibration_engine/README.md)
+
+**Related:** None in this catalog.
+
+**Track:** PM · Advanced.
+
+**Project 7:** Imported by the [Experiment & Learning Workspace](../experiment-data-quality-auditor/README.md).
+<!-- catalog:connects:end -->

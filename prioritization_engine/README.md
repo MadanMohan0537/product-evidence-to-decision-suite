@@ -9,6 +9,15 @@
 
 </div>
 
+<!-- catalog:io:start -->
+**Input → output:** opportunities, weights, and capacity → transparent scores and a capacity-aware portfolio
+
+**Quick start:** `cd prioritization_engine && npm install && npm run check`
+
+**Track:** PM · Starter · built
+<!-- catalog:io:end -->
+
+
 Project 6 scores opportunities using explicit PM estimates, reports score contributions and uncertainty assumptions, and builds a capacity-aware portfolio. It does not invent business value from upstream sentiment or request volume.
 
 ## Product impact
@@ -88,3 +97,19 @@ test/               Engine and HTTP tests
 ## License
 
 Licensed under the repository-level [Apache License 2.0](../LICENSE).
+
+<!-- catalog:connects:start -->
+## How this connects
+
+**Input → output:** opportunities, weights, and capacity → transparent scores and a capacity-aware portfolio
+
+**Upstream:** [AI product discovery engine](../ai_product_discovery_engine/README.md); [Pulse feedback prioritizer](../feedback_prioritizer/README.md); [Voice-of-Customer Dashboard](../voice_of_customer_dashboard/README.md)
+
+**Downstream:** [Experiment & Learning Workspace](../experiment-data-quality-auditor/README.md)
+
+**Related:** None in this catalog.
+
+**Track:** PM · Starter.
+
+**Project 7:** Imported by the [Experiment & Learning Workspace](../experiment-data-quality-auditor/README.md).
+<!-- catalog:connects:end -->

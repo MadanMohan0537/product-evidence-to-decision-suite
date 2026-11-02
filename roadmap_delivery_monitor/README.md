@@ -1,5 +1,14 @@
 # Roadmap Delivery Execution & Variance Monitor
 
+<!-- catalog:io:start -->
+**Input → output:** a baseline and actuals → variance, capacity, and blocker controls
+
+**Quick start:** `cd roadmap_delivery_monitor && npm install && npm run check`
+
+**Track:** PM · Advanced · built
+<!-- catalog:io:end -->
+
+
 **ProdMind Project 41 compares Project 40’s approved roadmap schedule with actual delivery evidence before a human continues, replans, or escalates.**
 
 Project 40 answers whether selected work can fit into a declared calendar. A feasible baseline does not show whether execution remains healthy. Project 41 closes that loop with chronological snapshots of completed work, consumed capacity, actual dates, blockers, and evidence.
@@ -147,3 +156,19 @@ These sources inform the controls. A passing report is not proof of GAO complian
 ## License
 
 [MIT](LICENSE)
+
+<!-- catalog:connects:start -->
+## How this connects
+
+**Input → output:** a baseline and actuals → variance, capacity, and blocker controls
+
+**Upstream:** [Evidence-linked Product Roadmap Delivery Scheduler](../roadmap_delivery_scheduler/README.md)
+
+**Downstream:** [Roadmap Delivery Recovery Action Planner](../roadmap_recovery_planner/README.md)
+
+**Related:** None in this catalog.
+
+**Track:** PM · Advanced.
+
+**Project 7:** Imported by the [Experiment & Learning Workspace](../experiment-data-quality-auditor/README.md).
+<!-- catalog:connects:end -->

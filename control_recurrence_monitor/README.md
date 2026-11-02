@@ -1,5 +1,14 @@
 # Product Control Regression & Recurrence Monitor
 
+<!-- catalog:io:start -->
+**Input → output:** post-exit snapshots → recurrence and coverage findings
+
+**Quick start:** `cd control_recurrence_monitor && npm install && npm run check`
+
+**Track:** PM · Advanced · built
+<!-- catalog:io:end -->
+
+
 **Project 28 of ProdMind keeps watching after a Project 27 exception exit is verified.**
 
 Remediation can work during an exit review and regress later. This zero-paid-service Cloudflare Workers project evaluates a bounded series of subsequent Project 25 monitors for target stability, maintained remediation, evidence lineage, sufficient snapshot coverage, and monitoring cadence.
@@ -47,3 +56,19 @@ The standalone endpoint is `POST /api/control-recurrence`. The responsive fronte
 These sources inform the workflow; the product is not certification or a guarantee of future effectiveness.
 
 See [PRD](docs/PRD.md), [architecture](docs/ARCHITECTURE.md), and [metrics](docs/METRICS.md). Apache-2.0 licensed.
+
+<!-- catalog:connects:start -->
+## How this connects
+
+**Input → output:** post-exit snapshots → recurrence and coverage findings
+
+**Upstream:** [Product Exception Exit & Corrective-Action Verifier](../exception_exit_verifier/README.md)
+
+**Downstream:** [Product Control Improvement Portfolio Planner](../control_improvement_planner/README.md)
+
+**Related:** None in this catalog.
+
+**Track:** PM · Advanced.
+
+**Project 7:** Imported by the [Experiment & Learning Workspace](../experiment-data-quality-auditor/README.md).
+<!-- catalog:connects:end -->

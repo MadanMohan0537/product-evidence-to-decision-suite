@@ -1,0 +1,14 @@
+[project]
+name = "autonomous-product-analyst"
+version = "0.1.0"
+description = "Evidence-first autonomous product analytics with governed metrics and safe SQL."
+requires-python = ">=3.11"
+dependencies = ["fastapi==0.116.1", "uvicorn[standard]==0.35.0", "pydantic==2.11.7"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"

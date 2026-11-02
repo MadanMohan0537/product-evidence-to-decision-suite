@@ -1,5 +1,14 @@
 # Roadmap Recalibration Rollback & Recovery Verifier
 
+<!-- catalog:io:start -->
+**Input → output:** rollback evidence → exact restoration verification
+
+**Quick start:** `cd roadmap_recalibration_recovery_verifier && npm install && npm run check`
+
+**Track:** PM · Advanced · built
+<!-- catalog:io:end -->
+
+
 Project 50 verifies that a human-authorized Project 49 rollback actually restored the exact prior estimate policy and remained stable before recovery is closed.
 
 ## Why this belongs in ProdMind
@@ -97,3 +106,19 @@ This verifier cannot establish evidence truth, causality, statistical significan
 - [Metrics](docs/METRICS.md)
 
 MIT licensed.
+
+<!-- catalog:connects:start -->
+## How this connects
+
+**Input → output:** rollback evidence → exact restoration verification
+
+**Upstream:** [Roadmap Estimate Recalibration Rollout Assurance Monitor](../roadmap_recalibration_rollout_monitor/README.md)
+
+**Downstream:** [Roadmap Recalibration Incident Learning & Re-entry Controller](../roadmap_recalibration_incident_reentry_controller/README.md)
+
+**Related:** None in this catalog.
+
+**Track:** PM · Advanced.
+
+**Project 7:** Imported by the [Experiment & Learning Workspace](../experiment-data-quality-auditor/README.md).
+<!-- catalog:connects:end -->

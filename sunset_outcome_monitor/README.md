@@ -1,5 +1,14 @@
 # Product Sunset Outcome & Reversibility Monitor
 
+<!-- catalog:io:start -->
+**Input → output:** post-sunset evidence → harm, residual-use, savings, and reversibility review
+
+**Quick start:** `cd sunset_outcome_monitor && npm install && npm run check`
+
+**Track:** PM · Advanced · built
+<!-- catalog:io:end -->
+
+
 Project 23 closes ProdMind’s product-retirement loop. Project 22 can show that customers, dependencies, notices, exceptions, and zero-use evidence are ready for a human sunset decision. This project asks the harder follow-up: **did the completed sunset work, and can the team still recover safely?**
 
 ## What it does
@@ -69,3 +78,19 @@ Set `API_TOKEN`, then send `POST /api/sunset-outcomes` with `runs`, `sunsetRepor
 - [Metrics](docs/METRICS.md)
 
 MIT licensed. The connected ProdMind repository retains its repository-level Apache 2.0 license.
+
+<!-- catalog:connects:start -->
+## How this connects
+
+**Input → output:** post-sunset evidence → harm, residual-use, savings, and reversibility review
+
+**Upstream:** [Customer Migration & Sunset Monitor](../sunset_migration_monitor/README.md)
+
+**Downstream:** [Product Decision Provenance & Governance Pack](../decision_provenance_pack/README.md)
+
+**Related:** None in this catalog.
+
+**Track:** PM · Advanced.
+
+**Project 7:** Imported by the [Experiment & Learning Workspace](../experiment-data-quality-auditor/README.md).
+<!-- catalog:connects:end -->

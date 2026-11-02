@@ -1,5 +1,14 @@
 # Roadmap Recalibration Incident Learning & Re-entry Controller
 
+<!-- catalog:io:start -->
+**Input → output:** incident learning → a recalibration re-entry control
+
+**Quick start:** `cd roadmap_recalibration_incident_reentry_controller && npm install && npm run check`
+
+**Track:** PM · Advanced · built
+<!-- catalog:io:end -->
+
+
 Project 51 prevents a verified rollback from becoming the end of learning. After Project 50 proves that the prior estimate policy was restored and stable, this project decides whether a different recalibration candidate is safe to re-enter shadow evaluation.
 
 ## Why it belongs in ProdMind
@@ -94,3 +103,19 @@ This controller does not lift a freeze, start a rollout, activate factors, edit 
 - [Metrics](docs/METRICS.md)
 
 MIT licensed.
+
+<!-- catalog:connects:start -->
+## How this connects
+
+**Input → output:** incident learning → a recalibration re-entry control
+
+**Upstream:** [Roadmap Recalibration Rollback & Recovery Verifier](../roadmap_recalibration_recovery_verifier/README.md)
+
+**Downstream:** [Roadmap Recalibration Re-entry Assurance Monitor](../roadmap_recalibration_reentry_monitor/README.md)
+
+**Related:** None in this catalog.
+
+**Track:** PM · Advanced.
+
+**Project 7:** Imported by the [Experiment & Learning Workspace](../experiment-data-quality-auditor/README.md).
+<!-- catalog:connects:end -->

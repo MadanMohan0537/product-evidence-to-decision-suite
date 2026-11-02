@@ -1,5 +1,14 @@
 # Roadmap Estimate Basis & Calibration Adoption Controller
 
+<!-- catalog:io:start -->
+**Input → output:** factors and item bases → an estimate-adoption control result
+
+**Quick start:** `cd roadmap_estimate_adoption_controller && npm install && npm run check`
+
+**Track:** PM · Advanced · built
+<!-- catalog:io:end -->
+
+
 **ProdMind Project 45 proves whether approved roadmap estimates actually use Project 44 calibration—or carry a prior, independently reviewed exception.**
 
 Project 44 learns from completed Projects 40–41 work. Project 45 closes the operational loop before a new schedule is accepted: for every Project 40 item, it records the unadjusted base, identifies a sufficiently sampled reference class, verifies the applied duration and capacity factors, recalculates the approved values, and controls any deliberate departure.
@@ -147,3 +156,19 @@ These sources inform the control design; they do not certify this implementation
 ## License
 
 [MIT](LICENSE)
+
+<!-- catalog:connects:start -->
+## How this connects
+
+**Input → output:** factors and item bases → an estimate-adoption control result
+
+**Upstream:** [Roadmap Delivery Estimate Calibration & Reference-Class Engine](../roadmap_estimate_calibration/README.md)
+
+**Downstream:** [Roadmap Estimate Calibration Effectiveness & Exception Outcome Monitor](../roadmap_estimate_effectiveness_monitor/README.md)
+
+**Related:** None in this catalog.
+
+**Track:** PM · Advanced.
+
+**Project 7:** Imported by the [Experiment & Learning Workspace](../experiment-data-quality-auditor/README.md).
+<!-- catalog:connects:end -->

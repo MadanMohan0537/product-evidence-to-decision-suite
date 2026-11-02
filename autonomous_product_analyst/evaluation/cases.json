@@ -1,0 +1,17 @@
+{
+  "cases": [
+    {
+      "question": "Why did activation fall last week?",
+      "end": "2026-09-01",
+      "expected_direction": "down",
+      "expected_primary_dimension": "platform",
+      "expected_primary_value": "android",
+      "minimum_z_score": 1.96
+    },
+    {
+      "question": "What happened to conversion last week?",
+      "end": "2026-09-01",
+      "expected_metric": "conversion"
+    }
+  ]
+}

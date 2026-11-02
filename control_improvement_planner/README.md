@@ -1,5 +1,14 @@
 # Product Control Improvement Portfolio Planner
 
+<!-- catalog:io:start -->
+**Input → output:** recurrence targets and capacity → a selected improvement portfolio
+
+**Quick start:** `cd control_improvement_planner && npm install && npm run check`
+
+**Track:** PM · Advanced · built
+<!-- catalog:io:end -->
+
+
 **Project 29 of ProdMind turns Project 28 recurrence evidence into a reviewable, capacity-feasible improvement portfolio.**
 
 Monitoring is incomplete if findings never become owned improvement work. This zero-paid-service Cloudflare Workers project derives actionable targets only from real Project 28 failures or recurrences, validates proposed preventive, detective, or governance actions, and uses exact bounded optimization to maximize unique risk coverage within declared capacity.
@@ -56,3 +65,18 @@ These sources inform the workflow. This project does not certify compliance or d
 
 See the [PRD](docs/PRD.md), [architecture](docs/ARCHITECTURE.md), and [metrics](docs/METRICS.md). Apache-2.0 licensed.
 
+<!-- catalog:connects:start -->
+## How this connects
+
+**Input → output:** recurrence targets and capacity → a selected improvement portfolio
+
+**Upstream:** [Product Control Regression & Recurrence Monitor](../control_recurrence_monitor/README.md)
+
+**Downstream:** [Product Control Improvement Outcome Monitor](../control_improvement_outcome_monitor/README.md)
+
+**Related:** None in this catalog.
+
+**Track:** PM · Advanced.
+
+**Project 7:** Imported by the [Experiment & Learning Workspace](../experiment-data-quality-auditor/README.md).
+<!-- catalog:connects:end -->

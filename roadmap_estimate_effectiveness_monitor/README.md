@@ -1,5 +1,14 @@
 # Roadmap Estimate Effectiveness Monitor
 
+<!-- catalog:io:start -->
+**Input → output:** completed outcomes → an error-reduction review
+
+**Quick start:** `cd roadmap_estimate_effectiveness_monitor && npm install && npm run check`
+
+**Track:** PM · Advanced · built
+<!-- catalog:io:end -->
+
+
 **ProdMind Project 46** closes the estimate-calibration loop. It verifies whether the estimate basis governed by Project 45 actually improved duration and capacity accuracy once Project 41 reports completed delivery.
 
 The monitor is deterministic, evidence-linked, deployable on Cloudflare Workers, and requires no paid API or hosted model.
@@ -118,3 +127,19 @@ These sources motivate the feedback loop. Project 46 is a portfolio prototype, n
 ## License
 
 MIT
+
+<!-- catalog:connects:start -->
+## How this connects
+
+**Input → output:** completed outcomes → an error-reduction review
+
+**Upstream:** [Roadmap Estimate Basis & Calibration Adoption Controller](../roadmap_estimate_adoption_controller/README.md)
+
+**Downstream:** [Roadmap Estimate Calibration Drift & Recalibration Readiness Monitor](../roadmap_estimate_drift_monitor/README.md)
+
+**Related:** None in this catalog.
+
+**Track:** PM · Advanced.
+
+**Project 7:** Imported by the [Experiment & Learning Workspace](../experiment-data-quality-auditor/README.md).
+<!-- catalog:connects:end -->

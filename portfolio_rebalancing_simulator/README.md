@@ -9,6 +9,15 @@
 
 </div>
 
+<!-- catalog:io:start -->
+**Input → output:** a portfolio and declared constraints → a minimum-disruption rebalancing scenario
+
+**Quick start:** `cd portfolio_rebalancing_simulator && npm install && npm run check`
+
+**Track:** PM · Advanced · built
+<!-- catalog:io:end -->
+
+
 Project 13 identifies where selected product effort is inconsistent with declared strategic objectives. A portfolio review still needs to answer a harder question: what is the least disruptive combination of additions and removals that improves the allocation without violating capacity, dependencies, or locked commitments?
 
 Project 14 searches the complete bounded Project 6 backlog and produces a reviewable rebalance scenario. It never modifies a saved ranking.
@@ -176,3 +185,19 @@ These sources support ongoing portfolio control, strategic alignment, transparen
 ## License
 
 [MIT](LICENSE)
+
+<!-- catalog:connects:start -->
+## How this connects
+
+**Input → output:** a portfolio and declared constraints → a minimum-disruption rebalancing scenario
+
+**Upstream:** [Product Strategy Alignment Auditor](../strategy_alignment_auditor/README.md)
+
+**Downstream:** [Product Portfolio Resilience Stress Tester](../portfolio_resilience_stress_tester/README.md); [Product Benefits Realization Tracker](../benefits_realization_tracker/README.md); [Evidence-linked Product Roadmap Delivery Scheduler](../roadmap_delivery_scheduler/README.md)
+
+**Related:** [AI roadmap optimizer](../ai_roadmap_optimizer/README.md)
+
+**Track:** PM · Advanced.
+
+**Project 7:** Imported by the [Experiment & Learning Workspace](../experiment-data-quality-auditor/README.md).
+<!-- catalog:connects:end -->

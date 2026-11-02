@@ -1,5 +1,14 @@
 # Product Planning Policy Experiment Planner
 
+<!-- catalog:io:start -->
+**Input → output:** calibration gaps → a reversible policy-experiment plan
+
+**Quick start:** `cd planning_policy_experiment_planner && npm install && npm run check`
+
+**Track:** PM · Advanced · built
+<!-- catalog:io:end -->
+
+
 **Project 32 of ProdMind turns Project 31 calibration gaps into reversible, capacity-feasible planning-policy experiments.**
 
 Measurement only improves a product operating system when a team can act on it safely. This zero-paid-service Cloudflare Workers project derives targets from failed calibration checks, validates candidate policy trials, and uses exact bounded optimization to cover the most important gaps within declared change capacity. Every trial has an owner, hypothesis, success measure, guardrail, rollback plan, observation window, and named human decision.
@@ -53,3 +62,19 @@ An approved output is permission to conduct the declared experiments—not proof
 These sources inform the learning and control boundaries; this project is not a compliance, audit, or statistical-inference product.
 
 See the [PRD](docs/PRD.md), [architecture](docs/ARCHITECTURE.md), and [metrics](docs/METRICS.md). Apache-2.0 licensed.
+
+<!-- catalog:connects:start -->
+## How this connects
+
+**Input → output:** calibration gaps → a reversible policy-experiment plan
+
+**Upstream:** [Product Control Improvement Calibration & Learning Engine](../control_improvement_calibration/README.md)
+
+**Downstream:** [Product Planning Policy Experiment Outcome Verifier](../planning_policy_outcome_verifier/README.md)
+
+**Related:** None in this catalog.
+
+**Track:** PM · Advanced.
+
+**Project 7:** Imported by the [Experiment & Learning Workspace](../experiment-data-quality-auditor/README.md).
+<!-- catalog:connects:end -->

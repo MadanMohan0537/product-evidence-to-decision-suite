@@ -1,5 +1,14 @@
 # Product Benefits Realization Tracker
 
+<!-- catalog:io:start -->
+**Input → output:** benefit targets and observations → an expected-versus-observed realization ledger
+
+**Quick start:** `cd benefits_realization_tracker && npm install && npm run check`
+
+**Track:** PM · Advanced · built
+<!-- catalog:io:end -->
+
+
 Project 16 closes ProdMind’s value loop. It records the expected benefit behind a selected product opportunity, compares that target with an observed measurement, and retains the original evidence, experiment, decision and outcome-review identities.
 
 The tracker answers **“did the intended benefit materialize?”** It does not claim that the product change caused the measurement, fabricate ROI, or add unlike units.
@@ -84,3 +93,19 @@ See [PRD](docs/PRD.md), [architecture](docs/ARCHITECTURE.md), and [metrics](docs
 ## License
 
 MIT
+
+<!-- catalog:connects:start -->
+## How this connects
+
+**Input → output:** benefit targets and observations → an expected-versus-observed realization ledger
+
+**Upstream:** [Strategic Portfolio Rebalancing Simulator](../portfolio_rebalancing_simulator/README.md)
+
+**Downstream:** [Product Investment Assurance Review](../investment_assurance_review/README.md)
+
+**Related:** Causal impact estimator *(planned, not in the repo)*
+
+**Track:** PM · Advanced.
+
+**Project 7:** Imported by the [Experiment & Learning Workspace](../experiment-data-quality-auditor/README.md).
+<!-- catalog:connects:end -->

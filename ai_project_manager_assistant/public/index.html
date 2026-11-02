@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="AI-powered project management workspace for planning, scheduling, resource allocation, RAID tracking and project delivery.">
+  <title>AI Project Manager</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="brand"><span class="brand-mark">AP</span><span>AI Project Manager</span></div>
+      <nav class="nav">
+        <button class="active" data-view="dashboard" title="Dashboard">◫ <span>Dashboard</span></button>
+        <button data-view="projects" title="Projects">▣ <span>Projects</span></button>
+        <button data-view="workspace" title="Workspace">◆ <span>Workspace</span></button>
+      </nav>
+      <div class="sidebar-footer">Cloudflare Workers AI<br>Project workspace v3</div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="title-block"><h1 id="top-title">Dashboard</h1><p id="top-sub">AI-powered technical project delivery</p></div>
+        <div class="actions">
+          <button class="btn ghost" onclick="toggleCopilot()">✦ AI Copilot</button>
+          <button class="btn primary" onclick="openProjectModal()">+ New project</button>
+        </div>
+      </header>
+
+      <div class="content">
+        <section id="view-dashboard" class="view active"><div id="dashboard-content"></div></section>
+        <section id="view-projects" class="view">
+          <div class="hero"><div><h2>Projects</h2><p>Saved workspaces on this device.</p></div><button class="btn primary" onclick="openProjectModal()">+ New project</button></div>
+          <div id="projects-grid" class="project-list"></div>
+        </section>
+        <section id="view-workspace" class="view">
+          <div class="hero">
+            <div><h2 id="workspace-title">Project workspace</h2><p id="workspace-objective"></p></div>
+            <div class="actions"><button class="btn" onclick="exportProject()">Export</button><button class="btn danger" onclick="deleteProject()">Delete</button></div>
+          </div>
+          <div class="tabs">
+            <button class="tab active" data-tab="overview">Overview</button>
+            <button class="tab" data-tab="tasks">WBS & Tasks</button>
+            <button class="tab" data-tab="board">Board</button>
+            <button class="tab" data-tab="timeline">Timeline</button>
+            <button class="tab" data-tab="team">Team</button>
+            <button class="tab" data-tab="raid">RAID</button>
+            <button class="tab" data-tab="reports">Reports</button>
+          </div>
+          <div id="panel-overview" class="workspace-panel active"></div>
+          <div id="panel-tasks" class="workspace-panel"></div>
+          <div id="panel-board" class="workspace-panel"></div>
+          <div id="panel-timeline" class="workspace-panel"></div>
+          <div id="panel-team" class="workspace-panel"></div>
+          <div id="panel-raid" class="workspace-panel"></div>
+          <div id="panel-reports" class="workspace-panel"></div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <div id="project-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="new-project-title">
+    <div class="modal-card">
+      <div class="modal-head"><div><h2 id="new-project-title">Create project workspace</h2><p style="color:var(--muted);margin:5px 0 18px">Give the planner enough context to build a realistic execution plan.</p></div><button class="close" onclick="closeProjectModal()">×</button></div>
+      <form onsubmit="submitProject(event)">
+        <div class="form-grid">
+          <div class="field"><label>Project name</label><input name="name" maxlength="120" placeholder="Customer Analytics Platform" required></div>
+          <div class="field"><label>Methodology</label><select name="methodology"><option>Agile</option><option>Scrum</option><option>Kanban</option><option>Waterfall</option></select></div>
+          <div class="field full"><label>Objective</label><textarea name="objective" placeholder="What should this project achieve and how will success be measured?" required></textarea></div>
+          <div class="field full"><label>Description / requirements</label><textarea name="description" placeholder="Scope, users, functional requirements, technical expectations and expected outcome..."></textarea></div>
+          <div class="field"><label>Start date</label><input name="startDate" type="date"></div>
+          <div class="field"><label>Target date</label><input name="targetDate" type="date"></div>
+          <div class="field full"><label>Technology stack</label><input name="stack" placeholder="React, TypeScript, Cloudflare Workers, D1..."></div>
+          <div class="field full"><label>Constraints / known blockers</label><textarea name="constraints" placeholder="Budget, compliance, API limitations, fixed deadlines, dependencies..."></textarea></div>
+          <div class="field full"><label>Team members</label><div id="members" class="team-editor"></div><button class="btn" type="button" onclick="addMember()" style="margin-top:8px">+ Add member</button></div>
+        </div>
+        <div style="display:flex;justify-content:flex-end;gap:8px;margin-top:20px"><button class="btn" type="button" onclick="closeProjectModal()">Cancel</button><button id="generate-btn" class="btn primary" type="submit">Generate project workspace</button></div>
+      </form>
+    </div>
+  </div>
+
+  <aside id="copilot" class="copilot">
+    <div class="copilot-head"><span>✦ Project Copilot</span><button class="close" onclick="toggleCopilot()">×</button></div>
+    <div id="copilot-body" class="copilot-body"><div class="message ai">Ask about blockers, critical dependencies, workload, priorities, risks, or what should happen next.</div></div>
+    <form class="copilot-form" onsubmit="askCopilot(event)"><input id="copilot-input" maxlength="2000" placeholder="What could delay this project?"><button class="btn primary">Ask</button></form>
+  </aside>
+  <div id="toast" class="toast"></div>
+  <script src="/app.js"></script>
+</body>
+</html>

@@ -9,6 +9,15 @@
 
 </div>
 
+<!-- catalog:io:start -->
+**Input → output:** feedback text → explainable sentiment, aspects, and review flags
+
+**Quick start:** `cd sentiment_analyzer && npm install && npm run check`
+
+**Track:** PM · Starter · built
+<!-- catalog:io:end -->
+
+
 Project 2 enriches normalized Project 1 feedback with deterministic sentiment, language, aspect, confidence, token evidence, and a human-review flag. It is deliberately a transparent baseline rather than a claimed production ML model.
 
 ## Product impact
@@ -92,3 +101,19 @@ test/                Analyzer, evaluation and HTTP tests
 ## License
 
 Licensed under the repository-level [Apache License 2.0](../LICENSE).
+
+<!-- catalog:connects:start -->
+## How this connects
+
+**Input → output:** feedback text → explainable sentiment, aspects, and review flags
+
+**Upstream:** [Signal stakeholder sentiment](../ai_stakeholder_sentiment_analyzer/README.md); [Feedback Collector](../feedback_collector/README.md)
+
+**Downstream:** [Voice-of-Customer Dashboard](../voice_of_customer_dashboard/README.md)
+
+**Related:** [MCP review intelligence](../mcp_review_intelligence/README.md)
+
+**Track:** PM · Starter.
+
+**Project 7:** Imported by the [Experiment & Learning Workspace](../experiment-data-quality-auditor/README.md).
+<!-- catalog:connects:end -->
