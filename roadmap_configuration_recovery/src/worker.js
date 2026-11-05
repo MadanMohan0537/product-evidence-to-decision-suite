@@ -6,6 +6,7 @@ const json = (value, status=200) => Response.json(value,{status,headers});
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+    if (!url.pathname.startsWith('/api/')) return env.ASSETS ? env.ASSETS.fetch(request) : json({error:'Assets unavailable'},503);
     if (url.pathname === '/api/health') return json({configured:Boolean(env.API_TOKEN)});
     if (!env.API_TOKEN) return json({error:'API_TOKEN required'},503);
     if (request.headers.get('Origin') && request.headers.get('Origin') !== url.origin) return json({error:'Cross-origin request rejected'},403);
