@@ -8,3 +8,7 @@ test('verifies originally failed controls',()=>assert.equal(verify(source,follow
 test('missing remediation blocks completion',()=>assert.equal(verify(source,followup,[]).status,'recovery_incomplete'));
 test('changed baseline rejected',()=>assert.throws(()=>verify(source,{...followup,activeVersion:'v2'},actions),/Changed/));
 test('earlier follow-up rejected',()=>assert.throws(()=>verify(source,{...followup,asOf:'2026-09-30'},actions),/later/));
+test('empty follow-up cannot pass by vacuous truth',()=>assert.throws(()=>verify(source,{...followup,checks:[]},actions),/nonempty/));
+test('duplicate controls cannot conceal failure',()=>assert.throws(()=>verify(source,{...followup,checks:[...followup.checks,...followup.checks]},actions),/Unique/));
+test('missing controls cannot silently disappear',()=>assert.throws(()=>verify({...source,checks:[...source.checks,{id:'archive',passed:true}]},followup,actions),/control set/));
+test('truthy nonboolean values rejected',()=>assert.throws(()=>verify(source,{...followup,checks:[{id:'consumer-convergence',passed:'true'}]},actions),/boolean/));

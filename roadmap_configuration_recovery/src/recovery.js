@@ -2,6 +2,15 @@
 export function verifyConfigurationRecovery(source, followup, actions) {
   if (!source || !followup || !Array.isArray(source.checks) || !Array.isArray(followup.checks)) throw new Error('Two monitoring reports required');
   if (source.schemaVersion !== '1.0.0' || followup.schemaVersion !== '1.0.0') throw new Error('Unsupported report schema');
+  for (const report of [source, followup]) {
+    if (!report.checks.length || report.checks.length > 100) throw new Error('Bounded nonempty controls required');
+    const ids = new Set();
+    for (const control of report.checks) {
+      if (!control || typeof control.id !== 'string' || !control.id.trim() || ids.has(control.id) || typeof control.passed !== 'boolean') throw new Error('Unique boolean controls required');
+      ids.add(control.id);
+    }
+  }
+  if (source.checks.length !== followup.checks.length || source.checks.some(control => !followup.checks.some(item => item.id === control.id))) throw new Error('Follow-up control set must match source');
   if (!source.id || !followup.id || source.id === followup.id) throw new Error('Distinct report IDs required');
   if (!Number.isFinite(Date.parse(source.asOf)) || !Number.isFinite(Date.parse(followup.asOf)) || Date.parse(followup.asOf) <= Date.parse(source.asOf)) throw new Error('Follow-up must be later');
   for (const key of ['sourceHandoffId', 'activeVersion', 'factorManifestId']) {
