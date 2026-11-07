@@ -1,0 +1,16 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {verifyConfigurationRecovery as verify} from '../src/recovery.js';
+const source = {schemaVersion:'1.0.0',id:'before',asOf:'2026-10-01',sourceHandoffId:'h1',activeVersion:'v1',factorManifestId:'f1',scope:['onboarding'],checks:[{id:'consumer-convergence',passed:false}]};
+const followup = {...source,id:'after',asOf:'2026-10-02',checks:[{id:'consumer-convergence',passed:true}]};
+const actions = [{id:'a1',controlId:'consumer-convergence',owner:'Operations',evidence:'Reviewed change record',status:'completed'}];
+test('verifies originally failed controls',()=>assert.equal(verify(source,followup,actions).status,'recovery_evidence_complete'));
+test('missing remediation blocks completion',()=>assert.equal(verify(source,followup,[]).status,'recovery_incomplete'));
+test('changed baseline rejected',()=>assert.throws(()=>verify(source,{...followup,activeVersion:'v2'},actions),/Changed/));
+test('earlier follow-up rejected',()=>assert.throws(()=>verify(source,{...followup,asOf:'2026-09-30'},actions),/later/));
+test('empty follow-up cannot pass by vacuous truth',()=>assert.throws(()=>verify(source,{...followup,checks:[]},actions),/nonempty/));
+test('duplicate controls cannot conceal failure',()=>assert.throws(()=>verify(source,{...followup,checks:[...followup.checks,...followup.checks]},actions),/Unique/));
+test('missing controls cannot silently disappear',()=>assert.throws(()=>verify({...source,checks:[...source.checks,{id:'archive',passed:true}]},followup,actions),/control set/));
+test('truthy nonboolean values rejected',()=>assert.throws(()=>verify(source,{...followup,checks:[{id:'consumer-convergence',passed:'true'}]},actions),/boolean/));
+test('narrowed scope cannot masquerade as recovery',()=>assert.throws(()=>verify(source,{...followup,scope:['other']},actions),/scope must match/));
+test('missing scope rejected',()=>assert.throws(()=>verify(source,{...followup,scope:[]},actions),/scope required/));
