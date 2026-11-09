@@ -2,6 +2,7 @@ import {discover, rankOpportunities} from './pipeline.js';
 import {addExperiment, startExperiment, recordReadout, recordDecision, recordOutcomeReview, learningLedger} from './lifecycle.js';
 import {RunStore, Conflict} from './store.js';
 import auditor from './worker.js';
+import {verifyConfigurationRecovery} from '../../roadmap_configuration_recovery/src/recovery.js';
 import {buildLearningMemory, searchLearningMemory} from '../../product_learning_memory/src/memory.js';
 import {calibrateRuns} from '../../decision_calibration_engine/src/calibration.js';
 import {assessEvidenceIntegrity} from '../../evidence_integrity_monitor/src/integrity.js';
@@ -392,6 +393,28 @@ export default {
           monitoring: input.recalibrationBaselineDriftMonitoring,
           review: input.recalibrationBaselineDriftReview,
         }));
+      }
+      if (url.pathname === '/api/configuration-recovery' && request.method === 'POST') {
+        const input = await body(request);
+        const runs = await store.recent(Number(url.searchParams.get('limit') ?? 20));
+        const reconstruct = assessment => {
+          const {handoff} = buildRoadmapRecalibrationBaselineHandoff(runs, assessment);
+          return monitorRoadmapRecalibrationBaselineDrift(handoff, {
+            id: assessment.recalibrationBaselineDriftId,
+            asOf: assessment.recalibrationBaselineDriftAsOf,
+            minimumSnapshots: assessment.recalibrationBaselineDriftMinimumSnapshots,
+            maximumSnapshotGapHours: assessment.recalibrationBaselineDriftMaximumSnapshotGapHours,
+            maximumSnapshotAgeHours: assessment.recalibrationBaselineDriftMaximumSnapshotAgeHours,
+            minimumArchiveRemainingDays: assessment.recalibrationBaselineDriftMinimumArchiveRemainingDays,
+            maximumRollbackTestAgeDays: assessment.recalibrationBaselineDriftMaximumRollbackTestAgeDays,
+            snapshots: assessment.recalibrationBaselineDriftSnapshots,
+            archive: assessment.recalibrationBaselineDriftArchive,
+            rollback: assessment.recalibrationBaselineDriftRollback,
+            monitoring: assessment.recalibrationBaselineDriftMonitoring,
+            review: assessment.recalibrationBaselineDriftReview,
+          });
+        };
+        return json(verifyConfigurationRecovery(reconstruct(input.sourceAssessment), reconstruct(input.followupAssessment), input.actions, input.review));
       }
       if (url.pathname === '/api/portfolio-stress' && request.method === 'POST') {
         const limit = Number(url.searchParams.get('limit') ?? 20);

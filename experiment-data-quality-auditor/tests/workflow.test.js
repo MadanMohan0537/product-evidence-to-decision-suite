@@ -384,6 +384,27 @@ test('HTTP complete lifecycle persists learning and survives reopening the store
   assert.equal(roadmapRecalibrationBaselineDrift.sourceHandoffId,'baseline-handoff-1');
   assert.equal(roadmapRecalibrationBaselineDrift.summary.alignedSnapshots,3);
   assert.ok(roadmapRecalibrationBaselineDrift.checks.every(item=>item.passed));
+  const sourceAssessment=structuredClone(requestBodies.get('/api/roadmap-recalibration-baseline-drift'));
+  sourceAssessment.recalibrationBaselineDriftArchive.available=false;
+  const followupAssessment=structuredClone(requestBodies.get('/api/roadmap-recalibration-baseline-drift'));
+  followupAssessment.recalibrationBaselineDriftId='baseline-drift-recovered';
+  followupAssessment.recalibrationBaselineDriftAsOf='2027-04-08T03:00:00Z';
+  followupAssessment.recalibrationBaselineDriftSnapshots.push(
+    driftSnapshot('config-25h','2027-04-08T01:00:00Z'),
+    driftSnapshot('config-26h','2027-04-08T02:00:00Z'),
+    driftSnapshot('config-27h','2027-04-08T03:00:00Z'),
+  );
+  followupAssessment.recalibrationBaselineDriftReview.reviewedAt='2027-04-08T04:00:00Z';
+  const recoveryResponse=await worker.fetch(req('/api/configuration-recovery',{
+    sourceAssessment,followupAssessment,
+    actions:[{id:'restore-archive',controlId:'archive-availability',owner:'Records operations',evidence:'Reviewed archive restoration receipt.',status:'completed',approvedBy:'Change board',approvedAt:'2027-04-08T00:10:00Z',completedAt:'2027-04-08T00:30:00Z'}],
+    review:{reviewer:'Recovery assurance',decision:'accept_evidence',reviewedAt:'2027-04-08T05:00:00Z'},
+  }),env);
+  assert.equal(recoveryResponse.status,200);
+  const configurationRecovery=await recoveryResponse.json();
+  assert.equal(configurationRecovery.status,'recovery_evidence_complete');
+  assert.equal(configurationRecovery.sourceReportId,'baseline-drift-1');
+  assert.deepEqual(configurationRecovery.restored,[{id:'archive-availability',restored:true}]);
   assert.equal(roadmapRecovery.status,'approved_recovery_plan');
   assert.equal(roadmapRecovery.sourceDeliveryMonitorId,'delivery-recovery');
   assert.deepEqual(roadmapRecovery.selectedActions[0].sourceEvidenceIds,run.ranking.ranked[0].evidenceIds);
