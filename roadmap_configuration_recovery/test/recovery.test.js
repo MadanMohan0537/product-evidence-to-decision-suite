@@ -14,3 +14,6 @@ test('missing controls cannot silently disappear',()=>assert.throws(()=>verify({
 test('truthy nonboolean values rejected',()=>assert.throws(()=>verify(source,{...followup,checks:[{id:'consumer-convergence',passed:'true'}]},actions),/boolean/));
 test('narrowed scope cannot masquerade as recovery',()=>assert.throws(()=>verify(source,{...followup,scope:['other']},actions),/scope must match/));
 test('missing scope rejected',()=>assert.throws(()=>verify(source,{...followup,scope:[]},actions),/scope required/));
+test('null actions rejected safely',()=>assert.throws(()=>verify(source,followup,[null]),/Action object/));
+test('unknown action status rejected',()=>assert.throws(()=>verify(source,followup,[{...actions[0],status:'approved'}]),/Invalid action status/));
+test('oversized evidence rejected',()=>assert.throws(()=>verify(source,followup,[{...actions[0],evidence:'x'.repeat(2001)}]),/Bounded/));

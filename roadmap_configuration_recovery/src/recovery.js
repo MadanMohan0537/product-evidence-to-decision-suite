@@ -23,6 +23,10 @@ export function verifyConfigurationRecovery(source, followup, actions) {
   if (!failed.length) throw new Error('Source must contain failed controls');
   const seen = new Set();
   for (const action of actions) {
+    if (!action || typeof action !== 'object' || Array.isArray(action)) throw new Error('Action object required');
+    if (typeof action.id !== 'string' || !action.id.trim() || action.id.length > 120) throw new Error('Bounded action ID required');
+    if (typeof action.owner !== 'string' || typeof action.evidence !== 'string' || action.owner.length > 120 || action.evidence.length > 2000) throw new Error('Bounded action owner and evidence required');
+    if (!['planned', 'in_progress', 'completed'].includes(action.status)) throw new Error('Invalid action status');
     if (!action.id || seen.has(action.id)) throw new Error('Unique action IDs required');
     seen.add(action.id);
     if (!action.owner?.trim() || !action.evidence?.trim() || !failed.includes(action.controlId)) throw new Error('Owned evidence-linked actions required');
