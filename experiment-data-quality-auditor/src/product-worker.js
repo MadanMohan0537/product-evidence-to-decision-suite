@@ -414,7 +414,7 @@ export default {
             review: assessment.recalibrationBaselineDriftReview,
           });
         };
-        return json(verifyConfigurationRecovery(reconstruct(input.sourceAssessment), reconstruct(input.followupAssessment), input.actions));
+        return json(verifyConfigurationRecovery(reconstruct(input.sourceAssessment), reconstruct(input.followupAssessment), input.actions, input.review));
       }
       if (url.pathname === '/api/portfolio-stress' && request.method === 'POST') {
         const limit = Number(url.searchParams.get('limit') ?? 20);

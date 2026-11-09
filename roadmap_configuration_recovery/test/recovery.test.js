@@ -2,9 +2,14 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {verifyConfigurationRecovery as verify} from '../src/recovery.js';
 const source = {schemaVersion:'1.0.0',id:'before',asOf:'2026-10-01',sourceHandoffId:'h1',activeVersion:'v1',factorManifestId:'f1',scope:['onboarding'],checks:[{id:'consumer-convergence',passed:false}]};
-const followup = {...source,id:'after',asOf:'2026-10-02',checks:[{id:'consumer-convergence',passed:true}]};
-const actions = [{id:'a1',controlId:'consumer-convergence',owner:'Operations',evidence:'Reviewed change record',status:'completed'}];
-test('verifies originally failed controls',()=>assert.equal(verify(source,followup,actions).status,'recovery_evidence_complete'));
+const followup = {...source,id:'after',asOf:'2026-10-02',checks:[{id:'consumer-convergence',passed:true}],
+  snapshots:['2026-10-01T12:00:00Z','2026-10-01T13:00:00Z'].map(observedAt=>({observedAt,aligned:true}))};
+const actions = [{id:'a1',controlId:'consumer-convergence',owner:'Operations',evidence:'Reviewed change record',status:'completed',approvedBy:'Change board',approvedAt:'2026-10-01T09:00:00Z',completedAt:'2026-10-01T10:00:00Z'}];
+const review = {reviewer:'Assurance',decision:'accept_evidence',reviewedAt:'2026-10-02T01:00:00Z'};
+test('verifies originally failed controls',()=>assert.equal(verify(source,followup,actions,review).status,'recovery_evidence_complete'));
+test('blocks self-approval',()=>assert.throws(()=>verify(source,followup,[{...actions[0],approvedBy:' operations '}],review),/independent approval/));
+test('blocks stale or insufficient observations',()=>assert.equal(verify(source,{...followup,snapshots:followup.snapshots.slice(0,1)},actions,review).status,'recovery_incomplete'));
+test('blocks review by the approver',()=>assert.equal(verify(source,followup,actions,{...review,reviewer:'Change board'}).independentReview,false));
 test('missing remediation blocks completion',()=>assert.equal(verify(source,followup,[]).status,'recovery_incomplete'));
 test('changed baseline rejected',()=>assert.throws(()=>verify(source,{...followup,activeVersion:'v2'},actions),/Changed/));
 test('earlier follow-up rejected',()=>assert.throws(()=>verify(source,{...followup,asOf:'2026-09-30'},actions),/later/));

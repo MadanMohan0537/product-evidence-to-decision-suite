@@ -34,7 +34,7 @@ export default {
       let offset=0;
       for (const chunk of chunks) {bytes.set(chunk,offset);offset+=chunk.length;}
       const payload=JSON.parse(new TextDecoder().decode(bytes));
-      return json(verifyConfigurationRecovery(payload.source,payload.followup,payload.actions));
+      return json(verifyConfigurationRecovery(payload.source,payload.followup,payload.actions,payload.review));
     } catch (error) {
       return json({error:error.message},422);
     }
