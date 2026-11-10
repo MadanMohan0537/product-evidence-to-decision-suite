@@ -9,6 +9,12 @@
 <body>
   <header><a href="/" class="brand">ProdMind <span>Evidence to decisions</span></a><span class="badge">Single-team workspace</span></header>
   <main>
+    <section class="panel">
+      <h2>Project 58: Plan drift prevention</h2>
+      <p>Upload verified recovery inputs and a prevention plan to find missing or overdue follow-up actions.</p>
+      <form id="recovery-learning"><label>Assessment JSON <input name="file" type="file" accept=".json,application/json" required></label><button>Assess prevention plan</button></form>
+      <pre id="recovery-learning-result" aria-live="polite"></pre>
+    </section>
     <section class="access panel"><form id="connect"><label>Workspace API token<input id="token" type="password" required autocomplete="off" placeholder="Token is kept only in this page's memory"></label><button>Connect</button></form><p>The server saves your work. Reloading this page requires entering the token again.</p></section>
     <p id="notice" role="status" aria-live="polite">Connect to load saved discovery runs.</p>
     <section class="panel"><h2>Project 9: Product learning memory</h2><p>Search prior experiments, decisions, evidence and monitored outcomes before planning another bet.</p><form id="memory-search" class="form-grid"><label>Search prior learning<input name="query" required minlength="2" maxlength="200" placeholder="onboarding activation"></label><label>Decision filter<select name="outcome"><option value="">Any decision</option><option value="ship">Ship</option><option value="iterate">Iterate</option><option value="reject">Reject</option></select></label><label>Outcome filter<select name="status"><option value="">Any status</option><option value="sustained">Sustained</option><option value="emerging">Emerging</option><option value="below_target">Below target</option><option value="at_risk">At risk</option><option value="unmonitored">Unmonitored</option></select></label><button>Search product memory</button></form><div id="memory-results"><p class="muted">Connect to search saved runs.</p></div></section>

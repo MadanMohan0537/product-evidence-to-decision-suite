@@ -405,6 +405,15 @@ test('HTTP complete lifecycle persists learning and survives reopening the store
   assert.equal(configurationRecovery.status,'recovery_evidence_complete');
   assert.equal(configurationRecovery.sourceReportId,'baseline-drift-1');
   assert.deepEqual(configurationRecovery.restored,[{id:'archive-availability',restored:true}]);
+  const learningResponse=await worker.fetch(req('/api/recovery-learning',{
+    ...requestBodies.get('/api/configuration-recovery'),
+    prevention:{sourceReportId:'baseline-drift-1',followupReportId:'baseline-drift-recovered',
+      asOf:'2027-04-08T06:00:00Z',lesson:'Detect archive access loss earlier',
+      actions:[{id:'archive-probe',controlId:'archive-availability',owner:'Records operations',
+        measure:'Probe raises a test alert when the archive cannot be read',dueAt:'2027-04-15T00:00:00Z'}]},
+  }),env);
+  assert.equal(learningResponse.status,200);
+  assert.equal((await learningResponse.json()).status,'ready_for_human_review');
   assert.equal(roadmapRecovery.status,'approved_recovery_plan');
   assert.equal(roadmapRecovery.sourceDeliveryMonitorId,'delivery-recovery');
   assert.deepEqual(roadmapRecovery.selectedActions[0].sourceEvidenceIds,run.ranking.ranked[0].evidenceIds);

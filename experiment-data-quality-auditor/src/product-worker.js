@@ -3,6 +3,7 @@ import {addExperiment, startExperiment, recordReadout, recordDecision, recordOut
 import {RunStore, Conflict} from './store.js';
 import auditor from './worker.js';
 import {verifyConfigurationRecovery} from '../../roadmap_configuration_recovery/src/recovery.js';
+import {assessRecoveryLearning} from '../../roadmap_recovery_learning/src/learning.js';
 import {buildLearningMemory, searchLearningMemory} from '../../product_learning_memory/src/memory.js';
 import {calibrateRuns} from '../../decision_calibration_engine/src/calibration.js';
 import {assessEvidenceIntegrity} from '../../evidence_integrity_monitor/src/integrity.js';
@@ -394,7 +395,7 @@ export default {
           review: input.recalibrationBaselineDriftReview,
         }));
       }
-      if (url.pathname === '/api/configuration-recovery' && request.method === 'POST') {
+      if (['/api/configuration-recovery', '/api/recovery-learning'].includes(url.pathname) && request.method === 'POST') {
         const input = await body(request);
         const runs = await store.recent(Number(url.searchParams.get('limit') ?? 20));
         const reconstruct = assessment => {
@@ -414,7 +415,12 @@ export default {
             review: assessment.recalibrationBaselineDriftReview,
           });
         };
-        return json(verifyConfigurationRecovery(reconstruct(input.sourceAssessment), reconstruct(input.followupAssessment), input.actions, input.review));
+        const recovery = verifyConfigurationRecovery(reconstruct(input.sourceAssessment), reconstruct(input.followupAssessment), input.actions, input.review);
+        if (url.pathname === '/api/recovery-learning') {
+          if (Date.parse(input.prevention?.asOf) < Date.parse(input.review?.reviewedAt)) throw new Error('Prevention assessment must follow recovery review');
+          return json(assessRecoveryLearning(recovery, input.prevention));
+        }
+        return json(recovery);
       }
       if (url.pathname === '/api/portfolio-stress' && request.method === 'POST') {
         const limit = Number(url.searchParams.get('limit') ?? 20);

@@ -2,7 +2,7 @@
 
 # ProdMind
 
-**A 57-project, evidence-to-execution-and-governance operating system for product teams.**
+**A 58-project, evidence-to-execution-and-governance operating system for product teams.**
 
 [![Connected lifecycle](https://github.com/MadanMohan0537/prodmind/actions/workflows/experiment-data-quality-auditor.yml/badge.svg)](https://github.com/MadanMohan0537/prodmind/actions/workflows/experiment-data-quality-auditor.yml)
 [![Cloudflare Workers](https://img.shields.io/badge/runtime-Cloudflare%20Workers-F38020)](https://developers.cloudflare.com/workers/)
@@ -153,7 +153,7 @@ ProdMind is designed around decisions rather than disconnected demos:
 
 The product should be evaluated by evidence-linked decisions, time saved with review quality preserved, prevented data-quality failures, accepted research plans, monitored outcome coverage, and strategy exceptions resolved. None of these measures should reward automatic shipping or unsupported causal claims.
 
-## The 57 projects
+## The 58 projects
 
 | # | Project | What it contributes | Frontend |
 |---:|---|---|---|
@@ -214,6 +214,7 @@ The product should be evaluated by evidence-linked decisions, time saved with re
 | 55 | [Roadmap Recalibration Baseline Handoff Controller](roadmap_recalibration_baseline_handoff_controller/) | Exact factor manifest, class registration, five-consumer convergence, immutable archive, current rollback and downstream monitoring | Standalone and connected baseline-handoff control |
 | 56 | [Roadmap Recalibration Baseline Configuration Drift Monitor](roadmap_recalibration_baseline_drift_monitor/) | Chronological configuration snapshots, manifest and class continuity, five-consumer convergence, archive, rollback and monitoring obligations | Standalone and connected configuration-drift monitoring |
 | 57 | [Configuration Drift Remediation & Recovery Verifier](roadmap_configuration_recovery/) | Approved corrective actions, post-remediation observations, and independent evidence review | Standalone and connected recovery verification |
+| 58 | [Roadmap Recovery Learning & Prevention Planner](roadmap_recovery_learning/) | Lessons and owned, measurable follow-up for each restored control | Connected prevention-plan review |
 
 `.github/` is supporting CI configuration, not a product project.
 
