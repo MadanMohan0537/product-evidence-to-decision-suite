@@ -61,6 +61,7 @@ on:
       - 'roadmap_recalibration_baseline_drift_monitor/**'
       - 'roadmap_configuration_recovery/**'
       - 'roadmap_recovery_learning/**'
+      - 'roadmap_prevention_followthrough/**'
   pull_request:
     paths:
       - 'experiment-data-quality-auditor/**'
@@ -122,6 +123,7 @@ on:
       - 'roadmap_recalibration_baseline_drift_monitor/**'
       - 'roadmap_configuration_recovery/**'
       - 'roadmap_recovery_learning/**'
+      - 'roadmap_prevention_followthrough/**'
 permissions:
   contents: read
 jobs:

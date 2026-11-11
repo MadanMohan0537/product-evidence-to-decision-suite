@@ -1,0 +1,11 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {verifyPreventionFollowthrough as verify} from '../src/followthrough.js';
+const plan={status:'ready_for_human_review',sourceReportId:'s',followupReportId:'f',asOf:'2027-01-01T00:00:00Z',actions:[{id:'probe',controlId:'archive',owner:'Ops',measure:'Detect unreadable archive',dueAt:'2027-01-02T00:00:00Z'}]};
+const record={actionId:'probe',completedAt:'2027-01-03T00:00:00Z',checkedAt:'2027-01-03T01:00:00Z',verifier:'QA',reference:'Test log 1',measure:'Detect unreadable archive',passed:true};
+const review={sourceReportId:'s',followupReportId:'f',asOf:'2027-01-04T00:00:00Z',evidence:[record]};
+test('verified late action retains its lateness',()=>{const r=verify(plan,review);assert.equal(r.status,'followthrough_verified');assert.equal(r.actions[0].late,true);});
+test('missing or failing evidence remains open',()=>{for(const evidence of [[],[{...record,passed:false}]])assert.equal(verify(plan,{...review,evidence}).status,'followthrough_open');});
+test('rejects self verification and changed measure',()=>{for(const change of [{verifier:' ops '},{measure:'Different'}])assert.throws(()=>verify(plan,{...review,evidence:[{...record,...change}]}),/Independent/);});
+test('rejects evidence predating the plan',()=>assert.throws(()=>verify(plan,{...review,evidence:[{...record,completedAt:plan.asOf}]}),/chronology/));
+test('rejects unrelated recovery and action',()=>{assert.throws(()=>verify(plan,{...review,sourceReportId:'other'}),/lineage/);assert.throws(()=>verify(plan,{...review,evidence:[{...record,actionId:'other'}]}),/plan/);});
