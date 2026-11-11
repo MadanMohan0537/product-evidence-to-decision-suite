@@ -4,6 +4,7 @@ import {RunStore, Conflict} from './store.js';
 import auditor from './worker.js';
 import {verifyConfigurationRecovery} from '../../roadmap_configuration_recovery/src/recovery.js';
 import {assessRecoveryLearning} from '../../roadmap_recovery_learning/src/learning.js';
+import {verifyPreventionFollowthrough} from '../../roadmap_prevention_followthrough/src/followthrough.js';
 import {buildLearningMemory, searchLearningMemory} from '../../product_learning_memory/src/memory.js';
 import {calibrateRuns} from '../../decision_calibration_engine/src/calibration.js';
 import {assessEvidenceIntegrity} from '../../evidence_integrity_monitor/src/integrity.js';
@@ -395,7 +396,7 @@ export default {
           review: input.recalibrationBaselineDriftReview,
         }));
       }
-      if (['/api/configuration-recovery', '/api/recovery-learning'].includes(url.pathname) && request.method === 'POST') {
+      if (['/api/configuration-recovery', '/api/recovery-learning', '/api/prevention-followthrough'].includes(url.pathname) && request.method === 'POST') {
         const input = await body(request);
         const runs = await store.recent(Number(url.searchParams.get('limit') ?? 20));
         const reconstruct = assessment => {
@@ -416,9 +417,10 @@ export default {
           });
         };
         const recovery = verifyConfigurationRecovery(reconstruct(input.sourceAssessment), reconstruct(input.followupAssessment), input.actions, input.review);
-        if (url.pathname === '/api/recovery-learning') {
+        if (url.pathname !== '/api/configuration-recovery') {
           if (Date.parse(input.prevention?.asOf) < Date.parse(input.review?.reviewedAt)) throw new Error('Prevention assessment must follow recovery review');
-          return json(assessRecoveryLearning(recovery, input.prevention));
+          const plan = assessRecoveryLearning(recovery, input.prevention);
+          return json(url.pathname === '/api/recovery-learning' ? plan : verifyPreventionFollowthrough(plan, input.followthrough));
         }
         return json(recovery);
       }
