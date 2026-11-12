@@ -62,6 +62,7 @@ on:
       - 'roadmap_configuration_recovery/**'
       - 'roadmap_recovery_learning/**'
       - 'roadmap_prevention_followthrough/**'
+      - 'roadmap_prevention_revalidation/**'
   pull_request:
     paths:
       - 'experiment-data-quality-auditor/**'
@@ -124,6 +125,7 @@ on:
       - 'roadmap_configuration_recovery/**'
       - 'roadmap_recovery_learning/**'
       - 'roadmap_prevention_followthrough/**'
+      - 'roadmap_prevention_revalidation/**'
 permissions:
   contents: read
 jobs:

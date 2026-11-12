@@ -423,6 +423,15 @@ test('HTTP complete lifecycle persists learning and survives reopening the store
   }),env);
   assert.equal(followthrough.status,200);
   assert.equal((await followthrough.json()).status,'followthrough_verified');
+  const revalidation=await worker.fetch(req('/api/prevention-revalidation',{
+    ...requestBodies.get('/api/prevention-followthrough'),
+    revalidation:{sourceReportId:'baseline-drift-1',followupReportId:'baseline-drift-recovered',
+      asOf:'2027-04-14T00:00:00Z',maximumAgeHours:24,checks:[{actionId:'archive-probe',
+        checkedAt:'2027-04-13T12:00:00Z',verifier:'Assurance',reference:'Repeat probe receipt',
+        measure:'Probe raises a test alert when the archive cannot be read',passed:true}]},
+  }),env);
+  assert.equal(revalidation.status,200);
+  assert.equal((await revalidation.json()).status,'prevention_checks_current');
   assert.equal(roadmapRecovery.status,'approved_recovery_plan');
   assert.equal(roadmapRecovery.sourceDeliveryMonitorId,'delivery-recovery');
   assert.deepEqual(roadmapRecovery.selectedActions[0].sourceEvidenceIds,run.ranking.ranked[0].evidenceIds);
