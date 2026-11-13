@@ -432,6 +432,12 @@ test('HTTP complete lifecycle persists learning and survives reopening the store
   }),env);
   assert.equal(revalidation.status,200);
   assert.equal((await revalidation.json()).status,'prevention_checks_current');
+  const evidenceExport=await worker.fetch(req('/api/prevention-evidence-export',requestBodies.get('/api/prevention-revalidation')),env);
+  assert.equal(evidenceExport.status,200);
+  const exported=await evidenceExport.json();
+  assert.equal(exported.payload.stages.revalidation,'prevention_checks_current');
+  assert.match(exported.integrity.digest,/^[a-f0-9]{64}$/);
+  assert.doesNotMatch(JSON.stringify(exported),/Repeat probe receipt|Assurance/);
   assert.equal(roadmapRecovery.status,'approved_recovery_plan');
   assert.equal(roadmapRecovery.sourceDeliveryMonitorId,'delivery-recovery');
   assert.deepEqual(roadmapRecovery.selectedActions[0].sourceEvidenceIds,run.ranking.ranked[0].evidenceIds);

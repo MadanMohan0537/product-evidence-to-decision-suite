@@ -6,6 +6,7 @@ import {verifyConfigurationRecovery} from '../../roadmap_configuration_recovery/
 import {assessRecoveryLearning} from '../../roadmap_recovery_learning/src/learning.js';
 import {verifyPreventionFollowthrough} from '../../roadmap_prevention_followthrough/src/followthrough.js';
 import {revalidatePrevention} from '../../roadmap_prevention_revalidation/src/revalidation.js';
+import {exportPreventionEvidence} from '../../roadmap_prevention_evidence_export/src/export.js';
 import {buildLearningMemory, searchLearningMemory} from '../../product_learning_memory/src/memory.js';
 import {calibrateRuns} from '../../decision_calibration_engine/src/calibration.js';
 import {assessEvidenceIntegrity} from '../../evidence_integrity_monitor/src/integrity.js';
@@ -397,7 +398,7 @@ export default {
           review: input.recalibrationBaselineDriftReview,
         }));
       }
-      if (['/api/configuration-recovery', '/api/recovery-learning', '/api/prevention-followthrough', '/api/prevention-revalidation'].includes(url.pathname) && request.method === 'POST') {
+      if (['/api/configuration-recovery', '/api/recovery-learning', '/api/prevention-followthrough', '/api/prevention-revalidation', '/api/prevention-evidence-export'].includes(url.pathname) && request.method === 'POST') {
         const input = await body(request);
         const runs = await store.recent(Number(url.searchParams.get('limit') ?? 20));
         const reconstruct = assessment => {
@@ -424,7 +425,9 @@ export default {
           if (url.pathname === '/api/recovery-learning') return json(plan);
           const verified = verifyPreventionFollowthrough(plan, input.followthrough);
           if (url.pathname === '/api/prevention-followthrough') return json(verified);
-          return json(revalidatePrevention(plan, verified, input.followthrough.asOf, input.revalidation));
+          const current = revalidatePrevention(plan, verified, input.followthrough.asOf, input.revalidation);
+          if (url.pathname === '/api/prevention-revalidation') return json(current);
+          return json(await exportPreventionEvidence(recovery, plan, verified, current));
         }
         return json(recovery);
       }
