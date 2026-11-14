@@ -109,6 +109,20 @@ $('#roadmap-recalibration-baseline-handoff').onsubmit = event => {event.preventD
 $('#roadmap-recalibration-baseline-drift').onsubmit = event => {event.preventDefault();action(async()=>{
   const file=event.currentTarget.elements.file.files[0];if(!file||file.size>2_000_000)throw new Error('Choose a baseline drift JSON file under 2 MB.');const input=JSON.parse(await file.text());const result=await api('/api/roadmap-recalibration-baseline-drift',input);const parent=$('#roadmap-recalibration-baseline-drift-results');parent.replaceChildren();const metrics=el('div',undefined,'metrics');for(const[label,value]of Object.entries({Status:result.status,Snapshots:result.summary.snapshots,Aligned:result.summary.alignedSnapshots,Drifted:result.summary.driftSnapshots,Consumers:result.summary.driftedConsumers.length})){const tile=el('div',undefined,'metric');tile.append(el('strong',String(value)),el('span',label));metrics.append(tile);}parent.append(metrics,el('p',result.method,'muted'));for(const snapshot of result.snapshots){const card=el('article',undefined,'card');card.append(el('h3',snapshot.id),el('p',`${snapshot.observedAt} · ${snapshot.activeVersion} · ${snapshot.factorManifestId} · ${snapshot.aligned?'aligned':'drift detected'}`,'muted'));details(card,'Inspect class registrations and consumer configuration',snapshot);parent.append(card);}details(parent,'Inspect archive, rollback, monitoring obligations, checks, and review',result);notice('Baseline configuration monitored. No self-healing, configuration, factor, estimate, schedule, archive, rollback, monitoring, or product state change was performed.');
 });};
+$('#prevention-evidence-verify').onsubmit = event => {
+  event.preventDefault();
+  const {file,digest} = event.currentTarget.elements;
+  const expectedDigest = digest.value;
+  const selectedFile = file.files[0];
+  const output = $('#prevention-evidence-verify-result');
+  output.textContent = '';
+  action(async () => {
+    if (!selectedFile || selectedFile.size > 2_000_000) throw new Error('Choose a JSON file under 2 MB.');
+    const envelope = JSON.parse(await selectedFile.text());
+    const result = await api('/api/prevention-evidence-verify', {envelope,expectedDigest});
+    output.textContent = JSON.stringify(result, null, 2);
+  });
+};
 $('#prevention-evidence-export').onsubmit = event => {
   event.preventDefault();
   const file = event.currentTarget.elements.file.files[0];

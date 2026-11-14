@@ -7,6 +7,7 @@ import {assessRecoveryLearning} from '../../roadmap_recovery_learning/src/learni
 import {verifyPreventionFollowthrough} from '../../roadmap_prevention_followthrough/src/followthrough.js';
 import {revalidatePrevention} from '../../roadmap_prevention_revalidation/src/revalidation.js';
 import {exportPreventionEvidence} from '../../roadmap_prevention_evidence_export/src/export.js';
+import {verifyPreventionEvidence} from '../../roadmap_prevention_evidence_verification/src/verify.js';
 import {buildLearningMemory, searchLearningMemory} from '../../product_learning_memory/src/memory.js';
 import {calibrateRuns} from '../../decision_calibration_engine/src/calibration.js';
 import {assessEvidenceIntegrity} from '../../evidence_integrity_monitor/src/integrity.js';
@@ -397,6 +398,10 @@ export default {
           monitoring: input.recalibrationBaselineDriftMonitoring,
           review: input.recalibrationBaselineDriftReview,
         }));
+      }
+      if (url.pathname === '/api/prevention-evidence-verify' && request.method === 'POST') {
+        const {envelope, expectedDigest} = await body(request);
+        return json(await verifyPreventionEvidence(envelope, expectedDigest));
       }
       if (['/api/configuration-recovery', '/api/recovery-learning', '/api/prevention-followthrough', '/api/prevention-revalidation', '/api/prevention-evidence-export'].includes(url.pathname) && request.method === 'POST') {
         const input = await body(request);
