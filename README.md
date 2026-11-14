@@ -2,7 +2,7 @@
 
 # ProdMind
 
-**A 61-project, evidence-to-execution-and-governance operating system for product teams.**
+**A 62-project, evidence-to-execution-and-governance operating system for product teams.**
 
 [![Connected lifecycle](https://github.com/MadanMohan0537/prodmind/actions/workflows/experiment-data-quality-auditor.yml/badge.svg)](https://github.com/MadanMohan0537/prodmind/actions/workflows/experiment-data-quality-auditor.yml)
 [![Cloudflare Workers](https://img.shields.io/badge/runtime-Cloudflare%20Workers-F38020)](https://developers.cloudflare.com/workers/)
@@ -153,7 +153,7 @@ ProdMind is designed around decisions rather than disconnected demos:
 
 The product should be evaluated by evidence-linked decisions, time saved with review quality preserved, prevented data-quality failures, accepted research plans, monitored outcome coverage, and strategy exceptions resolved. None of these measures should reward automatic shipping or unsupported causal claims.
 
-## The 61 projects
+## The 62 projects
 
 | # | Project | What it contributes | Frontend |
 |---:|---|---|---|
@@ -218,6 +218,7 @@ The product should be evaluated by evidence-linked decisions, time saved with re
 | 59 | [Roadmap Prevention Follow-through Verifier](roadmap_prevention_followthrough/) | Independent implementation evidence against planned measures, with deadline visibility | Connected follow-through review |
 | 60 | [Roadmap Prevention Revalidation Monitor](roadmap_prevention_revalidation/) | Later repeat-check evidence and freshness against the original prevention measures | Connected revalidation review |
 | 61 | [Roadmap Prevention Evidence Export](roadmap_prevention_evidence_export/) | Downloadable recovery-to-revalidation summary with a SHA-256 checksum | Connected evidence export |
+| 62 | [Roadmap Prevention Evidence Verification](roadmap_prevention_evidence_verification/) | Recipient-side comparison to a separately trusted SHA-256 digest | Connected checksum verification |
 
 `.github/` is supporting CI configuration, not a product project.
 
