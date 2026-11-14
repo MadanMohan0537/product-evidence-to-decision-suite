@@ -10,6 +10,12 @@
   <header><a href="/" class="brand">ProdMind <span>Evidence to decisions</span></a><span class="badge">Single-team workspace</span></header>
   <main>
     <section class="panel">
+      <h2>Project 62: Verify prevention evidence</h2>
+      <p>Compare a Project 61 export with a digest obtained separately from a trusted source.</p>
+      <form id="prevention-evidence-verify"><label>Evidence JSON <input name="file" type="file" accept=".json,application/json" required></label><label>Trusted SHA-256 digest <input name="digest" required pattern="[0-9a-fA-F]{64}" maxlength="64" autocomplete="off"></label><button>Verify checksum</button></form>
+      <pre id="prevention-evidence-verify-result" aria-live="polite"></pre>
+    </section>
+    <section class="panel">
       <h2>Project 61: Export prevention evidence</h2>
       <p>Upload a revalidation request to download a minimized, checksummed summary.</p>
       <form id="prevention-evidence-export"><label>Revalidation JSON <input name="file" type="file" accept=".json,application/json" required></label><button>Download evidence summary</button></form>
