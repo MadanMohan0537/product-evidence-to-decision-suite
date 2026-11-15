@@ -443,6 +443,17 @@ test('HTTP complete lifecycle persists learning and survives reopening the store
   }),env);
   assert.equal(verifiedExport.status,200);
   assert.equal((await verifiedExport.json()).status,'digest_match');
+  const nextRequest=structuredClone(requestBodies.get('/api/prevention-revalidation'));
+  nextRequest.revalidation.asOf='2027-04-15T00:00:00Z';
+  const nextExport=await worker.fetch(req('/api/prevention-evidence-export',nextRequest),env);
+  assert.equal(nextExport.status,200);
+  const latest=await nextExport.json();
+  const comparison=await worker.fetch(req('/api/prevention-evidence-compare',{
+    previous:{envelope:exported,expectedDigest:exported.integrity.digest},
+    latest:{envelope:latest,expectedDigest:latest.integrity.digest},
+  }),env);
+  assert.equal(comparison.status,200);
+  assert.equal((await comparison.json()).actions[0].change,'lost_currency');
   assert.equal(roadmapRecovery.status,'approved_recovery_plan');
   assert.equal(roadmapRecovery.sourceDeliveryMonitorId,'delivery-recovery');
   assert.deepEqual(roadmapRecovery.selectedActions[0].sourceEvidenceIds,run.ranking.ranked[0].evidenceIds);
