@@ -9,6 +9,7 @@ modules.push('roadmap_prevention_followthrough');
 modules.push('roadmap_prevention_revalidation');
 modules.push('roadmap_prevention_evidence_export');
 modules.push('roadmap_prevention_evidence_verification');
+modules.push('roadmap_prevention_evidence_comparison');
 const testFiles=directory=>readdirSync(directory,{withFileTypes:true}).flatMap(entry=>entry.isDirectory()?testFiles(`${directory}/${entry.name}`):(entry.name.endsWith('.test.js')?[`${directory}/${entry.name}`]:[]));
 let failed=false;
 for(const name of modules){
