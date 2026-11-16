@@ -66,6 +66,7 @@ on:
       - 'roadmap_prevention_evidence_export/**'
       - 'roadmap_prevention_evidence_verification/**'
       - 'roadmap_prevention_evidence_comparison/**'
+      - 'roadmap_prevention_triage/**'
   pull_request:
     paths:
       - 'experiment-data-quality-auditor/**'
@@ -132,6 +133,7 @@ on:
       - 'roadmap_prevention_evidence_export/**'
       - 'roadmap_prevention_evidence_verification/**'
       - 'roadmap_prevention_evidence_comparison/**'
+      - 'roadmap_prevention_triage/**'
 permissions:
   contents: read
 jobs:

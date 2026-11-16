@@ -454,6 +454,11 @@ test('HTTP complete lifecycle persists learning and survives reopening the store
   }),env);
   assert.equal(comparison.status,200);
   assert.equal((await comparison.json()).actions[0].change,'lost_currency');
+  const triage=await worker.fetch(req('/api/prevention-triage',requestBodies.get('/api/prevention-evidence-compare')),env);
+  assert.equal(triage.status,200);
+  const queue=await triage.json();
+  assert.equal(queue.queue[0].controlId,'archive-availability');
+  assert.equal(queue.queue[0].actions[0].status,'stale');
   assert.equal(roadmapRecovery.status,'approved_recovery_plan');
   assert.equal(roadmapRecovery.sourceDeliveryMonitorId,'delivery-recovery');
   assert.deepEqual(roadmapRecovery.selectedActions[0].sourceEvidenceIds,run.ranking.ranked[0].evidenceIds);

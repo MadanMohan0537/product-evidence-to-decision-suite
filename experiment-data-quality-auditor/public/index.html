@@ -10,6 +10,12 @@
   <header><a href="/" class="brand">ProdMind <span>Evidence to decisions</span></a><span class="badge">Single-team workspace</span></header>
   <main>
     <section class="panel">
+      <h2>Project 64: Prioritize prevention follow-up</h2>
+      <p>Upload a Project 63 comparison request to group outstanding checks by control.</p>
+      <form id="prevention-triage"><label>Comparison JSON <input name="file" type="file" accept=".json,application/json" required></label><button>Build review queue</button></form>
+      <pre id="prevention-triage-result" aria-live="polite"></pre>
+    </section>
+    <section class="panel">
       <h2>Project 63: Compare prevention evidence</h2>
       <p>Upload a comparison request containing two exports and separately trusted digests.</p>
       <form id="prevention-evidence-compare"><label>Comparison JSON <input name="file" type="file" accept=".json,application/json" required></label><button>Compare evidence</button></form>
