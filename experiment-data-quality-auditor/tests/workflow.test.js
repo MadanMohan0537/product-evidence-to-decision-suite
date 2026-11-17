@@ -459,6 +459,12 @@ test('HTTP complete lifecycle persists learning and survives reopening the store
   const queue=await triage.json();
   assert.equal(queue.queue[0].controlId,'archive-availability');
   assert.equal(queue.queue[0].actions[0].status,'stale');
+  const ownership=await worker.fetch(req('/api/prevention-ownership',{
+    ...requestBodies.get('/api/prevention-evidence-compare'),
+    assignments:[{controlId:'archive-availability',owner:'Records operations',ticket:'OPS-57'}],
+  }),env);
+  assert.equal(ownership.status,200);
+  assert.equal((await ownership.json()).status,'ready_for_handoff');
   assert.equal(roadmapRecovery.status,'approved_recovery_plan');
   assert.equal(roadmapRecovery.sourceDeliveryMonitorId,'delivery-recovery');
   assert.deepEqual(roadmapRecovery.selectedActions[0].sourceEvidenceIds,run.ranking.ranked[0].evidenceIds);
