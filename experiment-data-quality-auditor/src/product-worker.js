@@ -10,6 +10,7 @@ import {exportPreventionEvidence} from '../../roadmap_prevention_evidence_export
 import {verifyPreventionEvidence} from '../../roadmap_prevention_evidence_verification/src/verify.js';
 import {comparePreventionEvidence} from '../../roadmap_prevention_evidence_comparison/src/compare.js';
 import {prioritizePreventionReview} from '../../roadmap_prevention_triage/src/triage.js';
+import {assessPreventionOwnership} from '../../roadmap_prevention_ownership/src/ownership.js';
 import {buildLearningMemory, searchLearningMemory} from '../../product_learning_memory/src/memory.js';
 import {calibrateRuns} from '../../decision_calibration_engine/src/calibration.js';
 import {assessEvidenceIntegrity} from '../../evidence_integrity_monitor/src/integrity.js';
@@ -401,9 +402,10 @@ export default {
           review: input.recalibrationBaselineDriftReview,
         }));
       }
-      if (['/api/prevention-evidence-compare', '/api/prevention-triage'].includes(url.pathname) && request.method === 'POST') {
-        const {previous, latest, limit} = await body(request);
+      if (['/api/prevention-evidence-compare', '/api/prevention-triage', '/api/prevention-ownership'].includes(url.pathname) && request.method === 'POST') {
+        const {previous, latest, limit, assignments} = await body(request);
         const comparison = await comparePreventionEvidence(previous, latest);
+        if (url.pathname === '/api/prevention-ownership') return json(assessPreventionOwnership(prioritizePreventionReview(comparison, 100), assignments));
         return json(url.pathname === '/api/prevention-triage' ? prioritizePreventionReview(comparison, limit) : comparison);
       }
       if (url.pathname === '/api/prevention-evidence-verify' && request.method === 'POST') {

@@ -10,6 +10,12 @@
   <header><a href="/" class="brand">ProdMind <span>Evidence to decisions</span></a><span class="badge">Single-team workspace</span></header>
   <main>
     <section class="panel">
+      <h2>Project 65: Check prevention ownership</h2>
+      <p>Match outstanding controls to proposed owners and ticket references.</p>
+      <form id="prevention-ownership"><label>Handoff JSON <input name="file" type="file" accept=".json,application/json" required></label><button>Check handoff coverage</button></form>
+      <pre id="prevention-ownership-result" aria-live="polite"></pre>
+    </section>
+    <section class="panel">
       <h2>Project 64: Prioritize prevention follow-up</h2>
       <p>Upload a Project 63 comparison request to group outstanding checks by control.</p>
       <form id="prevention-triage"><label>Comparison JSON <input name="file" type="file" accept=".json,application/json" required></label><button>Build review queue</button></form>
