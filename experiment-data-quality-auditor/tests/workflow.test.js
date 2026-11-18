@@ -465,6 +465,14 @@ test('HTTP complete lifecycle persists learning and survives reopening the store
   }),env);
   assert.equal(ownership.status,200);
   assert.equal((await ownership.json()).status,'ready_for_handoff');
+  const receipt=await worker.fetch(req('/api/prevention-handoff',{
+    ...requestBodies.get('/api/prevention-ownership'),
+    handoff:{asOf:'2027-04-16T00:00:00Z',windowHours:12,receipts:[
+      {controlId:'archive-availability',owner:'Records operations',ticket:'OPS-57',acknowledgedAt:'2027-04-15T13:00:00Z'},
+    ]},
+  }),env);
+  assert.equal(receipt.status,200);
+  assert.equal((await receipt.json()).controls[0].status,'acknowledged_late');
   assert.equal(roadmapRecovery.status,'approved_recovery_plan');
   assert.equal(roadmapRecovery.sourceDeliveryMonitorId,'delivery-recovery');
   assert.deepEqual(roadmapRecovery.selectedActions[0].sourceEvidenceIds,run.ranking.ranked[0].evidenceIds);
