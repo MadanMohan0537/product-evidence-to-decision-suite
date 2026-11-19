@@ -473,6 +473,12 @@ test('HTTP complete lifecycle persists learning and survives reopening the store
   }),env);
   assert.equal(receipt.status,200);
   assert.equal((await receipt.json()).controls[0].status,'acknowledged_late');
+  const escalationInput=structuredClone(requestBodies.get('/api/prevention-handoff'));
+  escalationInput.handoff.receipts=[];
+  escalationInput.routes=[{controlId:'archive-availability',contact:'Duty lead',channel:'Internal queue',runbook:'RB-1'}];
+  const escalation=await worker.fetch(req('/api/handoff-escalation',escalationInput),env);
+  assert.equal(escalation.status,200);
+  assert.equal((await escalation.json()).status,'ready_for_manual_escalation');
   assert.equal(roadmapRecovery.status,'approved_recovery_plan');
   assert.equal(roadmapRecovery.sourceDeliveryMonitorId,'delivery-recovery');
   assert.deepEqual(roadmapRecovery.selectedActions[0].sourceEvidenceIds,run.ranking.ranked[0].evidenceIds);
