@@ -12,6 +12,7 @@ import {comparePreventionEvidence} from '../../roadmap_prevention_evidence_compa
 import {prioritizePreventionReview} from '../../roadmap_prevention_triage/src/triage.js';
 import {assessPreventionOwnership} from '../../roadmap_prevention_ownership/src/ownership.js';
 import {assessHandoff} from '../../roadmap_prevention_handoff/src/handoff.js';
+import {planEscalation} from '../../roadmap_handoff_escalation/src/escalation.js';
 import {buildLearningMemory, searchLearningMemory} from '../../product_learning_memory/src/memory.js';
 import {calibrateRuns} from '../../decision_calibration_engine/src/calibration.js';
 import {assessEvidenceIntegrity} from '../../evidence_integrity_monitor/src/integrity.js';
@@ -403,12 +404,14 @@ export default {
           review: input.recalibrationBaselineDriftReview,
         }));
       }
-      if (['/api/prevention-evidence-compare', '/api/prevention-triage', '/api/prevention-ownership', '/api/prevention-handoff'].includes(url.pathname) && request.method === 'POST') {
-        const {previous, latest, limit, assignments, handoff} = await body(request);
+      if (['/api/prevention-evidence-compare', '/api/prevention-triage', '/api/prevention-ownership', '/api/prevention-handoff', '/api/handoff-escalation'].includes(url.pathname) && request.method === 'POST') {
+        const {previous, latest, limit, assignments, handoff, routes} = await body(request);
         const comparison = await comparePreventionEvidence(previous, latest);
-        if (['/api/prevention-ownership', '/api/prevention-handoff'].includes(url.pathname)) {
+        if (['/api/prevention-ownership', '/api/prevention-handoff', '/api/handoff-escalation'].includes(url.pathname)) {
           const ownership = assessPreventionOwnership(prioritizePreventionReview(comparison, 100), assignments);
-          return json(url.pathname === '/api/prevention-handoff' ? assessHandoff(ownership, handoff) : ownership);
+          if (url.pathname === '/api/prevention-ownership') return json(ownership);
+          const assessed = assessHandoff(ownership, handoff);
+          return json(url.pathname === '/api/handoff-escalation' ? planEscalation(assessed, routes) : assessed);
         }
         return json(url.pathname === '/api/prevention-triage' ? prioritizePreventionReview(comparison, limit) : comparison);
       }

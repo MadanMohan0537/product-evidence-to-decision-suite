@@ -10,6 +10,12 @@
   <header><a href="/" class="brand">ProdMind <span>Evidence to decisions</span></a><span class="badge">Single-team workspace</span></header>
   <main>
     <section class="panel">
+      <h2>Project 67: Draft handoff escalation</h2>
+      <p>Prepare manual follow-up for overdue or unassigned handoffs. No messages are sent.</p>
+      <form id="handoff-escalation"><label>Escalation JSON <input name="file" type="file" accept=".json,application/json" required></label><button>Prepare drafts</button></form>
+      <pre id="handoff-escalation-result" aria-live="polite"></pre>
+    </section>
+    <section class="panel">
       <h2>Project 66: Check handoff acknowledgment</h2>
       <p>Find owners whose acknowledgment is pending or overdue.</p>
       <form id="prevention-handoff"><label>Handoff JSON <input name="file" type="file" accept=".json,application/json" required></label><button>Check acknowledgments</button></form>
