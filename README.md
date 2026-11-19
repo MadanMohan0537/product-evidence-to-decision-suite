@@ -2,7 +2,7 @@
 
 # ProdMind
 
-**A 66-project, evidence-to-execution-and-governance operating system for product teams.**
+**A 67-project, evidence-to-execution-and-governance operating system for product teams.**
 
 [![Connected lifecycle](https://github.com/MadanMohan0537/prodmind/actions/workflows/experiment-data-quality-auditor.yml/badge.svg)](https://github.com/MadanMohan0537/prodmind/actions/workflows/experiment-data-quality-auditor.yml)
 [![Cloudflare Workers](https://img.shields.io/badge/runtime-Cloudflare%20Workers-F38020)](https://developers.cloudflare.com/workers/)
@@ -153,7 +153,7 @@ ProdMind is designed around decisions rather than disconnected demos:
 
 The product should be evaluated by evidence-linked decisions, time saved with review quality preserved, prevented data-quality failures, accepted research plans, monitored outcome coverage, and strategy exceptions resolved. None of these measures should reward automatic shipping or unsupported causal claims.
 
-## The 66 projects
+## The 67 projects
 
 | # | Project | What it contributes | Frontend |
 |---:|---|---|---|
@@ -223,6 +223,7 @@ The product should be evaluated by evidence-linked decisions, time saved with re
 | 64 | [Roadmap Prevention Review Queue](roadmap_prevention_triage/) | Ranked, control-grouped follow-up for failed, missing and stale prevention checks | Connected triage |
 | 65 | [Roadmap Prevention Ownership Check](roadmap_prevention_ownership/) | Complete owner and tracking-reference coverage for outstanding controls | Connected handoff review |
 | 66 | [Roadmap Prevention Handoff Acknowledgment](roadmap_prevention_handoff/) | Match receipts to assigned controls and surface late or missing acknowledgment | Connected handoff assessment |
+| 67 | [Roadmap Handoff Escalation Planner](roadmap_handoff_escalation/) | Manual escalation drafts for overdue or unassigned handoffs | Connected escalation preparation |
 
 `.github/` is supporting CI configuration, not a product project.
 
