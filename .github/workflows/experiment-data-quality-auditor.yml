@@ -70,6 +70,7 @@ on:
       - 'roadmap_prevention_ownership/**'
       - 'roadmap_prevention_handoff/**'
       - 'roadmap_handoff_escalation/**'
+      - 'roadmap_escalation_response/**'
   pull_request:
     paths:
       - 'experiment-data-quality-auditor/**'
@@ -140,6 +141,7 @@ on:
       - 'roadmap_prevention_ownership/**'
       - 'roadmap_prevention_handoff/**'
       - 'roadmap_handoff_escalation/**'
+      - 'roadmap_escalation_response/**'
 permissions:
   contents: read
 jobs:

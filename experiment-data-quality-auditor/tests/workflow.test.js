@@ -128,6 +128,7 @@ test('HTTP rejects stale revision and fails closed without DB or auth',async t=>
   assert.equal((await worker.fetch(req(`/api/runs/${run.id}/rank`,{version:0}),env)).status,409);
   assert.equal((await worker.fetch(req('/api/runs'),{API_TOKEN:'secret'})).status,503);
   assert.equal((await worker.fetch(req('/api/runs',null,'bad'),env)).status,401);
+  assert.equal((await worker.fetch(req('/api/escalation-responses',{},'bad'),env)).status,401);
 });
 
 test('HTTP complete lifecycle persists learning and survives reopening the store',async t=>{
@@ -479,6 +480,17 @@ test('HTTP complete lifecycle persists learning and survives reopening the store
   const escalation=await worker.fetch(req('/api/handoff-escalation',escalationInput),env);
   assert.equal(escalation.status,200);
   assert.equal((await escalation.json()).status,'ready_for_manual_escalation');
+  const responseInput = {...escalationInput, responseMonitoring:{
+    asOf:'2027-04-17T00:00:00Z', responseWindowHours:4,
+    receipts:[{controlId:'archive-availability', ...escalationInput.routes[0],
+      reference:'MSG-68', sentAt:'2027-04-16T01:00:00Z'}],
+  }};
+  const responseResult = await worker.fetch(req('/api/escalation-responses', responseInput), env);
+  assert.equal(responseResult.status, 200);
+  assert.equal((await responseResult.json()).controls[0].status, 'response_overdue');
+  responseInput.responseMonitoring.receipts[0].contact = 'Wrong lead';
+  const rejectedResponse = await worker.fetch(req('/api/escalation-responses', responseInput), env);
+  assert.equal(rejectedResponse.status, 422);
   assert.equal(roadmapRecovery.status,'approved_recovery_plan');
   assert.equal(roadmapRecovery.sourceDeliveryMonitorId,'delivery-recovery');
   assert.deepEqual(roadmapRecovery.selectedActions[0].sourceEvidenceIds,run.ranking.ranked[0].evidenceIds);

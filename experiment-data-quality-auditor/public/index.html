@@ -10,6 +10,12 @@
   <header><a href="/" class="brand">ProdMind <span>Evidence to decisions</span></a><span class="badge">Single-team workspace</span></header>
   <main>
     <section class="panel">
+      <h2>Project 68: Monitor escalation responses</h2>
+      <p>Check manually recorded send and response receipts. A reply is not proof of resolution. Nothing is sent automatically.</p>
+      <form id="escalation-responses"><label>Response monitoring JSON <input name="file" type="file" accept=".json,application/json" required></label><button>Check responses</button></form>
+      <pre id="escalation-responses-result" aria-live="polite"></pre>
+    </section>
+    <section class="panel">
       <h2>Project 67: Draft handoff escalation</h2>
       <p>Prepare manual follow-up for overdue or unassigned handoffs. No messages are sent.</p>
       <form id="handoff-escalation"><label>Escalation JSON <input name="file" type="file" accept=".json,application/json" required></label><button>Prepare drafts</button></form>
