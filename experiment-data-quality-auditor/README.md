@@ -10,7 +10,7 @@
 
 </div>
 
-Project 7 is both the experiment workspace and the integration host for the fifty-six-project [ProdMind](../README.md) product. It executes Projects 1–6 directly and imports Projects 8–56, including an execution branch that schedules Project 14 portfolio selections, compares them with actual delivery, plans and verifies bounded recovery, calibrates future estimating context, controls its adoption, verifies observed effectiveness, monitors performance drift, validates versioned recalibration proposals, assures shadow-plus-staged rollout evidence, verifies rollback recovery, governs incident learning before re-entry, assures the observed retry, gates sustained promotion, verifies the promoted operating outcome, completes exact baseline handoff, and then monitors ongoing configuration drift.
+Project 7 is both the experiment workspace and the integration host for the 68-project [ProdMind](../README.md) product. It executes Projects 1–6 directly and imports Projects 8–68. Its execution branch extends portfolio scheduling through recovery, drift prevention, evidence comparison, ownership and handoff. Project 68 adds manually recorded escalation send/reply monitoring to Project 67 drafts; replies never imply remediation.
 
 The folder name is retained because the experiment data-quality auditor remains a core component.
 
@@ -18,7 +18,7 @@ The folder name is retained because the experiment data-quality auditor remains 
 
 - **Decision improved:** whether evidence can progress from discovery through a prospective experiment, reviewed decision and monitored learning.
 - **Leading measures:** blocked data-quality audits, stale-write conflicts, completed guardrail reviews and evidence-linked decisions.
-- **Portfolio value:** provides one D1-backed control plane for all fifty-six modules and preserves the decision trail.
+- **Portfolio value:** hosts all 68 modules and preserves the core D1-backed decision trail; read-only follow-up assessments have explicitly documented persistence limits.
 - **Stop condition:** descriptive readouts and workflow gates do not establish statistical significance or causality.
 
 ## Connected lifecycle

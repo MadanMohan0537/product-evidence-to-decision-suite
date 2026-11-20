@@ -200,3 +200,7 @@ Cloudflare free-tier resource limits can still constrain large inputs. Disabling
 - [D1 prepared statements](https://developers.cloudflare.com/d1/worker-api/prepared-statements/)
 - [D1 transaction behavior](https://developers.cloudflare.com/d1/worker-api/d1-database/)
 - [Worker static asset routing](https://developers.cloudflare.com/workers/static-assets/)
+
+## Project 68: Escalation response monitoring
+
+Authenticated `POST /api/escalation-responses` accepts the Project 67 request plus `responseMonitoring` (observation time, integer response window in hours, and manual send/reply receipts). The server reconstructs Projects 63–67 from verified evidence instead of accepting a client-computed draft. Control/contact/channel/runbook matching and UTC chronology are mandatory. Unrouted, unsent, awaiting, overdue, timely and late responses remain distinct. The result is read-only, not durable delivery evidence or control resolution. See the [Project 68 contract](../../roadmap_escalation_response/README.md).
