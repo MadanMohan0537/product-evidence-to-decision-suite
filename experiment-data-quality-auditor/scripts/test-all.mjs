@@ -16,6 +16,7 @@ modules.push('roadmap_prevention_handoff');
 modules.push('roadmap_handoff_escalation');
 modules.push('roadmap_escalation_response');
 modules.push('roadmap_response_summary');
+modules.push('roadmap_response_review');
 const testFiles=directory=>readdirSync(directory,{withFileTypes:true}).flatMap(entry=>entry.isDirectory()?testFiles(`${directory}/${entry.name}`):(entry.name.endsWith('.test.js')?[`${directory}/${entry.name}`]:[]));
 let failed=false;
 for(const name of modules){
