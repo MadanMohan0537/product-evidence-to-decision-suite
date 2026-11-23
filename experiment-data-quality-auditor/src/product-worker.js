@@ -16,6 +16,7 @@ import {planEscalation} from '../../roadmap_handoff_escalation/src/escalation.js
 import {monitorResponses} from '../../roadmap_escalation_response/src/response.js';
 import {summarizeResponses} from '../../roadmap_response_summary/src/summary.js';
 import {reviewResponses} from '../../roadmap_response_review/src/review.js';
+import {assignReviews} from '../../roadmap_review_assignments/src/assignments.js';
 import {buildLearningMemory, searchLearningMemory} from '../../product_learning_memory/src/memory.js';
 import {calibrateRuns} from '../../decision_calibration_engine/src/calibration.js';
 import {assessEvidenceIntegrity} from '../../evidence_integrity_monitor/src/integrity.js';
@@ -408,7 +409,7 @@ export default {
         }));
       }
       if (['/api/prevention-evidence-compare', '/api/prevention-triage', '/api/prevention-ownership', '/api/prevention-handoff', '/api/handoff-escalation', '/api/escalation-responses'].includes(url.pathname) && request.method === 'POST') {
-        const {previous, latest, limit, assignments, handoff, routes, responseMonitoring} = await body(request);
+        const {previous, latest, limit, assignments, handoff, routes, responseMonitoring, reviewAssignments} = await body(request);
         const comparison = await comparePreventionEvidence(previous, latest);
         if (['/api/prevention-ownership', '/api/prevention-handoff', '/api/handoff-escalation', '/api/escalation-responses'].includes(url.pathname)) {
           const ownership = assessPreventionOwnership(prioritizePreventionReview(comparison, 100), assignments);
@@ -416,7 +417,9 @@ export default {
           const assessed = assessHandoff(ownership, handoff);
           if (url.pathname === '/api/escalation-responses') {
             const report = monitorResponses(planEscalation(assessed, routes), responseMonitoring);
-            return json({...report, summary:summarizeResponses(report), reviewQueue:reviewResponses(report)});
+            const reviewQueue = reviewResponses(report);
+            return json({...report, summary:summarizeResponses(report), reviewQueue,
+              reviewResponsibilities:assignReviews(reviewQueue, reviewAssignments)});
           }
           return json(url.pathname === '/api/handoff-escalation' ? planEscalation(assessed, routes) : assessed);
         }
