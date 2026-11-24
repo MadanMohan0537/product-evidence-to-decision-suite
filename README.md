@@ -2,7 +2,7 @@
 
 # ProdMind
 
-**A 71-project, evidence-to-execution-and-governance operating system for product teams.**
+**A 72-project, evidence-to-execution-and-governance operating system for product teams.**
 
 [![Connected lifecycle](https://github.com/MadanMohan0537/prodmind/actions/workflows/experiment-data-quality-auditor.yml/badge.svg)](https://github.com/MadanMohan0537/prodmind/actions/workflows/experiment-data-quality-auditor.yml)
 [![Cloudflare Workers](https://img.shields.io/badge/runtime-Cloudflare%20Workers-F38020)](https://developers.cloudflare.com/workers/)
@@ -153,7 +153,7 @@ ProdMind is designed around decisions rather than disconnected demos:
 
 The product should be evaluated by evidence-linked decisions, time saved with review quality preserved, prevented data-quality failures, accepted research plans, monitored outcome coverage, and strategy exceptions resolved. None of these measures should reward automatic shipping or unsupported causal claims.
 
-## The 71 projects
+## The 72 projects
 
 | # | Project | What it contributes | Frontend |
 |---:|---|---|---|
@@ -228,6 +228,7 @@ The product should be evaluated by evidence-linked decisions, time saved with re
 | 69 | [Escalation Communication Coverage](roadmap_response_summary/) | Denominator-aware response coverage | Connected summary |
 | 70 | [Escalation Response Review Queue](roadmap_response_review/) | Explicit next actions and deterministic review order | Connected human follow-up |
 | 71 | [Escalation Review Responsibility Register](roadmap_review_assignments/) | Explicit reviewer and tracking references, with missing assignments visible | Connected review accountability |
+| 72 | [Review Ownership Load Summary](roadmap_review_load/) | Reviewer grouping, immediate-work counts and missing ownership | Connected ownership visibility |
 
 `.github/` is supporting CI configuration, not a product project.
 
