@@ -71,6 +71,11 @@ on:
       - 'roadmap_prevention_handoff/**'
       - 'roadmap_handoff_escalation/**'
       - 'roadmap_escalation_response/**'
+      - 'roadmap_response_summary/**'
+      - 'roadmap_response_review/**'
+      - 'roadmap_review_assignments/**'
+      - 'roadmap_review_load/**'
+      - 'roadmap_review_ticket_audit/**'
   pull_request:
     paths:
       - 'experiment-data-quality-auditor/**'
@@ -142,6 +147,11 @@ on:
       - 'roadmap_prevention_handoff/**'
       - 'roadmap_handoff_escalation/**'
       - 'roadmap_escalation_response/**'
+      - 'roadmap_response_summary/**'
+      - 'roadmap_response_review/**'
+      - 'roadmap_review_assignments/**'
+      - 'roadmap_review_load/**'
+      - 'roadmap_review_ticket_audit/**'
 permissions:
   contents: read
 jobs:
