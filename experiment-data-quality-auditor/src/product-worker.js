@@ -18,6 +18,7 @@ import {summarizeResponses} from '../../roadmap_response_summary/src/summary.js'
 import {reviewResponses} from '../../roadmap_response_review/src/review.js';
 import {assignReviews} from '../../roadmap_review_assignments/src/assignments.js';
 import {summarizeReviewLoad} from '../../roadmap_review_load/src/load.js';
+import {auditReviewTickets} from '../../roadmap_review_ticket_audit/src/audit.js';
 import {buildLearningMemory, searchLearningMemory} from '../../product_learning_memory/src/memory.js';
 import {calibrateRuns} from '../../decision_calibration_engine/src/calibration.js';
 import {assessEvidenceIntegrity} from '../../evidence_integrity_monitor/src/integrity.js';
@@ -421,7 +422,8 @@ export default {
             const reviewQueue = reviewResponses(report);
             const reviewResponsibilities = assignReviews(reviewQueue, reviewAssignments);
             return json({...report, summary:summarizeResponses(report), reviewQueue,
-              reviewResponsibilities, reviewLoad:summarizeReviewLoad(reviewResponsibilities)});
+              reviewResponsibilities, reviewLoad:summarizeReviewLoad(reviewResponsibilities),
+              reviewTrackingAudit:auditReviewTickets(reviewResponsibilities)});
           }
           return json(url.pathname === '/api/handoff-escalation' ? planEscalation(assessed, routes) : assessed);
         }
