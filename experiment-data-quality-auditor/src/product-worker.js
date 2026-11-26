@@ -19,6 +19,7 @@ import {reviewResponses} from '../../roadmap_response_review/src/review.js';
 import {assignReviews} from '../../roadmap_review_assignments/src/assignments.js';
 import {summarizeReviewLoad} from '../../roadmap_review_load/src/load.js';
 import {auditReviewTickets} from '../../roadmap_review_ticket_audit/src/audit.js';
+import {assessReviewDispositions} from '../../roadmap_review_disposition/src/disposition.js';
 import {buildLearningMemory, searchLearningMemory} from '../../product_learning_memory/src/memory.js';
 import {calibrateRuns} from '../../decision_calibration_engine/src/calibration.js';
 import {assessEvidenceIntegrity} from '../../evidence_integrity_monitor/src/integrity.js';
@@ -411,7 +412,7 @@ export default {
         }));
       }
       if (['/api/prevention-evidence-compare', '/api/prevention-triage', '/api/prevention-ownership', '/api/prevention-handoff', '/api/handoff-escalation', '/api/escalation-responses'].includes(url.pathname) && request.method === 'POST') {
-        const {previous, latest, limit, assignments, handoff, routes, responseMonitoring, reviewAssignments} = await body(request);
+        const {previous, latest, limit, assignments, handoff, routes, responseMonitoring, reviewAssignments, reviewDecisions} = await body(request);
         const comparison = await comparePreventionEvidence(previous, latest);
         if (['/api/prevention-ownership', '/api/prevention-handoff', '/api/handoff-escalation', '/api/escalation-responses'].includes(url.pathname)) {
           const ownership = assessPreventionOwnership(prioritizePreventionReview(comparison, 100), assignments);
@@ -423,7 +424,8 @@ export default {
             const reviewResponsibilities = assignReviews(reviewQueue, reviewAssignments);
             return json({...report, summary:summarizeResponses(report), reviewQueue,
               reviewResponsibilities, reviewLoad:summarizeReviewLoad(reviewResponsibilities),
-              reviewTrackingAudit:auditReviewTickets(reviewResponsibilities)});
+              reviewTrackingAudit:auditReviewTickets(reviewResponsibilities),
+              reviewDispositions:assessReviewDispositions(reviewResponsibilities, reviewDecisions)});
           }
           return json(url.pathname === '/api/handoff-escalation' ? planEscalation(assessed, routes) : assessed);
         }
