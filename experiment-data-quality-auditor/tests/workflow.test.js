@@ -495,6 +495,8 @@ test('HTTP complete lifecycle persists learning and survives reopening the store
   assert.equal(responseReport.reviewLoad.assignmentCoverage, 0);
   assert.equal(responseReport.reviewTrackingAudit.unassigned, 1);
   assert.equal(responseReport.reviewDispositions.pending, 1);
+  assert.equal(responseReport.reviewBrief.counts.pending, 1);
+  assert.equal(responseReport.reviewBrief.agenda[0].controlId, 'archive-availability');
   responseInput.reviewAssignments = [{controlId:'archive-availability',owner:'Reviewer',ticket:'REVIEW-73'}];
   const assignedResponse = await worker.fetch(req('/api/escalation-responses', responseInput), env);
   assert.equal(assignedResponse.status, 200);
