@@ -2,7 +2,7 @@
 
 # ProdMind
 
-**A 75-project, evidence-to-execution-and-governance operating system for product teams.**
+**A 76-project, evidence-to-execution-and-governance operating system for product teams.**
 
 [![Connected lifecycle](https://github.com/MadanMohan0537/prodmind/actions/workflows/experiment-data-quality-auditor.yml/badge.svg)](https://github.com/MadanMohan0537/prodmind/actions/workflows/experiment-data-quality-auditor.yml)
 [![Cloudflare Workers](https://img.shields.io/badge/runtime-Cloudflare%20Workers-F38020)](https://developers.cloudflare.com/workers/)
@@ -153,7 +153,7 @@ ProdMind is designed around decisions rather than disconnected demos:
 
 The product should be evaluated by evidence-linked decisions, time saved with review quality preserved, prevented data-quality failures, accepted research plans, monitored outcome coverage, and strategy exceptions resolved. None of these measures should reward automatic shipping or unsupported causal claims.
 
-## The 75 projects
+## The 76 projects
 
 | # | Project | What it contributes | Frontend |
 |---:|---|---|---|
@@ -232,6 +232,7 @@ The product should be evaluated by evidence-linked decisions, time saved with re
 | 73 | [Review Tracking Reference Auditor](roadmap_review_ticket_audit/) | Shared tracking references and cross-owner ambiguity | Connected tracking inspection |
 | 74 | [Communication Review Disposition Register](roadmap_review_disposition/) | Explicit reviewer outcomes with rationale and evidence references | Connected review decisions |
 | 75 | [Communication Review Meeting Brief](roadmap_review_brief/) | Evidence-linked agenda and explicit pending-outcome counts | Connected review preparation |
+| 76 | [Portable Communication Review Brief](roadmap_review_export/) | Escaped Markdown export of the recomputed agenda | Connected review sharing |
 
 `.github/` is supporting CI configuration, not a product project.
 
