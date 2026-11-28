@@ -78,6 +78,7 @@ on:
       - 'roadmap_review_ticket_audit/**'
       - 'roadmap_review_disposition/**'
       - 'roadmap_review_brief/**'
+      - 'roadmap_review_export/**'
   pull_request:
     paths:
       - 'experiment-data-quality-auditor/**'
@@ -156,6 +157,7 @@ on:
       - 'roadmap_review_ticket_audit/**'
       - 'roadmap_review_disposition/**'
       - 'roadmap_review_brief/**'
+      - 'roadmap_review_export/**'
 permissions:
   contents: read
 jobs:

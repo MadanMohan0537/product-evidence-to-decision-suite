@@ -22,6 +22,7 @@ modules.push('roadmap_review_load');
 modules.push('roadmap_review_ticket_audit');
 modules.push('roadmap_review_disposition');
 modules.push('roadmap_review_brief');
+modules.push('roadmap_review_export');
 const testFiles=directory=>readdirSync(directory,{withFileTypes:true}).flatMap(entry=>entry.isDirectory()?testFiles(`${directory}/${entry.name}`):(entry.name.endsWith('.test.js')?[`${directory}/${entry.name}`]:[]));
 let failed=false;
 for(const name of modules){
